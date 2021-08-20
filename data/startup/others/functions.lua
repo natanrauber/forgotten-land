@@ -10,8 +10,7 @@ function loadLuaMapAction(tablename)
 				-- Checks that you have no items created
 				if tile:getItemCountById(value.itemId) == 0 then
 					Spdlog.warn("[loadLuaMapAction] - Wrong item id found")
-					Spdlog.warn(string.format("Action id: %d, item id: %d",
-						index, value.itemId))
+					Spdlog.warn(string.format("Action id: %d, item id: %d", index, value.itemId))
 				end
 				if tile:getItemCountById(value.itemId) == 1 then
 					item = tile:getItemById(value.itemId)
@@ -51,7 +50,7 @@ function loadLuaMapUnique(tablename)
 			-- Checks that you have no items created
 			if tile:getItemCountById(value.itemId) == 0 then
 				Spdlog.warn("[loadLuaMapUnique] - Wrong item id found")
-				Spdlog.warn("Unique id: ".. index ..", item id: ".. value.itemId .."")
+				Spdlog.warn("Unique id: " .. index .. ", item id: " .. value.itemId .. "")
 			end
 			if tile:getItemCountById(value.itemId) == 1 then
 				item = tile:getItemById(value.itemId)
@@ -74,7 +73,7 @@ function loadLuaMapSign(tablename)
 			-- Checks that you have no items created
 			if tile:getItemCountById(value.itemId) == 0 then
 				Spdlog.warn("[loadLuaMapSign] - Wrong item id found")
-				Spdlog.warn("Sign id: ".. index ..", item id: ".. value.itemId .."")
+				Spdlog.warn("Sign id: " .. index .. ", item id: " .. value.itemId .. "")
 			end
 			if tile:getItemCountById(value.itemId) == 1 then
 				item = tile:getItemById(value.itemId)
@@ -119,20 +118,25 @@ function loadLuaMapBookDocument(tablename)
 						item:setAttribute(ITEM_ATTRIBUTE_TEXT, value.text)
 						totals[2] = totals[2] + 1
 					else
-						Spdlog.warn("[loadLuaMapBookDocument] - Item not found! Index: ".. index ..", itemId: ".. value.itemId.."")
+						Spdlog.warn("[loadLuaMapBookDocument] - Item not found! Index: " .. index .. ", itemId: " .. value.itemId .. "")
 					end
 				else
-					Spdlog.warn("[loadLuaMapBookDocument] - Container not found! Index: ".. index ..", containerId: ".. value.containerId.."")
+					Spdlog.warn(
+						"[loadLuaMapBookDocument] - Container not found! Index: " .. index .. ", containerId: " .. value.containerId .. ""
+					)
 				end
 			else
-				Spdlog.warn("[loadLuaMapBookDocument] - Tile not found! Index: ".. index ..", position: x: ".. value.position.x.." y: ".. value.position.y .." z: ".. value.position.z .."")
+				Spdlog.warn(
+					"[loadLuaMapBookDocument] - Tile not found! Index: " ..
+						index .. ", position: x: " .. value.position.x .. " y: " .. value.position.y .. " z: " .. value.position.z .. ""
+				)
 			end
 		end
 	end
 	if totals[1] == totals[2] then
-		Spdlog.info("Loaded ".. totals[2] .." books and documents in the map")
+		Spdlog.info("Loaded " .. totals[2] .. " books and documents in the map")
 	else
-		Spdlog.info("Loaded ".. totals[2] .." of ".. totals[1] .." books and documents in the map")
+		Spdlog.info("Loaded " .. totals[2] .. " of " .. totals[1] .. " books and documents in the map")
 	end
 end
 
@@ -146,8 +150,8 @@ function loadLuaNpcs(tablename)
 			end
 		end
 	end
-	Spdlog.info("Loaded ".. (#NpcTable) .." npcs and spawned ".. Game.getMonsterCount() .." monsters")
-	Spdlog.info("Loaded ".. #Game.getTowns() .. " towns with ".. #Game.getHouses() .." houses in total")
+	Spdlog.info("Loaded " .. (#NpcTable) .. " npcs and spawned " .. Game.getMonsterCount() .. " monsters")
+	Spdlog.info("Loaded " .. #Game.getTowns() .. " towns with " .. #Game.getHouses() .. " houses in total")
 end
 
 -- Function for load the map and spawm custom (config.lua line 92)
@@ -161,10 +165,12 @@ function loadCustomMap()
 		-- It's load the spawn
 		-- 10 * 1000 = 10 seconds delay for load the spawn after loading the map
 		addEvent(
-		function()
-			Game.loadSpawnFile(configManager.getString(configKeys.MAP_CUSTOM_SPAWN))
-			Spdlog.info("Loaded " .. mapName .. " spawn")
-		end, 10 * 1000)
+			function()
+				Game.loadSpawnFile(configManager.getString(configKeys.MAP_CUSTOM_SPAWN))
+				Spdlog.info("Loaded " .. mapName .. " spawn")
+			end,
+			10 * 1000
+		)
 	end
 end
 

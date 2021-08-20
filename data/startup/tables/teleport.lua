@@ -1,7 +1,8 @@
 -- Look README.md for see the reserved action/unique numbers
 
 TeleportAction = {
-	[35001] = { -- The Cursed Crystal teleports
+	[35001] = {
+		-- The Cursed Crystal teleports
 		itemId = 21721,
 		itemPos = {
 			{x = 31973, y = 32905, z = 10},
@@ -73,10 +74,10 @@ TeleportUnique = {
 	-- Dawnport quest
 	-- Sacred snake teleport
 	-- Path: data\scripts\movements\quests\dawnport\legion_helmet.lua
-	[35010] = {
-		itemId = 1387,
-		itemPos = {x = 32112, y = 31936, z = 8}
-	},
+	-- [35010] = {
+	-- 	itemId = 1387,
+	-- 	itemPos = {x = 32112, y = 31936, z = 8}
+	-- },
 	-- Draconia quest
 	-- Exit teleport
 	-- Path: data\scripts\movements\quests\draconia\movement-exit_teleport.lua
@@ -130,7 +131,6 @@ TeleportUnique = {
 		itemId = 11796,
 		itemPos = {x = 33498, y = 32613, z = 8}
 	},
-
 	-- Simple teleports (They are registered automatically, without just configuring the table correctly)
 	-- Path: data\scripts\movements\others\teleport.lua
 
@@ -280,7 +280,6 @@ TeleportUnique = {
 		destination = {x = 32480, y = 31905, z = 2},
 		effect = CONST_ME_TELEPORT
 	},
-
 	-- Others teleports
 	-- Water elemental cave (Trapwood)
 	[39001] = {

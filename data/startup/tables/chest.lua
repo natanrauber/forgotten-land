@@ -28,7 +28,6 @@
 	The "for use of the script" variables are used by the scripts
 	To allow a single script to manage all rewards
 ]]
-
 ChestAction = {
 	-- Keys quest
 	[5000] = {
@@ -63,13 +62,13 @@ ChestUnique = {
 		storage = Storage.Quest.Key.ID4055
 	},
 	-- Dawnport quest key 0010 chest
-	[5002] = {
-		isKey = true,
-		itemId = 1717,
-		itemPos = {x = 32068, y = 31895, z = 3},
-		reward = {{23763, 1}},
-		storage = Storage.Quest.Key.ID0010
-	},
+	-- [5002] = {
+	-- 	isKey = true,
+	-- 	itemId = 1717,
+	-- 	itemPos = {x = 32068, y = 31895, z = 3},
+	-- 	reward = {{23763, 1}},
+	-- 	storage = Storage.Quest.Key.ID0010
+	-- },
 	-- Emperor's cookies quest key 3800
 	[5003] = {
 		isKey = true,
@@ -141,7 +140,6 @@ ChestUnique = {
 		reward = {{2089, 1}},
 		storage = Storage.Quest.Key.ID3899
 	},
-
 	-- To add a reward inside a bag, you need to add the variable "container = bagId" before "reward"
 	-- Just duplicate the table and configure correctly, the scripts already register the entire table automatically
 	-- Path: data\scripts\actions\system\quest_reward_common.lua
@@ -178,20 +176,20 @@ ChestUnique = {
 	},
 	-- Dawnport
 	-- Legion helmet quest (dawnport)
-	[6006] = {
-		itemId = 3058,
-		itemPos = {x = 32143, y = 31910, z = 8},
-		reward = {{2480, 1}},
-		storage = Storage.Quest.SanctuaryOfTheLizardGod.LegionHelmet
-	},
+	-- [6006] = {
+	-- 	itemId = 3058,
+	-- 	itemPos = {x = 32143, y = 31910, z = 8},
+	-- 	reward = {{2480, 1}},
+	-- 	storage = Storage.Quest.SanctuaryOfTheLizardGod.LegionHelmet
+	-- },
 	-- Dawnport quest
 	-- Torn log book
-	[6007] = {
-		itemId = 1740,
-		itemPos = {x = 32059, y = 31800, z = 10},
-		reward = {{23749, 1}},
-		storage = Storage.Quest.Dawnport.TornLogBook
-	},
+	-- [6007] = {
+	-- 	itemId = 1740,
+	-- 	itemPos = {x = 32059, y = 31800, z = 10},
+	-- 	reward = {{23749, 1}},
+	-- 	storage = Storage.Quest.Dawnport.TornLogBook
+	-- },
 	-- Deeper fibula quest
 	-- Tower shield
 	[6008] = {
@@ -232,7 +230,7 @@ ChestUnique = {
 	-- Book
 	[6013] = {
 		itemId = 1740,
-		itemPos = {x = 32171, y = 32197, z = 7},
+		itemPos = {x = 32116, y = 32176, z = 7},
 		reward = {{1955, 1}},
 		storage = Storage.Quest.ShortSword.Book
 	},
@@ -253,19 +251,19 @@ ChestUnique = {
 	},
 	-- Studded shield quest (rookgaard)
 	-- Banana free account area
-	[6016] = {
-		itemId = 2725,
-		itemPos = {x = 32172, y = 32169, z = 7},
-		reward = {{2676, 1}},
-		storage = Storage.Quest.StuddedShield.BananaFree
-	},
-	-- Banana premium account area
-	[6017] = {
-		itemId = 2725,
-		itemPos = {x = 31983, y = 32193, z = 5},
-		reward = {{2676, 1}},
-		storage = Storage.Quest.StuddedShield.BananaPremium
-	},
+	-- [6016] = {
+	-- 	itemId = 2725,
+	-- 	itemPos = {x = 32172, y = 32169, z = 7},
+	-- 	reward = {{2676, 1}},
+	-- 	storage = Storage.Quest.StuddedShield.BananaFree
+	-- },
+	-- -- Banana premium account area
+	-- [6017] = {
+	-- 	itemId = 2725,
+	-- 	itemPos = {x = 31983, y = 32193, z = 5},
+	-- 	reward = {{2676, 1}},
+	-- 	storage = Storage.Quest.StuddedShield.BananaPremium
+	-- },
 	-- Rope (kazordoon, emperor's cookies quest)
 	[6018] = {
 		itemId = 1740,
@@ -594,7 +592,7 @@ ChestUnique = {
 		itemPos = {x = 32778, y = 32282, z = 11},
 		container = 1987,
 		keyAction = Storage.Quest.Key.ID3702,
-		reward = {{2090,1}, {2600, 1}, {2457, 1}, {2524, 1}, {1955, 1}, {2383, 1}, {2201, 1}, {2164, 1}},
+		reward = {{2090, 1}, {2600, 1}, {2457, 1}, {2524, 1}, {1955, 1}, {2383, 1}, {2201, 1}, {2164, 1}},
 		weight = 194,
 		storage = Storage.Quest.OrnamentedShield.Bag
 	},
@@ -602,7 +600,7 @@ ChestUnique = {
 		itemId = 1747,
 		itemPos = {x = 32769, y = 32302, z = 10},
 		container = 1993,
-		reward = {{2071, 1}, {2175, 1}, {2199, 1}, {2152, 5} , {2169, 1}},
+		reward = {{2071, 1}, {2175, 1}, {2199, 1}, {2152, 5}, {2169, 1}},
 		weight = 44,
 		storage = Storage.Quest.OrnamentedShield.RedBag
 	},
@@ -838,7 +836,6 @@ ChestUnique = {
 		reward = {{2189, 1}},
 		storage = Storage.Quest.TheParadoxTower.Reward.Wand
 	},
-
 	-- Reward of others scrips files (varied rewards)
 	-- The First dragon Quest
 	-- Treasure chests (data\scripts\actions\quests\first_dragon\treasure_chests.lua)
@@ -943,25 +940,25 @@ ChestUnique = {
 	-- Dawnport vocation rewards
 	-- Path: data\scripts\actions\quests\dawnport\vocation_reward.lua
 	-- Sorcerer
-	[14025] = {
-		itemId = 1740,
-		itemPos = {x = 32054, y = 31882, z = 6}
-	},
-	-- Druid
-	[14026] = {
-		itemId = 1740,
-		itemPos = {x = 32073, y = 31882, z = 6}
-	},
-	-- Paladin
-	[14027] = {
-		itemId = 1740,
-		itemPos = {x = 32059, y = 31882, z = 6}
-	},
-	-- Knight
-	[14028] = {
-		itemId = 1740,
-		itemPos = {x = 32068, y = 31882, z = 6}
-	},
+	-- [14025] = {
+	-- 	itemId = 1740,
+	-- 	itemPos = {x = 32054, y = 31882, z = 6}
+	-- },
+	-- -- Druid
+	-- [14026] = {
+	-- 	itemId = 1740,
+	-- 	itemPos = {x = 32073, y = 31882, z = 6}
+	-- },
+	-- -- Paladin
+	-- [14027] = {
+	-- 	itemId = 1740,
+	-- 	itemPos = {x = 32059, y = 31882, z = 6}
+	-- },
+	-- -- Knight
+	-- [14028] = {
+	-- 	itemId = 1740,
+	-- 	itemPos = {x = 32068, y = 31882, z = 6}
+	-- },
 	-- Explorer Society Missions
 	-- Path: data\scripts\actions\quests\explorer_society\findings.lua
 	-- Uzgod Family Brooch (Dwacatra)
@@ -1001,7 +998,7 @@ ChestUnique = {
 	},
 	-- Others uniques
 	-- Threatened Dreams Quest
-	[14036] = {
+	[34123] = {
 		itemId = 13903,
 		itemPos = {x = 32787, y = 31975, z = 11}
 	}
