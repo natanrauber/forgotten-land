@@ -1,0 +1,16 @@
+local stairPosition = Position(32143, 32169, 10)
+
+local catacombTileClose = MoveEvent()
+
+function catacombTileClose.onStepIn(cid, item, position, fromPosition)
+    local stair = Tile(stairPosition):getItemById(7525)
+
+    if stair then
+        stair:transform(7520)
+    end
+    return true
+end
+
+catacombTileClose:type("stepin")
+catacombTileClose:aid(9906)
+catacombTileClose:register()

@@ -1,65 +1,5 @@
 -- The Rookie Guard Quest - Mission 09: Rock 'n Troll
 
-local missionTiles = {
-	[50342] = {
-		state = 1,
-		message = "This is not the way to the troll caves. Go back down the stairs and walk north to find them.",
-		arrowPosition = {x = 32089, y = 32147, z = 6}
-	},
-	[50343] = {
-		state = 1,
-		message = "This is not the way to the troll caves. Go back down the stairs and walk north to find them.",
-		arrowPosition = {x = 32094, y = 32137, z = 7}
-	},
-	[50344] = {
-		state = 1,
-		newState = 2,
-		message = "You've reached the newly dug troll tunnel. Take what you find in this chest and use it to bring down all support beams!",
-		arrowPosition = {x = 32059, y = 32132, z = 10}
-	},
-	[50345] = {
-		state = 7,
-		newState = 8,
-		message = "You hear a crumbling below you. The tunnel collapsed. Vascalir will be pleased to hear about that."
-	}
-}
-
--- Mission tutorial tiles
-
-local missionGuide = MoveEvent()
-
-function missionGuide.onStepIn(creature, item, position, fromPosition)
-	local player = creature:getPlayer()
-	if not player then
-		return true
-	end
-	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission09)
-	-- Skip if not was started or finished
-	if missionState == -1 or missionState > 7 then
-		return true
-	end
-	local missionTile = missionTiles[item.actionid]
-	-- Check if the tile is active
-	if missionState == missionTile.state then
-		-- Check delayed notifications (message/arrow)
-		if not isTutorialNotificationDelayed(player) then
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, missionTile.message)
-			if missionTile.arrowPosition then
-				Position(missionTile.arrowPosition):sendMagicEffect(CONST_ME_TUTORIALARROW)
-			end
-		end
-		if missionTile.newState then
-			player:setStorageValue(Storage.TheRookieGuard.Mission09, missionTile.newState)
-		end
-	end
-	return true
-end
-
-for index, value in pairs(missionTiles) do
-	missionGuide:aid(index)
-end
-missionGuide:register()
-
 -- Troll caves dug tunnel hole
 
 local tunnelHole = MoveEvent()
@@ -115,7 +55,10 @@ function trunkChest.onUse(player, item, frompos, item2, topos)
 		local hasOpenedChest = testFlag(chestsState, chest.id)
 		if not hasOpenedChest then
 			local reward = Game.createItem(chest.itemId, 1)
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found " .. reward:getArticle() .. " " .. reward:getName() .. ".")
+			player:sendTextMessage(
+				MESSAGE_EVENT_ADVANCE,
+				"You have found " .. reward:getArticle() .. " " .. reward:getName() .. "."
+			)
 			player:setStorageValue(Storage.TheRookieGuard.TrollChests, chestsState + chest.id)
 			player:addItemEx(reward, true, CONST_SLOT_WHEREEVER)
 		else
@@ -158,15 +101,21 @@ function onUsePickAtTunnelPillar(player, item, fromPosition, item2, toPosition)
 			if table.find({3, 4, 5, 6}, newMissionState) then
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "That should weaken the beam enough to make it collapse soon.")
 			elseif newMissionState == 7 then
-				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "This was the last beam. Now, get out of here before the cave collapses!")
+				player:sendTextMessage(
+					MESSAGE_EVENT_ADVANCE,
+					"This was the last beam. Now, get out of here before the cave collapses!"
+				)
 				player:addExperience(100, true)
 			end
 			player:say("<crack>", TALKTYPE_MONSTER_SAY, false, player, toPosition)
 			toPosition:sendMagicEffect(CONST_ME_HITAREA)
-			player:setStorageValue(Storage.TheRookieGuard.Mission09, newMissionState)			
+			player:setStorageValue(Storage.TheRookieGuard.Mission09, newMissionState)
 			player:setStorageValue(Storage.TheRookieGuard.TunnelPillars, pillarsState + pillarId)
 		else
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You've already weakened this beam. Better leave it alone now so it won't collapse before you are out of here.")
+			player:sendTextMessage(
+				MESSAGE_EVENT_ADVANCE,
+				"You've already weakened this beam. Better leave it alone now so it won't collapse before you are out of here."
+			)
 		end
 	end
 	return true

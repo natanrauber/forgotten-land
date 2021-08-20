@@ -225,9 +225,9 @@ function missionGuide.onStepIn(creature, item, position, fromPosition)
 			-- Check delayed notifications (message/arrow)
 			if not isTutorialNotificationDelayed(player) then
 				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, tile[i].message)
-				if tile[i].arrowPosition then
-					Position(tile[i].arrowPosition):sendMagicEffect(CONST_ME_TUTORIALARROW)
-				end
+			-- if tile[i].arrowPosition then
+			-- 	Position(tile[i].arrowPosition):sendMagicEffect(CONST_ME_TUTORIALARROW)
+			-- end
 			end
 			break
 		end

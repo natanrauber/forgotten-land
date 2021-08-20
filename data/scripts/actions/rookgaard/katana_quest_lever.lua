@@ -1,28 +1,27 @@
-local doorPosition = Position(32177, 32148, 11)
-local relocatePosition = Position(32178, 32148, 11)
+local doorPos = Position(32122, 32127, 11)
+local relocatePos = Position(32123, 32127, 11)
 
 local katanaQuestLever = Action()
 
-function katanaQuestLever.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if item.itemid == 1945 then
-		local doorItem = Tile(doorPosition):getItemById(5108)
-		if doorItem then
-			doorItem:transform(5109)
-			doorItem:setAttribute(ITEM_ATTRIBUTE_UNIQUEID, 1055)
-			item:transform(1946)
-		end
-	else
-		local tile = Tile(doorPosition)
-		local doorItem = tile:getItemById(5109)
-		if doorItem then
-			tile:relocateTo(relocatePosition, true)
-			doorItem:transform(5108)
-			doorItem:setAttribute(ITEM_ATTRIBUTE_UNIQUEID, 1055)
-			item:transform(1945)
-		end
-	end
-	return true
+function katanaQuestLever.onUse(player, item, fromPosition, target, toPosition)
+    local doorLocked = Tile(doorPos):getItemById(5107)
+    local doorClosed = Tile(doorPos):getItemById(5108)
+    local doorOpen = Tile(doorPos):getItemById(5109)
+
+    if item.itemid == 10044 and doorLocked then
+        item:transform(10045)
+        doorLocked:transform(5109)
+    elseif item.itemid == 10045 and doorClosed then
+        item:transform(10044)
+        Tile(doorPos):relocateTo(relocatePos)
+        doorClosed:transform(5107)
+    elseif item.itemid == 10045 and doorOpen then
+        item:transform(10044)
+        Tile(doorPos):relocateTo(relocatePos)
+        doorOpen:transform(5107)
+    end
+    return true
 end
 
-katanaQuestLever:uid(1054)
+katanaQuestLever:aid(9995)
 katanaQuestLever:register()
