@@ -2,16 +2,16 @@
 -- NOTE: valid values for worldType are: "pvp", "no-pvp" and "pvp-enforced"
 worldType = "pvp"
 hotkeyAimbotEnabled = true
-protectionLevel = 7
-pzLocked = 60 * 1000
+protectionLevel = 0
+pzLocked = 30 * 1000
 removeChargesFromRunes = true
 removeChargesFromPotions = true
 removeWeaponAmmunition = true
 removeWeaponCharges = true
 timeToDecreaseFrags = 24 * 60 * 60 * 1000
-whiteSkullTime = 15 * 60 * 1000
+whiteSkullTime = 5 * 60 * 1000
 stairJumpExhaustion = 2 * 1000
-experienceByKillingPlayers = false
+experienceByKillingPlayers = true
 expFromPlayersLevelRange = 75
 dayKillsToRedSkull = 3
 weekKillsToRedSkull = 5
@@ -32,10 +32,10 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
-motd = "Bem vindo ao OTServBR-Global!"
+motd = "Bem vindo a Forgotten Land!"
 onePlayerOnlinePerAccount = true
 allowClones = false
-serverName = "OTServBR-Global"
+serverName = "Forgotten Land"
 statusTimeout = 5 * 1000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
@@ -47,9 +47,9 @@ clientVersion = 1264
 clientVersionStr = "12.64"
 
 -- Depot Limit
-freeDepotLimit = 2000
+freeDepotLimit = 10000
 premiumDepotLimit = 10000
-depotBoxes = 18
+depotBoxes = 16
 
 -- GameStore
 gamestoreByModules = true
@@ -62,14 +62,17 @@ weatherRain = false
 thunderEffect = false
 freeQuests = false
 allConsoleLog = false
+
 -- NOTE: saveIntervalTime in hours
 saveInterval = false
 saveIntervalCleanMap = false
 saveIntervalTime = 1
+
 -- Stamina in Trainers
 staminaTrainer = false
 staminaTrainerDelay = 5
 staminaTrainerGain = 1
+
 -- Stamina in PZ
 staminaPz = false
 staminaOrangeDelay = 1
@@ -99,9 +102,8 @@ pushDistanceDelay = 1500
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
--- NOTE: unzip the map world.rar
-mapName = "otservbr"
-mapAuthor = "OTServBR"
+mapName = "forgotten-land"
+mapAuthor = "natanrauber"
 
 -- Party List limitations
 -- max distance in which players in party list are visible
@@ -110,11 +112,11 @@ partyListMaxDistance = 30
 
 -- Custom Map
 -- NOTE: mapCustomEnabled: true = activate the map, false = disable the map
-mapCustomName = "otservbr-custom"
-mapCustomFile = "data/world/custom/otservbr-custom.otbm"
-mapCustomSpawn = "data/world/custom/otservbr-custom-spawn.xml"
-mapCustomAuthor = "OTServBR"
-mapCustomEnabled = true
+mapCustomName = ""
+mapCustomFile = ""
+mapCustomSpawn = ""
+mapCustomAuthor = ""
+mapCustomEnabled = false
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60
@@ -126,19 +128,19 @@ maxMarketOffersAtATimePerPlayer = 100
 mysqlHost = "127.0.0.1"
 mysqlUser = "root"
 mysqlPass = ""
-mysqlDatabase = "otservbr-global"
+mysqlDatabase = "forgotten-land"
 mysqlPort = 3306
 mysqlSock = ""
 
 -- Misc.
 allowChangeOutfit = true
-freePremium = false
+freePremium = true
 kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
-emoteSpells = false
+emoteSpells = true
 classicEquipmentSlots = false
-allowWalkthrough = true
-coinPacketSize = 25
+allowWalkthrough = false
+coinPacketSize = 5
 coinImagesURL = "http://127.0.0.1/images/store/"
 classicAttackSpeed = false
 showScriptsLogInConsole = false
@@ -155,9 +157,9 @@ serverSaveShutdown = true
 -- NOTE: rateExp, rateSkill and rateMagic is used as a fallback only
 -- To configure rates see file data/stages.lua
 rateExp = 1
-rateSkill = 50
-rateLoot = 3
-rateMagic = 25
+rateSkill = 1
+rateLoot = 1
+rateMagic = 1
 rateSpawn = 1
 
 -- Monster rates
@@ -183,9 +185,9 @@ defaultPriority = "high"
 startupDatabaseOptimization = true
 
 -- Status server information
-ownerName = "OTServBR-Global"
+ownerName = ""
 ownerEmail = ""
-url = "https://github.com/opentibiabr/otservbr-global"
+url = ""
 location = "South America"
 
 -- Sends Discord webhook notifications on startup, raids and shutdown.

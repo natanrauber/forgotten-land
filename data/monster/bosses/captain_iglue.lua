@@ -1,10 +1,10 @@
-local mType = Game.createMonsterType("Apprentice Sheng")
+local mType = Game.createMonsterType("Captain Iglue")
 local monster = {}
 
-monster.description = "Apprentice Sheng"
-monster.experience = 150
+monster.description = "Captain Iglue"
+monster.experience = 250
 monster.outfit = {
-	lookType = 23,
+	lookType = 196,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -13,13 +13,13 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 95
-monster.maxHealth = 95
+monster.health = 275
+monster.maxHealth = 275
 monster.race = "blood"
-monster.corpse = 5981
-monster.speed = 170
+monster.corpse = 5566
+monster.speed = 250
 monster.manaCost = 0
-monster.maxSummons = 2
+monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 5000,
@@ -44,13 +44,13 @@ monster.flags = {
 	canPushItems = true,
 	canPushCreatures = true,
 	staticAttackChance = 90,
-	targetDistance = 4,
-	runHealth = 20,
+	targetDistance = 1,
+	runHealth = 0,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = true,
-	canWalkOnFire = false,
-	canWalkOnPoison = false,
+	canWalkOnFire = true,
+	canWalkOnPoison = true,
 	pet = false
 }
 
@@ -59,76 +59,74 @@ monster.light = {
 	color = 0
 }
 
-monster.summons = {
-	{name = "Hyaena", chance = 30, interval = 5000}
-}
-
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "I will protect the secrets of my master!", yell = false},
-	{text = "This isle will become ours alone", yell = false},
-	{text = "Kaplar!", yell = false},
-	{text = "You already know too much.", yell = false}
+	{text = "Yooh Ho Hooh Ho!", yell = false},
+	{text = "Hell is waiting for You!", yell = false},
+	{text = "The curse! Aww the curse!", yell = false},
+	{text = "You will not get my treasure!", yell = false}
 }
 
 monster.loot = {
-	{name = "minotaur leather", chance = 100000},
-	{name = "minotaur horn", chance = 100000, maxCount = 2},
-	{name = "gold coin", chance = 38000, maxCount = 10},
-	-- carrot
-	{id = 2684, chance = 7690},
-	-- magic light wand
-	{id = 2162, chance = 76000},
+	{name = "gold coin", chance = 48000, maxCount = 67},
+	{name = "light shovel", chance = 27000},
 	-- torch
-	{id = 2050, chance = 30000, maxCount = 2},
-	-- dead snake
-	{id = 2817, chance = 10000},
-	{name = "leather legs", chance = 23000},
-	{name = "leather helmet", chance = 7690},
-	{name = "knife", chance = 7690}
+	{id = 2050, chance = 10000},
+	{name = "sabre", chance = 37000},
+	-- die
+	{id = 5792, chance = 250}
 }
 
 monster.attacks = {
-	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -10},
 	{
-		name = "energyfield",
-		interval = 1000,
-		chance = 8,
-		range = 7,
-		radius = 1,
-		shootEffect = CONST_ANI_ENERGY,
-		target = true
+		name = "melee",
+		interval = 2000,
+		chance = 100,
+		minDamage = 0,
+		maxDamage = -50,
+		condition = {type = CONDITION_POISON, totalDamage = 200, interval = 4000}
 	},
 	{
 		name = "combat",
-		interval = 1000,
-		chance = 14,
-		type = COMBAT_ENERGYDAMAGE,
-		minDamage = 0,
-		maxDamage = -25,
+		interval = 2000,
+		chance = 20,
+		type = COMBAT_LIFEDRAIN,
+		minDamage = -35,
+		maxDamage = -95,
 		range = 7,
-		shootEffect = CONST_ANI_ENERGYBALL,
-		effect = CONST_ME_ENERGYAREA,
+		radius = 3,
+		effect = CONST_ME_DRAWBLOOD,
 		target = false
 	},
 	{
 		name = "combat",
 		interval = 2000,
-		chance = 10,
-		type = COMBAT_FIREDAMAGE,
-		minDamage = 0,
-		maxDamage = -45,
+		chance = 15,
+		type = COMBAT_DEATHDAMAGE,
+		minDamage = -20,
+		maxDamage = -55,
 		range = 7,
-		shootEffect = CONST_ANI_FIRE,
-		effect = CONST_ME_FIREAREA,
+		radius = 7,
+		effect = CONST_ME_SOUND_RED,
 		target = false
+	},
+	{
+		name = "speed",
+		interval = 2000,
+		chance = 30,
+		speedChange = -300,
+		range = 7,
+		radius = 5,
+		effect = CONST_ME_MAGIC_RED,
+		target = false,
+		duration = 2000
 	}
 }
 
 monster.defenses = {
-	defense = 13,
-	armor = 12,
+	defense = 10,
+	armor = 10,
 	{
 		name = "combat",
 		interval = 4000,
@@ -142,23 +140,23 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
-	{type = COMBAT_ENERGYDAMAGE, percent = 100},
+	{type = COMBAT_PHYSICALDAMAGE, percent = 70},
+	{type = COMBAT_ENERGYDAMAGE, percent = 0},
 	{type = COMBAT_EARTHDAMAGE, percent = 0},
 	{type = COMBAT_FIREDAMAGE, percent = 0},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_HOLYDAMAGE, percent = -25},
 	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {
-	{type = "paralyze", condition = false},
-	{type = "outfit", condition = false},
+	{type = "paralyze", condition = true},
+	{type = "outfit", condition = true},
 	{type = "invisible", condition = true},
-	{type = "bleed", condition = false}
+	{type = "bleed", condition = true}
 }
 
 mType.onThink = function(monster, interval)

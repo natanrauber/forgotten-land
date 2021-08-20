@@ -1,10 +1,10 @@
-local mType = Game.createMonsterType("Teleskor")
+local mType = Game.createMonsterType("Megascolia")
 local monster = {}
 
-monster.description = "Teleskor"
-monster.experience = 70
+monster.description = "a wasp"
+monster.experience = 75
 monster.outfit = {
-	lookType = 298,
+	lookType = 44,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -13,17 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 80
-monster.maxHealth = 80
-monster.race = "undead"
-monster.corpse = 5972
-monster.speed = 150
+monster.health = 150
+monster.maxHealth = 150
+monster.race = "venom"
+monster.corpse = 5989
+monster.speed = 270
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 4000,
-	chance = 5
+	chance = 10
 }
 
 monster.strategiesTarget = {
@@ -41,8 +41,8 @@ monster.flags = {
 	pushable = false,
 	rewardBoss = false,
 	illusionable = false,
-	canPushItems = true,
-	canPushCreatures = true,
+	canPushItems = false,
+	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
 	runHealth = 0,
@@ -50,7 +50,7 @@ monster.flags = {
 	isBlockable = false,
 	canWalkOnEnergy = false,
 	canWalkOnFire = false,
-	canWalkOnPoison = false,
+	canWalkOnPoison = true,
 	pet = false
 }
 
@@ -61,42 +61,40 @@ monster.light = {
 
 monster.voices = {
 	interval = 5000,
-	chance = 10,
-	{text = "Who Disturbs my slumber?", yell = false},
-	{text = "Mourn the dead, do not hunt them!", yell = false}
+	chance = 10
 }
 
 monster.loot = {
-	{name = "pelvis bone", chance = 100000},
-	{name = "gold coin", chance = 81000, maxCount = 79},
-	-- torch
-	{id = 2050, chance = 36000},
-	{name = "mace", chance = 72000},
-	{name = "viking helmet", chance = 72000},
-	{name = "hatchet", chance = 23000},
-	{name = "bone sword", chance = 4000},
-	{name = "bone shield", chance = 3000}
+	{name = "honeycomb", chance = 100000},
+	{name = "silver amulet", chance = 13000}
 }
 
 monster.attacks = {
-	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -30}
+	{
+		name = "melee",
+		interval = 1500,
+		chance = 100,
+		skill = 30,
+		attack = 30,
+		condition = {type = CONDITION_POISON, totalDamage = 25, interval = 4000}
+	}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 10,
+	armor = 10
 }
 
 monster.elements = {
 	{type = COMBAT_PHYSICALDAMAGE, percent = 0},
 	{type = COMBAT_ENERGYDAMAGE, percent = 0},
-	{type = COMBAT_EARTHDAMAGE, percent = 0},
-	{type = COMBAT_FIREDAMAGE, percent = 0},
+	{type = COMBAT_EARTHDAMAGE, percent = 100},
+	{type = COMBAT_FIREDAMAGE, percent = -10},
 	{type = COMBAT_LIFEDRAIN, percent = 0},
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE, percent = -5},
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
 	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 

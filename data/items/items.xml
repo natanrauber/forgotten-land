@@ -1825,7 +1825,7 @@
 		<attribute key="slotType" value="ammo" />
 		<attribute key="weight" value="500" />
 		<attribute key="decayTo" value="2053" />
-		<attribute key="duration" value="600" />
+		<attribute key="duration" value="1800" />
 	</item>
 	<item id="2052" article="a" name="torch">
 		<attribute key="slotType" value="ammo" />
@@ -1836,7 +1836,7 @@
 		<attribute key="slotType" value="ammo" />
 		<attribute key="weight" value="450" />
 		<attribute key="decayTo" value="2055" />
-		<attribute key="duration" value="300" />
+		<attribute key="duration" value="900" />
 	</item>
 	<item id="2054" article="a" name="torch">
 		<attribute key="slotType" value="ammo" />
@@ -1847,7 +1847,7 @@
 		<attribute key="slotType" value="ammo" />
 		<attribute key="weight" value="400" />
 		<attribute key="decayTo" value="2056" />
-		<attribute key="duration" value="300" />
+		<attribute key="duration" value="900" />
 	</item>
 	<item id="2056" article="a" name="burnt down torch">
 		<attribute key="slotType" value="ammo" />
@@ -16338,16 +16338,17 @@
 	<item id="8577" name="void" />
 	<item id="8578" name="jungle grass" />
 	<item id="8579" article="a" name="loose stone pile">
-		<attribute key="description" value="Rightclick on your shovel, select 'Use' and then leftclick on this stonepile to dig." />
+		<attribute key="description" value="Use your shovel on this stonepile to dig." />
 	</item>
 	<item id="8580" article="a" name="sewer grate" />
 	<item id="8581" name="Zirella's cart" article="a" />
 	<item id="8582" article="a" name="branch">
-		<attribute key="description" value="Push it back to Zirella by holding the left mousebutton down on it and pushing it over the grass." />
 		<attribute key="weight" value="100000" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="120" />
 	</item>
 	<item id="8583" article="a" name="dead tree">
-		<attribute key="description" value="It is one of those Zirella mentioned. Rightclick it and select 'Use' to break a branch from it." />
+		<attribute key="description" value="It is one of those Zirella mentioned." />
 	</item>
 	<item id="8584" name="Jerom's family necklace">
 		<attribute key="weight" value="630" />
@@ -36681,55 +36682,55 @@
 	<item id="25451" name="unknown item" />
 	<item id="25452" name="unknown item" />
 	<item id="25453" article="a" name="depot box I">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25454" article="a" name="depot box II">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25455" article="a" name="depot box III">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25456" article="a" name="depot box IV">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25457" article="a" name="depot box V">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25458" article="a" name="depot box VI">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25459" article="a" name="depot box VII">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25460" article="a" name="depot box VIII">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25461" article="a" name="depot box IX">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25462" article="a" name="depot box X">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25463" article="a" name="depot box XI">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25464" article="a" name="depot box XII">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25465" article="a" name="depot box XIII">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25466" article="a" name="depot box XIV">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25467" article="a" name="depot box XV">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25468" article="a" name="depot box XVI">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25469" article="a" name="depot box XVII">
-		<attribute key="containerSize" value="32" />
+		<attribute key="containerSize" value="20" />
 	</item>
 	<item id="25519" name="unknown item" />
 	<item id="25520" name="unknown item" />
@@ -39773,7 +39774,8 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="29107" article="a" name="dead pooka">
+	<!-- pooka -->
+	<item id="29107" article="a" name="dead rabbit">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="0" />
@@ -39781,7 +39783,7 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="29108" article="a" name="dead pooka">
+	<item id="29108" article="a" name="dead rabbit">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="29107" />
@@ -39789,7 +39791,7 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="29109" article="a" name="dead pooka">
+	<item id="29109" article="a" name="dead rabbit">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="29108" />
@@ -39797,11 +39799,11 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="29110" article="a" name="dead pooka">
+	<item id="29110" article="a" name="dead rabbit">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="29109" />
-		<attribute key="duration" value="600" />
+		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>

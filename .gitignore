@@ -366,14 +366,12 @@ TODO
 .idea/
 
 ## CUSTOM
-# Files
-config.lua
 # Extensions
-*.ini
-*.otb
-*.exe
 *.otbm
+*.ini
+*.exe
 *.rar
+*.lnk
 
 # SFTP for Sublime
 sftp-config.json

@@ -30,7 +30,7 @@ monster.strategiesTarget = {
 	nearest = 70,
 	health = 10,
 	damage = 10,
-	random = 10,
+	random = 10
 }
 
 monster.flags = {
@@ -39,7 +39,7 @@ monster.flags = {
 	hostile = true,
 	convinceable = false,
 	pushable = true,
-	rewardBoss = true,
+	rewardBoss = false,
 	illusionable = false,
 	canPushItems = true,
 	canPushCreatures = true,
@@ -71,16 +71,15 @@ monster.voices = {
 }
 
 monster.loot = {
-	{id = 2449, chance = 87000},
-	{id = 2148, chance = 71000, maxCount = 22},
-	{id = 2696, chance = 56000},
-	{id = 3976, chance = 51000, maxCount = 4},
-	{id = 2687, chance = 2500, maxCount = 2},
+	{name = "rat cheese", chance = 10000},
+	{name = "worm", chance = 51000, maxCount = 3},
+	{name = "cookie", chance = 1120, maxCount = 2},
+	-- die
 	{id = 5792, chance = 250}
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -15}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -15}
 }
 
 monster.defenses = {
@@ -97,8 +96,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

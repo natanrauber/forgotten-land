@@ -4172,7 +4172,7 @@ GameStore.Categories = {
         {
           icons = { "Gold_Pouch.png" },
           name = "Gold Pouch",
-          price = 900,
+          price = 10,
           itemtype = 26377,
           count = 1,
           description = "<i>Carries as many gold, platinum or crystal coins as your capacity allows, however, no other items.</i>\n\n{character}\n{storeinbox}\n{once}\n{useicon} use it to open it\n{info} always placed on the first position of your Store inbox",

@@ -2,7 +2,7 @@ local mType = Game.createMonsterType("Cockroach")
 local monster = {}
 
 monster.description = "a cockroach"
-monster.experience = 0
+monster.experience = 5
 monster.outfit = {
 	lookType = 284,
 	lookHead = 0,
@@ -13,8 +13,8 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 1
-monster.maxHealth = 1
+monster.health = 5
+monster.maxHealth = 5
 monster.race = "venom"
 monster.corpse = 8593
 monster.speed = 180
@@ -66,8 +66,8 @@ monster.loot = {
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 10
+	defense = 1,
+	armor = 1
 }
 
 monster.elements = {

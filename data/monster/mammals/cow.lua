@@ -1,10 +1,10 @@
-local mType = Game.createMonsterType("Rabbit")
+local mType = Game.createMonsterType("Cow")
 local monster = {}
 
-monster.description = "a rabbit"
+monster.description = "a cow"
 monster.experience = 0
 monster.outfit = {
-	lookType = 74,
+	lookType = 1253,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -13,29 +13,29 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.raceId = 74
-monster.Bestiary = {
-	class = "Mammal",
-	race = BESTY_RACE_MAMMAL,
-	toKill = 250,
-	FirstUnlock = 10,
-	SecondUnlock = 100,
-	CharmsPoints = 5,
-	Stars = 1,
-	Occurrence = 0,
-	Locations = "In most grass areas of Tibia, for example on Tutorial Island."
-}
+-- monster.raceId = 14
+-- monster.Bestiary = {
+-- 	class = "Mammal",
+-- 	race = BESTY_RACE_MAMMAL,
+-- 	toKill = 250,
+-- 	FirstUnlock = 10,
+-- 	SecondUnlock = 100,
+-- 	CharmsPoints = 5,
+-- 	Stars = 1,
+-- 	Occurrence = 0,
+-- 	Locations = "In Rookgaard Sheep field, Greenshore and other farms like the one in Thais, east of Carlin. They can also be found wandering the fields of Edron, and some can be found along with a Black Sheep with the Hunter in Femur Hills."
+-- }
 
-monster.health = 15
-monster.maxHealth = 15
+monster.health = 35
+monster.maxHealth = 35
 monster.race = "blood"
-monster.corpse = 29110
-monster.speed = 180
-monster.manaCost = 220
+monster.corpse = 36926
+monster.speed = 105
+monster.manaCost = 250
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 5000,
+	interval = 4000,
 	chance = 0
 }
 
@@ -55,7 +55,7 @@ monster.flags = {
 	canPushCreatures = false,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 15,
+	runHealth = 35,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -71,17 +71,22 @@ monster.light = {
 
 monster.voices = {
 	interval = 5000,
-	chance = 10
+	chance = 10,
+	{text = "Moo", yell = false}
 }
 
 monster.loot = {
-	{name = "meat", chance = 85620, maxCount = 2},
-	{id = 2684, chance = 10000, maxCount = 2}
+	{name = "ham", chance = 45000, maxCount = 2},
+	{name = "veal", chance = 45000, maxCount = 1}
+}
+
+monster.attacks = {
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = 0}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 8,
+	armor = 10
 }
 
 monster.elements = {

@@ -1,10 +1,10 @@
-local mType = Game.createMonsterType("Teleskor")
+local mType = Game.createMonsterType("Magic Deer")
 local monster = {}
 
-monster.description = "Teleskor"
-monster.experience = 70
+monster.description = "a magic deer"
+monster.experience = 50
 monster.outfit = {
-	lookType = 298,
+	lookType = 400,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -13,39 +13,49 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 80
-monster.maxHealth = 80
-monster.race = "undead"
-monster.corpse = 5972
-monster.speed = 150
-monster.manaCost = 0
+-- monster.raceId = 10000
+-- monster.Bestiary = {
+-- 	class = "Mammal",
+-- 	race = BESTY_RACE_MAMMAL,
+-- 	toKill = 20,
+-- 	FirstUnlock = 5,
+-- 	SecondUnlock = 10,
+-- 	CharmsPoints = 30,
+-- 	Stars = 5,
+-- 	Occurrence = 0,
+-- 	Locations = ""
+-- }
+
+monster.health = 50
+monster.maxHealth = 50
+monster.race = "blood"
+monster.corpse = 13513
+monster.speed = 200
+monster.manaCost = 260
 monster.maxSummons = 0
 
 monster.changeTarget = {
 	interval = 4000,
-	chance = 5
+	chance = 20
 }
 
 monster.strategiesTarget = {
-	nearest = 70,
-	health = 10,
-	damage = 10,
-	random = 10
+	nearest = 100
 }
 
 monster.flags = {
 	summonable = false,
 	attackable = true,
-	hostile = true,
+	hostile = false,
 	convinceable = false,
 	pushable = false,
 	rewardBoss = false,
-	illusionable = false,
+	illusionable = true,
 	canPushItems = true,
 	canPushCreatures = true,
 	staticAttackChance = 90,
 	targetDistance = 1,
-	runHealth = 0,
+	runHealth = 50,
 	healthHidden = false,
 	isBlockable = false,
 	canWalkOnEnergy = false,
@@ -62,29 +72,32 @@ monster.light = {
 monster.voices = {
 	interval = 5000,
 	chance = 10,
-	{text = "Who Disturbs my slumber?", yell = false},
-	{text = "Mourn the dead, do not hunt them!", yell = false}
+	{text = "*sniff*", yell = false}
 }
 
 monster.loot = {
-	{name = "pelvis bone", chance = 100000},
-	{name = "gold coin", chance = 81000, maxCount = 79},
-	-- torch
-	{id = 2050, chance = 36000},
-	{name = "mace", chance = 72000},
-	{name = "viking helmet", chance = 72000},
-	{name = "hatchet", chance = 23000},
-	{name = "bone sword", chance = 4000},
-	{name = "bone shield", chance = 3000}
+	{name = "ham", chance = 19850, maxCount = 2},
+	{name = "white deer antlers", chance = 19520},
+	{name = "white deer skin", chance = 20280}
 }
 
 monster.attacks = {
-	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -30}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = 0}
 }
 
 monster.defenses = {
-	defense = 15,
-	armor = 15
+	defense = 10,
+	armor = 10,
+	{
+		name = "combat",
+		interval = 4000,
+		chance = 15,
+		type = COMBAT_HEALING,
+		minDamage = 5,
+		maxDamage = 15,
+		effect = CONST_ME_MAGIC_BLUE,
+		target = false
+	}
 }
 
 monster.elements = {
@@ -96,7 +109,7 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE, percent = -5},
+	{type = COMBAT_HOLYDAMAGE, percent = 100},
 	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
@@ -106,23 +119,5 @@ monster.immunities = {
 	{type = "invisible", condition = false},
 	{type = "bleed", condition = false}
 }
-
-mType.onThink = function(monster, interval)
-end
-
-mType.onAppear = function(monster, creature)
-	if monster:getType():isRewardBoss() then
-		monster:setReward(true)
-	end
-end
-
-mType.onDisappear = function(monster, creature)
-end
-
-mType.onMove = function(monster, creature, fromPosition, toPosition)
-end
-
-mType.onSay = function(monster, creature, type, message)
-end
 
 mType:register(monster)

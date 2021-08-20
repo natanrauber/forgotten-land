@@ -1,10 +1,10 @@
-local mType = Game.createMonsterType("Teleskor")
+local mType = Game.createMonsterType("Rottieworm")
 local monster = {}
 
-monster.description = "Teleskor"
-monster.experience = 70
+monster.description = "Rottie"
+monster.experience = 40
 monster.outfit = {
-	lookType = 298,
+	lookType = 192,
 	lookHead = 0,
 	lookBody = 0,
 	lookLegs = 0,
@@ -13,17 +13,17 @@ monster.outfit = {
 	lookMount = 0
 }
 
-monster.health = 80
-monster.maxHealth = 80
-monster.race = "undead"
-monster.corpse = 5972
-monster.speed = 150
+monster.health = 145
+monster.maxHealth = 145
+monster.race = "blood"
+monster.corpse = 6069
+monster.speed = 126
 monster.manaCost = 0
 monster.maxSummons = 0
 
 monster.changeTarget = {
-	interval = 4000,
-	chance = 5
+	interval = 2000,
+	chance = 0
 }
 
 monster.strategiesTarget = {
@@ -61,25 +61,25 @@ monster.light = {
 
 monster.voices = {
 	interval = 5000,
-	chance = 10,
-	{text = "Who Disturbs my slumber?", yell = false},
-	{text = "Mourn the dead, do not hunt them!", yell = false}
+	chance = 10
 }
 
 monster.loot = {
-	{name = "pelvis bone", chance = 100000},
-	{name = "gold coin", chance = 81000, maxCount = 79},
-	-- torch
-	{id = 2050, chance = 36000},
-	{name = "mace", chance = 72000},
-	{name = "viking helmet", chance = 72000},
-	{name = "hatchet", chance = 23000},
-	{name = "bone sword", chance = 4000},
-	{name = "bone shield", chance = 3000}
+	{name = "lump of dirt", chance = 90000},
+	{name = "carrion worm fang", chance = 90000},
+	{name = "gold coin", chance = 50000, maxCount = 45},
+	{name = "worm", chance = 55000, maxCount = 3},
+	{name = "ham", chance = 18000},
+	{name = "mace", chance = 80000},
+	-- sword
+	{id = 2376, chance = 18000},
+	{name = "copper shield", chance = 9000},
+	{name = "legion helmet", chance = 9000},
+	{name = "katana", chance = 5000}
 }
 
 monster.attacks = {
-	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -30}
+	{name = "melee", interval = 2000, chance = 100, minDamage = -10, maxDamage = -60}
 }
 
 monster.defenses = {
@@ -96,7 +96,7 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE, percent = -5},
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
 	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
@@ -106,23 +106,5 @@ monster.immunities = {
 	{type = "invisible", condition = false},
 	{type = "bleed", condition = false}
 }
-
-mType.onThink = function(monster, interval)
-end
-
-mType.onAppear = function(monster, creature)
-	if monster:getType():isRewardBoss() then
-		monster:setReward(true)
-	end
-end
-
-mType.onDisappear = function(monster, creature)
-end
-
-mType.onMove = function(monster, creature, fromPosition, toPosition)
-end
-
-mType.onSay = function(monster, creature, type, message)
-end
 
 mType:register(monster)
