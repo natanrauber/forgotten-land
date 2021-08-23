@@ -11584,13 +11584,13 @@ int LuaScriptInterface::luaPlayerSetGroup(lua_State *L)
 
 int LuaScriptInterface::luaPlayerSetSpecialContainersAvailable(lua_State *L)
 {
-	// player:setSpecialContainersAvailable(stashMenu, marketMenu);
+	// player:setSpecialContainersAvailable(true, false);
 	bool supplyStashMenu = getBoolean(L, 2, false);
 	bool marketMenu = getBoolean(L, 3, false);
 	Player *player = getUserdata<Player>(L, 1);
 	if (player)
 	{
-		// player->setSpecialMenuAvailable(supplyStashMenu, marketMenu);
+		player->setSpecialMenuAvailable(true, false);
 
 		pushBoolean(L, true);
 	}
