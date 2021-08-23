@@ -4,7 +4,7 @@
 	<raid name="Munster" file="rookgaard/munster.xml" interval2="500" margin="40" />
 	<raid name="Rats" file="rookgaard/rats.xml" interval2="500" margin="70" />
 	<raid name="Rottieworm" file="rookgaard/rottieworm.xml" interval2="500" margin="70" />
-	<raid name="Apprentice Sheng" file="rookgaard/sheng.xml" interval2="500" margin="70" />
+	<raid name="Apprentice Sheng" file="rookgaard/apprentice_sheng.xml" interval2="500" margin="70" />
 	<raid name="Teleskor" file="rookgaard/teleskor.xml" interval2="500" margin="50" />
 	<raid name="Captain Iglue" file="rookgaard/captain_iglue.xml" interval2="500" margin="20" />
 	<raid name="Magic Deer" file="rookgaard/magic_deer.xml" interval2="500" margin="20" />

@@ -32,7 +32,7 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
-motd = "Bem vindo a Forgotten Land!"
+motd = "Welcome to Forgotten Land!"
 onePlayerOnlinePerAccount = true
 allowClones = false
 serverName = "Forgotten Land"
@@ -74,7 +74,7 @@ staminaTrainerDelay = 5
 staminaTrainerGain = 1
 
 -- Stamina in PZ
-staminaPz = false
+staminaPz = true
 staminaOrangeDelay = 1
 staminaGreenDelay = 5
 staminaPzGain = 1
@@ -102,8 +102,9 @@ pushDistanceDelay = 1500
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
+-- unzip map at data/world
 mapName = "forgotten-land"
-mapAuthor = "natanrauber"
+mapAuthor = "Natan Rauber"
 
 -- Party List limitations
 -- max distance in which players in party list are visible
