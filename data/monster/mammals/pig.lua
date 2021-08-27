@@ -23,10 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Rookgaard, Orc Fort, under Femor Hills with Goblins, some farms like The McRonald's Farm, \z
-		Liberty Bay slums and Nargor, Foreigner Quarter in Yalahar, Isle of the Kings, \z
-		cells in Tafariel's throneroom in Pits of Inferno, Gardens of Night."
-	}
+	Locations = "Rookgaard, Orc Fort, under Femor Hills with Goblins, some farms like The McRonald's Farm, Liberty Bay slums and Nargor, Foreigner Quarter in Yalahar, Isle of the Kings, cells in Tafariel's throneroom in Pits of Inferno, Gardens of Night."
+}
 
 monster.health = 25
 monster.maxHealth = 25
@@ -42,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -84,8 +82,8 @@ monster.loot = {
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 10
+	defense = 2,
+	armor = 2
 }
 
 monster.elements = {
@@ -97,8 +95,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

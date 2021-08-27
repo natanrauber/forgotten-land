@@ -23,11 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Several spawns near Kazordoon, Femor Hills, north of Thais, near the White Flower Temple, \z
-		Rookgaard Bear Cave, Bear Room Quest in Rookgaard, Rookgaard Bear Mountain, South of Villa Scapula, \z
-		Ferngrims Gate, North of Carlin, Fields of Glory, Edron Troll Cave, south of Venore, Desert Dungeon, \z
-		first floor of the Orc Fort mountain and west of Outlaw Camp."
-	}
+	Locations = "Several spawns near Kazordoon, Femor Hills, north of Thais, near the White Flower Temple, Rookgaard Bear Cave, Bear Room Quest in Rookgaard, Rookgaard Bear Mountain, South of Villa Scapula, Ferngrims Gate, North of Carlin, Fields of Glory, Edron Troll Cave, south of Venore, Desert Dungeon, first floor of the Orc Fort mountain and west of Outlaw Camp."
+}
 
 monster.health = 80
 monster.maxHealth = 80
@@ -43,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -87,12 +84,12 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -25}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -25}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 6,
+	armor = 6
 }
 
 monster.elements = {
@@ -104,8 +101,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -5}
+	{type = COMBAT_HOLYDAMAGE, percent = 10},
+	{type = COMBAT_DEATHDAMAGE, percent = -5}
 }
 
 monster.immunities = {

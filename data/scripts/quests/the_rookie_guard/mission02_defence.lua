@@ -22,7 +22,7 @@ function stonePile.onUse(player, item, frompos, item2, topos)
 		end
 		-- Gather delay
 		if player:getStorageValue(Storage.TheRookieGuard.StonePileTimer) - os.time() <= 0 then
-			player:setStorageValue(Storage.TheRookieGuard.StonePileTimer, os.time() + 1.5 * 60)
+			player:setStorageValue(Storage.TheRookieGuard.StonePileTimer, os.time() + 1 * 60)
 			player:addItemEx(Game.createItem(13866, 1), true, CONST_SLOT_WHEREEVER)
 		else
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have to wait a while before you can pick up a new stone.")

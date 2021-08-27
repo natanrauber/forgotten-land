@@ -23,9 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Femor Hills, north east of Carlin, Edron Goblin Cave, Rookgaard (Premium Area), \z
-		Maze of Lost Souls and Fenrock."
-	}
+	Locations = "Femor Hills, north east of Carlin, Edron Goblin Cave, Rookgaard (Premium Area), Maze of Lost Souls and Fenrock."
+}
 
 monster.health = 50
 monster.maxHealth = 50
@@ -41,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -96,13 +95,23 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -10},
-	{name ="combat", interval = 2000, chance = 10, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -25, range = 7, shootEffect = CONST_ANI_SMALLSTONE, target = false}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -10},
+	{
+		name = "combat",
+		interval = 2000,
+		chance = 10,
+		type = COMBAT_PHYSICALDAMAGE,
+		minDamage = 0,
+		maxDamage = -25,
+		range = 7,
+		shootEffect = CONST_ANI_SMALLSTONE,
+		target = false
+	}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 6,
+	armor = 6
 }
 
 monster.elements = {
@@ -114,8 +123,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 1},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_HOLYDAMAGE, percent = 1},
+	{type = COMBAT_DEATHDAMAGE, percent = -10}
 }
 
 monster.immunities = {

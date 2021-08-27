@@ -425,7 +425,7 @@ ItemUnique = {
 	-- Unholy crypt sarcophagus
 	[40055] = {
 		itemId = 1417,
-		itemPos = {x = 32145, y = 32204, z = 10}
+		itemPos = {x = 32090, y = 32183, z = 10}
 	},
 	-- The Rookie Guard Quest - Mission 12: Into The Fortress
 	-- Path: data\scripts\actions\quests\the_rookie_guard\mission12_into_fortress.lua
@@ -535,15 +535,15 @@ ItemUnique = {
 	-- 	itemPos = {x = 32126, y = 32137, z = 9}
 	-- },
 	-- Unholy crypt box
-	[40077] = {
-		itemId = 1738,
-		itemPos = {x = 32144, y = 32177, z = 10}
-	},
+	-- [40077] = {
+	-- 	itemId = 1738,
+	-- 	itemPos = {x = 32144, y = 32177, z = 10}
+	-- },
 	-- Unholy crypt coffin
-	[40078] = {
-		itemId = 1744,
-		itemPos = {x = 32153, y = 32184, z = 10}
-	},
+	-- [40078] = {
+	-- 	itemId = 1744,
+	-- 	itemPos = {x = 32153, y = 32184, z = 10}
+	-- },
 	-- Orc fortress treasure chest
 	[40079] = {
 		itemId = 12665,

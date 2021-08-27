@@ -23,9 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "In many dungeons around Tibia like the troll cave in Thais, south of Carlin (out the east \z
-		exit and down the hole), Island of Destiny, Edron Troll Cave, and in Ab'Dendriel. Also found in Rookgaard."
-	}
+	Locations = "In many dungeons around Tibia like the troll cave in Thais, south of Carlin (out the east exit and down the hole), Island of Destiny, Edron Troll Cave, and in Ab'Dendriel. Also found in Rookgaard."
+}
 
 monster.health = 50
 monster.maxHealth = 50
@@ -41,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -96,12 +95,12 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -15}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -15}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 6,
+	armor = 6
 }
 
 monster.elements = {
@@ -113,8 +112,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 10},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_HOLYDAMAGE, percent = 10},
+	{type = COMBAT_DEATHDAMAGE, percent = -10}
 }
 
 monster.immunities = {

@@ -26,8 +26,8 @@ function playerLogin.onLogin(player)
 	-- 	{2148, 3}
 	-- }
 	if player:getLastLoginSaved() == 0 then
-		player:teleportTo({x = 31970, y = 32276, z = 6})
-		player:teleportTo({x = 31971, y = 32276, z = 6})
+		player:teleportTo({x = 31907, y = 32267, z = 7})
+		player:teleportTo({x = 31908, y = 32267, z = 7})
 		player:sendOutfitWindow()
 		local backpack = player:addItem(1988)
 		-- if backpack then

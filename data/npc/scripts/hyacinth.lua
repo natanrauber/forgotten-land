@@ -123,10 +123,8 @@ keywordHandler:addKeyword(
 		npcHandler = npcHandler,
 		text = {
 			"Take this star ring. Wear it to improve your regeneration, as long as you're not hungry. ...",
-			"Anyway, thanks so much for your help. I can brew a lot of potions from these herbs. If you're in the area and find yourself in need of potions, don't hesitate to drop by and ask me for a {trade}. ...",
-			"Anyway, this old man has taken enough of your time. Good luck on your travels."
-		},
-		ungreet = true
+			"Anyway, thanks so much for your help. I can brew a lot of potions from these herbs. If you're in the area and find yourself in need of potions, don't hesitate to drop by and ask me for a {trade}. ..."
+		}
 	},
 	function(player)
 		return player:getStorageValue(Storage.TheRookieGuard.Mission04) == 4

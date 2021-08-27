@@ -23,9 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 1,
 	Stars = 0,
 	Occurrence = 0,
-	Locations = "Carlin, Rookgaard, Factory Quarter, Yalahar, \z
-		The Witches' Cliff (only accessible during a quest), probably more areas."
-	}
+	Locations = "Carlin, Rookgaard, Factory Quarter, Yalahar, The Witches' Cliff (only accessible during a quest), probably more areas."
+}
 
 monster.health = 20
 monster.maxHealth = 20
@@ -41,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -78,16 +77,15 @@ monster.voices = {
 	{text = "Meow meow!", yell = false}
 }
 
-monster.loot = {
-}
+monster.loot = {}
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = 0}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = 0}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 1,
+	armor = 1
 }
 
 monster.elements = {
@@ -99,8 +97,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

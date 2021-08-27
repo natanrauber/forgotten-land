@@ -24,7 +24,7 @@ monster.Bestiary = {
 	Stars = 1,
 	Occurrence = 0,
 	Locations = "In almost all grassy areas of Tibia. Also found in Rookgaard."
-	}
+}
 
 monster.health = 15
 monster.maxHealth = 15
@@ -40,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -75,16 +75,22 @@ monster.voices = {
 	{text = "Zzzzzzt", yell = false}
 }
 
-monster.loot = {
-}
+monster.loot = {}
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -8, condition = {type = CONDITION_POISON, totalDamage = 15, interval = 4000}}
+	{
+		name = "melee",
+		interval = 2000,
+		chance = 100,
+		minDamage = 0,
+		maxDamage = -8,
+		condition = {type = CONDITION_POISON, totalDamage = 15, interval = 4000}
+	}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 0,
+	armor = 0
 }
 
 monster.elements = {
@@ -96,8 +102,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = -10},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

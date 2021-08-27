@@ -23,9 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Darama (Devourer, Kha'labal), in most grassy areas of Tibia, also found in \z
-		Rookgaard and on Tutorial Island. There are also 2 unreachable Deer found near Fiehonja's protection zone."
-	}
+	Locations = "Darama (Devourer, Kha'labal), in most grassy areas of Tibia, also found in Rookgaard and on Tutorial Island. There are also 2 unreachable Deer found near Fiehonja's protection zone."
+}
 
 monster.health = 25
 monster.maxHealth = 25
@@ -41,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -72,7 +71,7 @@ monster.light = {
 
 monster.voices = {
 	interval = 5000,
-	chance = 10,
+	chance = 10
 }
 
 monster.loot = {
@@ -82,12 +81,12 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 5
+	defense = 2,
+	armor = 2
 }
 
 monster.elements = {
@@ -99,8 +98,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

@@ -23,9 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Almost everywhere, in grass areas, sewers like Carlin sewers, \z
-		caves like as Ancient Temple, Rookgaard and the Tiquanda Tarantula Caves."
-	}
+	Locations = "Almost everywhere, in grass areas, sewers like Carlin sewers, caves like as Ancient Temple, Rookgaard and the Tiquanda Tarantula Caves."
+}
 
 monster.health = 20
 monster.maxHealth = 20
@@ -41,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -72,7 +71,7 @@ monster.light = {
 
 monster.voices = {
 	interval = 5000,
-	chance = 10,
+	chance = 10
 }
 
 monster.loot = {
@@ -81,7 +80,7 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -9}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -9}
 }
 
 monster.defenses = {
@@ -98,8 +97,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

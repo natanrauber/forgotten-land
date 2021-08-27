@@ -23,11 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Orc Fortress, Folda Dungeon, Edron Orc Cave and around it, Ancient Temple, \z
-		Venore Orc Cave, below the Point of No Return in Outlaw Camp, Plains of Havoc, \z
-		North of Thais in the Orc Peninsula, Elvenbane and Orc Camp in Foreigner Quarter. \z
-		Also found in Rookgaard West plains, Zao Orc Land."
-	}
+	Locations = "Orc Fortress, Folda Dungeon, Edron Orc Cave and around it, Ancient Temple, Venore Orc Cave, below the Point of No Return in Outlaw Camp, Plains of Havoc, North of Thais in the Orc Peninsula, Elvenbane and Orc Camp in Foreigner Quarter. Also found in Rookgaard West plains, Zao Orc Land."
+}
 
 monster.health = 105
 monster.maxHealth = 105
@@ -43,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -91,13 +88,23 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -25},
-	{name ="combat", interval = 2000, chance = 20, type = COMBAT_PHYSICALDAMAGE, minDamage = 0, maxDamage = -30, range = 7, shootEffect = CONST_ANI_SPEAR, target = false}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -25},
+	{
+		name = "combat",
+		interval = 2000,
+		chance = 20,
+		type = COMBAT_PHYSICALDAMAGE,
+		minDamage = 0,
+		maxDamage = -30,
+		range = 7,
+		shootEffect = CONST_ANI_SPEAR,
+		target = false
+	}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 6,
+	armor = 6
 }
 
 monster.elements = {
@@ -109,8 +116,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 20},
-	{type = COMBAT_DEATHDAMAGE , percent = -10}
+	{type = COMBAT_HOLYDAMAGE, percent = 20},
+	{type = COMBAT_DEATHDAMAGE, percent = -10}
 }
 
 monster.immunities = {

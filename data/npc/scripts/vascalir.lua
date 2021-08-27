@@ -315,9 +315,9 @@ local mission2Accept =
 		player:setStorageValue(Storage.TheRookieGuard.Questline, 1)
 		player:setStorageValue(Storage.TheRookieGuard.Mission02, 1)
 		player:setStorageValue(Storage.TheRookieGuard.Catapults, 0)
-		player:addMapMark({x = 32083, y = 32183, z = 6}, MAPMARK_FLAG, "Barn")
-		player:addMapMark({x = 32091, y = 32176, z = 6}, MAPMARK_FLAG, "North Exit")
-		player:addMapMark({x = 32108, y = 32219, z = 6}, MAPMARK_FLAG, "South Exit")
+		player:addMapMark({x = 32027, y = 32164, z = 6}, MAPMARK_FLAG, "Barn")
+		player:addMapMark({x = 32036, y = 32156, z = 6}, MAPMARK_FLAG, "North Exit")
+		player:addMapMark({x = 32053, y = 32196, z = 6}, MAPMARK_FLAG, "South Exit")
 	end
 )
 
@@ -425,8 +425,8 @@ mission3:addChildKeyword(
 	function(player)
 		player:setStorageValue(Storage.TheRookieGuard.Mission03, 1)
 		player:setStorageValue(Storage.TheRookieGuard.RatKills, 0)
-		player:addMapMark({x = 32087, y = 32220, z = 7}, MAPMARK_GREENSOUTH, "Rat Dungeon")
-		player:addMapMark({x = 32117, y = 32222, z = 7}, MAPMARK_GREENSOUTH, "Rat Dungeon")
+		player:addMapMark({x = 32032, y = 32199, z = 7}, MAPMARK_GREENSOUTH, "Rat Dungeon")
+		player:addMapMark({x = 32062, y = 32201, z = 7}, MAPMARK_GREENSOUTH, "Rat Dungeon")
 	end
 )
 
@@ -471,11 +471,7 @@ keywordHandler:addKeyword(
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
-		text = {
-			"Good job. Here's your promised reward - a sabre. ...",
-			"I think you're well enough equipped now to leave the village for another small task. Find Lily south-west of here, she will tell you what she needs done."
-		},
-		ungreet = true
+		text = "Good job. Here's your promised reward - a sabre. I think you're well enough equipped now to leave the village for another small task. Find Lily south-west of here, she will tell you what she needs done."
 	},
 	function(player)
 		return player:getStorageValue(Storage.TheRookieGuard.Mission03) == 1 and

@@ -26,7 +26,7 @@ monster.Bestiary = {
 	Locations = "In Rookgaard Sheep field, Greenshore and other farms like the one in Thais, east of Carlin. \z
 		They can also be found wandering the fields of Edron, and some can be found along with a \z
 		Black Sheep with the Hunter in Femur Hills."
-	}
+}
 
 monster.health = 20
 monster.maxHealth = 20
@@ -42,7 +42,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -83,12 +83,12 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -1}
 }
 
 monster.defenses = {
-	defense = 5,
-	armor = 10
+	defense = 1,
+	armor = 1
 }
 
 monster.elements = {
@@ -100,8 +100,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

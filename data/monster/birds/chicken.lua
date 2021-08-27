@@ -23,10 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 5,
 	Stars = 1,
 	Occurrence = 0,
-	Locations = "Sabrehaven, Rookgaard, The McRonalds Farm in Thais, Northport, \z
-		Fibula, Carlin (killable but unreachable), Greenshore, Krimhorn, Orc Fortress, \z
-		Factory Quarter, also theres one in the farm near Edron."
-	}
+	Locations = "Sabrehaven, Rookgaard, The McRonalds Farm in Thais, Northport, Fibula, Carlin (killable but unreachable), Greenshore, Krimhorn, Orc Fortress, Factory Quarter, also theres one in the farm near Edron."
+}
 
 monster.health = 15
 monster.maxHealth = 15
@@ -42,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -86,7 +84,7 @@ monster.loot = {
 }
 
 monster.defenses = {
-	defense = 5,
+	defense = 1,
 	armor = 1
 }
 
@@ -99,8 +97,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

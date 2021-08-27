@@ -23,12 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 15,
 	Stars = 2,
 	Occurrence = 0,
-	Locations = "Almost everywhere, like Ancient Temple, Vandura, Folda dungeon, Fibula Dungeon, \z
-		caves connecting Edron and Cormaya, Venore Swamp Troll cave, Thais Troll cave, Ferngrims Gate, \z
-		Dwarf Mines, Hellgate, below the graves in eastern Rookgaard, spider cave in western Rookgaard, \z
-		cave northeast of Ab'Dendriel, Darashia Rotworm Caves, Liberty Bay, Fenrock, \z
-		below Green Claw Swamp and some other places."
-	}
+	Locations = "Almost everywhere, like Ancient Temple, Vandura, Folda dungeon, Fibula Dungeon, caves connecting Edron and Cormaya, Venore Swamp Troll cave, Thais Troll cave, Ferngrims Gate, Dwarf Mines, Hellgate, below the graves in eastern Rookgaard, spider cave in western Rookgaard, cave northeast of Ab'Dendriel, Darashia Rotworm Caves, Liberty Bay, Fenrock, below Green Claw Swamp and some other places."
+}
 
 monster.health = 65
 monster.maxHealth = 65
@@ -44,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -75,7 +71,7 @@ monster.light = {
 
 monster.voices = {
 	interval = 5000,
-	chance = 10,
+	chance = 10
 }
 
 monster.loot = {
@@ -89,12 +85,12 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -40}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -40}
 }
 
 monster.defenses = {
-	defense = 10,
-	armor = 10
+	defense = 8,
+	armor = 8
 }
 
 monster.elements = {
@@ -106,8 +102,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {

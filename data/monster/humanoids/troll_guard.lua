@@ -23,9 +23,8 @@ monster.Bestiary = {
 	CharmsPoints = 30,
 	Stars = 2,
 	Occurrence = 3,
-	Locations = "Rookgaard's central cave in the new western Troll tunnel, \z
-		north-west of Carlin during raids and Thais Knights' Guild arena during raids on Kingsday."
-	}
+	Locations = "Rookgaard's central cave in the new western Troll tunnel, north-west of Carlin during raids and Thais Knights' Guild arena during raids on Kingsday."
+}
 
 monster.health = 60
 monster.maxHealth = 60
@@ -41,7 +40,7 @@ monster.changeTarget = {
 }
 
 monster.strategiesTarget = {
-	nearest = 100,
+	nearest = 100
 }
 
 monster.flags = {
@@ -72,7 +71,7 @@ monster.light = {
 
 monster.voices = {
 	interval = 5000,
-	chance = 10,
+	chance = 10
 }
 
 monster.loot = {
@@ -83,12 +82,12 @@ monster.loot = {
 }
 
 monster.attacks = {
-	{name ="melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -15}
+	{name = "melee", interval = 2000, chance = 100, minDamage = 0, maxDamage = -9}
 }
 
 monster.defenses = {
-	defense = 2,
-	armor = 1
+	defense = 4,
+	armor = 4
 }
 
 monster.elements = {
@@ -100,8 +99,8 @@ monster.elements = {
 	{type = COMBAT_MANADRAIN, percent = 0},
 	{type = COMBAT_DROWNDAMAGE, percent = 0},
 	{type = COMBAT_ICEDAMAGE, percent = 0},
-	{type = COMBAT_HOLYDAMAGE , percent = 0},
-	{type = COMBAT_DEATHDAMAGE , percent = 0}
+	{type = COMBAT_HOLYDAMAGE, percent = 0},
+	{type = COMBAT_DEATHDAMAGE, percent = 0}
 }
 
 monster.immunities = {
