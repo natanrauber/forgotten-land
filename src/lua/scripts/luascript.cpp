@@ -2104,117 +2104,117 @@ void LuaScriptInterface::registerFunctions()
 
 	// Use with Game.getReturnMessage
 	registerEnum(RETURNVALUE_NOERROR)
-	registerEnum(RETURNVALUE_NOTPOSSIBLE)
-	registerEnum(RETURNVALUE_NOTENOUGHROOM)
-	registerEnum(RETURNVALUE_PLAYERISPZLOCKED)
-	registerEnum(RETURNVALUE_PLAYERISNOTINVITED)
-	registerEnum(RETURNVALUE_CANNOTTHROW)
-	registerEnum(RETURNVALUE_THEREISNOWAY)
-	registerEnum(RETURNVALUE_DESTINATIONOUTOFREACH)
-	registerEnum(RETURNVALUE_CREATUREBLOCK)
-	registerEnum(RETURNVALUE_NOTMOVEABLE)
-	registerEnum(RETURNVALUE_DROPTWOHANDEDITEM)
-	registerEnum(RETURNVALUE_BOTHHANDSNEEDTOBEFREE)
-	registerEnum(RETURNVALUE_CANONLYUSEONEWEAPON)
-	registerEnum(RETURNVALUE_NEEDEXCHANGE)
-	registerEnum(RETURNVALUE_CANNOTBEDRESSED)
-	registerEnum(RETURNVALUE_PUTTHISOBJECTINYOURHAND)
-	registerEnum(RETURNVALUE_PUTTHISOBJECTINBOTHHANDS)
-	registerEnum(RETURNVALUE_TOOFARAWAY)
-	registerEnum(RETURNVALUE_FIRSTGODOWNSTAIRS)
-	registerEnum(RETURNVALUE_FIRSTGOUPSTAIRS)
-	registerEnum(RETURNVALUE_CONTAINERNOTENOUGHROOM)
-	registerEnum(RETURNVALUE_NOTENOUGHCAPACITY)
-	registerEnum(RETURNVALUE_CANNOTPICKUP)
-	registerEnum(RETURNVALUE_THISISIMPOSSIBLE)
-	registerEnum(RETURNVALUE_DEPOTISFULL)
-	registerEnum(RETURNVALUE_CREATUREDOESNOTEXIST)
-	registerEnum(RETURNVALUE_CANNOTUSETHISOBJECT)
-	registerEnum(RETURNVALUE_PLAYERWITHTHISNAMEISNOTONLINE)
-	registerEnum(RETURNVALUE_NOTREQUIREDLEVELTOUSERUNE)
-	registerEnum(RETURNVALUE_YOUAREALREADYTRADING)
-	registerEnum(RETURNVALUE_THISPLAYERISALREADYTRADING)
-	registerEnum(RETURNVALUE_YOUMAYNOTLOGOUTDURINGAFIGHT)
-	registerEnum(RETURNVALUE_DIRECTPLAYERSHOOT)
-	registerEnum(RETURNVALUE_NOTENOUGHLEVEL)
-	registerEnum(RETURNVALUE_NOTENOUGHMAGICLEVEL)
-	registerEnum(RETURNVALUE_NOTENOUGHMANA)
-	registerEnum(RETURNVALUE_NOTENOUGHSOUL)
-	registerEnum(RETURNVALUE_YOUAREEXHAUSTED)
-	registerEnum(RETURNVALUE_YOUCANNOTUSEOBJECTSTHATFAST)
-	registerEnum(RETURNVALUE_PLAYERISNOTREACHABLE)
-	registerEnum(RETURNVALUE_CANONLYUSETHISRUNEONCREATURES)
-	registerEnum(RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE)
-	registerEnum(RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER)
-	registerEnum(RETURNVALUE_YOUMAYNOTATTACKAPERSONINPROTECTIONZONE)
-	registerEnum(RETURNVALUE_YOUMAYNOTATTACKAPERSONWHILEINPROTECTIONZONE)
-	registerEnum(RETURNVALUE_YOUMAYNOTATTACKTHISCREATURE)
-	registerEnum(RETURNVALUE_YOUCANONLYUSEITONCREATURES)
-	registerEnum(RETURNVALUE_CREATUREISNOTREACHABLE)
-	registerEnum(RETURNVALUE_TURNSECUREMODETOATTACKUNMARKEDPLAYERS)
-	registerEnum(RETURNVALUE_YOUNEEDPREMIUMACCOUNT)
-	registerEnum(RETURNVALUE_YOUNEEDTOLEARNTHISSPELL)
-	registerEnum(RETURNVALUE_YOURVOCATIONCANNOTUSETHISSPELL)
-	registerEnum(RETURNVALUE_YOUNEEDAWEAPONTOUSETHISSPELL)
-	registerEnum(RETURNVALUE_PLAYERISPZLOCKEDLEAVEPVPZONE)
-	registerEnum(RETURNVALUE_PLAYERISPZLOCKEDENTERPVPZONE)
-	registerEnum(RETURNVALUE_ACTIONNOTPERMITTEDINANOPVPZONE)
-	registerEnum(RETURNVALUE_YOUCANNOTLOGOUTHERE)
-	registerEnum(RETURNVALUE_YOUNEEDAMAGICITEMTOCASTSPELL)
-	registerEnum(RETURNVALUE_CANNOTCONJUREITEMHERE)
-	registerEnum(RETURNVALUE_YOUNEEDTOSPLITYOURSPEARS)
-	registerEnum(RETURNVALUE_NAMEISTOOAMBIGUOUS)
-	registerEnum(RETURNVALUE_CANONLYUSEONESHIELD)
-	registerEnum(RETURNVALUE_NOPARTYMEMBERSINRANGE)
-	registerEnum(RETURNVALUE_YOUARENOTTHEOWNER)
-	registerEnum(RETURNVALUE_TRADEPLAYERFARAWAY)
-	registerEnum(RETURNVALUE_YOUDONTOWNTHISHOUSE)
-	registerEnum(RETURNVALUE_TRADEPLAYERALREADYOWNSAHOUSE)
-	registerEnum(RETURNVALUE_TRADEPLAYERHIGHESTBIDDER)
-	registerEnum(RETURNVALUE_YOUCANNOTTRADETHISHOUSE)
-	registerEnum(RETURNVALUE_YOUDONTHAVEREQUIREDPROFESSION)
-	registerEnum(RETURNVALUE_NOTENOUGHFISTLEVEL)
-	registerEnum(RETURNVALUE_NOTENOUGHCLUBLEVEL)
-	registerEnum(RETURNVALUE_NOTENOUGHSWORDLEVEL)
-	registerEnum(RETURNVALUE_NOTENOUGHAXELEVEL)
-	registerEnum(RETURNVALUE_NOTENOUGHDISTANCELEVEL)
-	registerEnum(RETURNVALUE_NOTENOUGHSHIELDLEVEL)
-	registerEnum(RETURNVALUE_NOTENOUGHFISHLEVEL)
-	registerEnum(RETURNVALUE_REWARDCHESTISEMPTY)
+		registerEnum(RETURNVALUE_NOTPOSSIBLE)
+			registerEnum(RETURNVALUE_NOTENOUGHROOM)
+				registerEnum(RETURNVALUE_PLAYERISPZLOCKED)
+					registerEnum(RETURNVALUE_PLAYERISNOTINVITED)
+						registerEnum(RETURNVALUE_CANNOTTHROW)
+							registerEnum(RETURNVALUE_THEREISNOWAY)
+								registerEnum(RETURNVALUE_DESTINATIONOUTOFREACH)
+									registerEnum(RETURNVALUE_CREATUREBLOCK)
+										registerEnum(RETURNVALUE_NOTMOVEABLE)
+											registerEnum(RETURNVALUE_DROPTWOHANDEDITEM)
+												registerEnum(RETURNVALUE_BOTHHANDSNEEDTOBEFREE)
+													registerEnum(RETURNVALUE_CANONLYUSEONEWEAPON)
+														registerEnum(RETURNVALUE_NEEDEXCHANGE)
+															registerEnum(RETURNVALUE_CANNOTBEDRESSED)
+																registerEnum(RETURNVALUE_PUTTHISOBJECTINYOURHAND)
+																	registerEnum(RETURNVALUE_PUTTHISOBJECTINBOTHHANDS)
+																		registerEnum(RETURNVALUE_TOOFARAWAY)
+																			registerEnum(RETURNVALUE_FIRSTGODOWNSTAIRS)
+																				registerEnum(RETURNVALUE_FIRSTGOUPSTAIRS)
+																					registerEnum(RETURNVALUE_CONTAINERNOTENOUGHROOM)
+																						registerEnum(RETURNVALUE_NOTENOUGHCAPACITY)
+																							registerEnum(RETURNVALUE_CANNOTPICKUP)
+																								registerEnum(RETURNVALUE_THISISIMPOSSIBLE)
+																									registerEnum(RETURNVALUE_DEPOTISFULL)
+																										registerEnum(RETURNVALUE_CREATUREDOESNOTEXIST)
+																											registerEnum(RETURNVALUE_CANNOTUSETHISOBJECT)
+																												registerEnum(RETURNVALUE_PLAYERWITHTHISNAMEISNOTONLINE)
+																													registerEnum(RETURNVALUE_NOTREQUIREDLEVELTOUSERUNE)
+																														registerEnum(RETURNVALUE_YOUAREALREADYTRADING)
+																															registerEnum(RETURNVALUE_THISPLAYERISALREADYTRADING)
+																																registerEnum(RETURNVALUE_YOUMAYNOTLOGOUTDURINGAFIGHT)
+																																	registerEnum(RETURNVALUE_DIRECTPLAYERSHOOT)
+																																		registerEnum(RETURNVALUE_NOTENOUGHLEVEL)
+																																			registerEnum(RETURNVALUE_NOTENOUGHMAGICLEVEL)
+																																				registerEnum(RETURNVALUE_NOTENOUGHMANA)
+																																					registerEnum(RETURNVALUE_NOTENOUGHSOUL)
+																																						registerEnum(RETURNVALUE_YOUAREEXHAUSTED)
+																																							registerEnum(RETURNVALUE_YOUCANNOTUSEOBJECTSTHATFAST)
+																																								registerEnum(RETURNVALUE_PLAYERISNOTREACHABLE)
+																																									registerEnum(RETURNVALUE_CANONLYUSETHISRUNEONCREATURES)
+																																										registerEnum(RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE)
+																																											registerEnum(RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER)
+																																												registerEnum(RETURNVALUE_YOUMAYNOTATTACKAPERSONINPROTECTIONZONE)
+																																													registerEnum(RETURNVALUE_YOUMAYNOTATTACKAPERSONWHILEINPROTECTIONZONE)
+																																														registerEnum(RETURNVALUE_YOUMAYNOTATTACKTHISCREATURE)
+																																															registerEnum(RETURNVALUE_YOUCANONLYUSEITONCREATURES)
+																																																registerEnum(RETURNVALUE_CREATUREISNOTREACHABLE)
+																																																	registerEnum(RETURNVALUE_TURNSECUREMODETOATTACKUNMARKEDPLAYERS)
+																																																		registerEnum(RETURNVALUE_YOUNEEDPREMIUMACCOUNT)
+																																																			registerEnum(RETURNVALUE_YOUNEEDTOLEARNTHISSPELL)
+																																																				registerEnum(RETURNVALUE_YOURVOCATIONCANNOTUSETHISSPELL)
+																																																					registerEnum(RETURNVALUE_YOUNEEDAWEAPONTOUSETHISSPELL)
+																																																						registerEnum(RETURNVALUE_PLAYERISPZLOCKEDLEAVEPVPZONE)
+																																																							registerEnum(RETURNVALUE_PLAYERISPZLOCKEDENTERPVPZONE)
+																																																								registerEnum(RETURNVALUE_ACTIONNOTPERMITTEDINANOPVPZONE)
+																																																									registerEnum(RETURNVALUE_YOUCANNOTLOGOUTHERE)
+																																																										registerEnum(RETURNVALUE_YOUNEEDAMAGICITEMTOCASTSPELL)
+																																																											registerEnum(RETURNVALUE_CANNOTCONJUREITEMHERE)
+																																																												registerEnum(RETURNVALUE_YOUNEEDTOSPLITYOURSPEARS)
+																																																													registerEnum(RETURNVALUE_NAMEISTOOAMBIGUOUS)
+																																																														registerEnum(RETURNVALUE_CANONLYUSEONESHIELD)
+																																																															registerEnum(RETURNVALUE_NOPARTYMEMBERSINRANGE)
+																																																																registerEnum(RETURNVALUE_YOUARENOTTHEOWNER)
+																																																																	registerEnum(RETURNVALUE_TRADEPLAYERFARAWAY)
+																																																																		registerEnum(RETURNVALUE_YOUDONTOWNTHISHOUSE)
+																																																																			registerEnum(RETURNVALUE_TRADEPLAYERALREADYOWNSAHOUSE)
+																																																																				registerEnum(RETURNVALUE_TRADEPLAYERHIGHESTBIDDER)
+																																																																					registerEnum(RETURNVALUE_YOUCANNOTTRADETHISHOUSE)
+																																																																						registerEnum(RETURNVALUE_YOUDONTHAVEREQUIREDPROFESSION)
+																																																																							registerEnum(RETURNVALUE_NOTENOUGHFISTLEVEL)
+																																																																								registerEnum(RETURNVALUE_NOTENOUGHCLUBLEVEL)
+																																																																									registerEnum(RETURNVALUE_NOTENOUGHSWORDLEVEL)
+																																																																										registerEnum(RETURNVALUE_NOTENOUGHAXELEVEL)
+																																																																											registerEnum(RETURNVALUE_NOTENOUGHDISTANCELEVEL)
+																																																																												registerEnum(RETURNVALUE_NOTENOUGHSHIELDLEVEL)
+																																																																													registerEnum(RETURNVALUE_NOTENOUGHFISHLEVEL)
+																																																																														registerEnum(RETURNVALUE_REWARDCHESTISEMPTY)
 
-	registerEnum(RELOAD_TYPE_ALL)
-	registerEnum(RELOAD_TYPE_CHAT)
-	registerEnum(RELOAD_TYPE_CONFIG)
-	registerEnum(RELOAD_TYPE_EVENTS)
-	registerEnum(RELOAD_TYPE_GLOBAL)
-	registerEnum(RELOAD_TYPE_IMBUEMENTS)
-	registerEnum(RELOAD_TYPE_ITEMS)
-	registerEnum(RELOAD_TYPE_MODULES)
-	registerEnum(RELOAD_TYPE_MONSTERS)
-	registerEnum(RELOAD_TYPE_MOUNTS)
-	registerEnum(RELOAD_TYPE_NPCS)
-	registerEnum(RELOAD_TYPE_RAIDS)
-	registerEnum(RELOAD_TYPE_SCRIPTS)
-	registerEnum(RELOAD_TYPE_STAGES)
+																																																																															registerEnum(RELOAD_TYPE_ALL)
+																																																																																registerEnum(RELOAD_TYPE_CHAT)
+																																																																																	registerEnum(RELOAD_TYPE_CONFIG)
+																																																																																		registerEnum(RELOAD_TYPE_EVENTS)
+																																																																																			registerEnum(RELOAD_TYPE_GLOBAL)
+																																																																																				registerEnum(RELOAD_TYPE_IMBUEMENTS)
+																																																																																					registerEnum(RELOAD_TYPE_ITEMS)
+																																																																																						registerEnum(RELOAD_TYPE_MODULES)
+																																																																																							registerEnum(RELOAD_TYPE_MONSTERS)
+																																																																																								registerEnum(RELOAD_TYPE_MOUNTS)
+																																																																																									registerEnum(RELOAD_TYPE_NPCS)
+																																																																																										registerEnum(RELOAD_TYPE_RAIDS)
+																																																																																											registerEnum(RELOAD_TYPE_SCRIPTS)
+																																																																																												registerEnum(RELOAD_TYPE_STAGES)
 
-	registerEnum(ZONE_PROTECTION)
-	registerEnum(ZONE_NOPVP)
-	registerEnum(ZONE_PVP)
-	registerEnum(ZONE_NOLOGOUT)
-	registerEnum(ZONE_NORMAL)
+																																																																																													registerEnum(ZONE_PROTECTION)
+																																																																																														registerEnum(ZONE_NOPVP)
+																																																																																															registerEnum(ZONE_PVP)
+																																																																																																registerEnum(ZONE_NOLOGOUT)
+																																																																																																	registerEnum(ZONE_NORMAL)
 
-	registerEnum(MAX_LOOTCHANCE)
+																																																																																																		registerEnum(MAX_LOOTCHANCE)
 
-	registerEnum(SPELL_INSTANT)
-	registerEnum(SPELL_RUNE)
+																																																																																																			registerEnum(SPELL_INSTANT)
+																																																																																																				registerEnum(SPELL_RUNE)
 
-	registerEnum(MONSTERS_EVENT_THINK)
-	registerEnum(MONSTERS_EVENT_APPEAR)
-	registerEnum(MONSTERS_EVENT_DISAPPEAR)
-	registerEnum(MONSTERS_EVENT_MOVE)
-	registerEnum(MONSTERS_EVENT_SAY)
+																																																																																																					registerEnum(MONSTERS_EVENT_THINK)
+																																																																																																						registerEnum(MONSTERS_EVENT_APPEAR)
+																																																																																																							registerEnum(MONSTERS_EVENT_DISAPPEAR)
+																																																																																																								registerEnum(MONSTERS_EVENT_MOVE)
+																																																																																																									registerEnum(MONSTERS_EVENT_SAY)
 
-	registerEnum(LIGHT_STATE_DAY);
+																																																																																																										registerEnum(LIGHT_STATE_DAY);
 	registerEnum(LIGHT_STATE_NIGHT);
 	registerEnum(LIGHT_STATE_SUNSET);
 	registerEnum(LIGHT_STATE_SUNRISE);
@@ -2235,111 +2235,130 @@ void LuaScriptInterface::registerFunctions()
 	// configKeys
 	registerTable("configKeys");
 
-	registerEnumIn("configKeys", ConfigManager::ALLOW_CHANGEOUTFIT);
-	registerEnumIn("configKeys", ConfigManager::ONE_PLAYER_ON_ACCOUNT);
-	registerEnumIn("configKeys", ConfigManager::AIMBOT_HOTKEY_ENABLED);
-	registerEnumIn("configKeys", ConfigManager::REMOVE_RUNE_CHARGES);
-	registerEnumIn("configKeys", ConfigManager::EXPERIENCE_FROM_PLAYERS);
-	registerEnumIn("configKeys", ConfigManager::FREE_PREMIUM);
-	registerEnumIn("configKeys", ConfigManager::REPLACE_KICK_ON_LOGIN);
-	registerEnumIn("configKeys", ConfigManager::ALLOW_CLONES);
-	registerEnumIn("configKeys", ConfigManager::BIND_ONLY_GLOBAL_ADDRESS);
-	registerEnumIn("configKeys", ConfigManager::OPTIMIZE_DATABASE);
-	registerEnumIn("configKeys", ConfigManager::MARKET_PREMIUM);
-	registerEnumIn("configKeys", ConfigManager::EMOTE_SPELLS);
-	registerEnumIn("configKeys", ConfigManager::STAMINA_SYSTEM);
-	registerEnumIn("configKeys", ConfigManager::WARN_UNSAFE_SCRIPTS);
-	registerEnumIn("configKeys", ConfigManager::CONVERT_UNSAFE_SCRIPTS);
-	registerEnumIn("configKeys", ConfigManager::CLASSIC_EQUIPMENT_SLOTS);
-	registerEnumIn("configKeys", ConfigManager::ALLOW_BLOCK_SPAWN);
-	registerEnumIn("configKeys", ConfigManager::CLASSIC_ATTACK_SPEED);
-	registerEnumIn("configKeys", ConfigManager::REMOVE_WEAPON_AMMO);
-	registerEnumIn("configKeys", ConfigManager::REMOVE_WEAPON_CHARGES);
-	registerEnumIn("configKeys", ConfigManager::REMOVE_POTION_CHARGES);
-	registerEnumIn("configKeys", ConfigManager::STOREMODULES);
-	registerEnumIn("configKeys", ConfigManager::WEATHER_RAIN);
-	registerEnumIn("configKeys", ConfigManager::WEATHER_THUNDER);
-	registerEnumIn("configKeys", ConfigManager::FREE_QUESTS);
-	registerEnumIn("configKeys", ConfigManager::ALL_CONSOLE_LOG);
+	registerEnumIn("configKeys", ConfigManager::ALLOW_CHANGEOUTFIT)
+		registerEnumIn("configKeys", ConfigManager::ONE_PLAYER_ON_ACCOUNT)
+			registerEnumIn("configKeys", ConfigManager::AIMBOT_HOTKEY_ENABLED)
+				registerEnumIn("configKeys", ConfigManager::REMOVE_RUNE_CHARGES)
+					registerEnumIn("configKeys", ConfigManager::EXPERIENCE_FROM_PLAYERS)
+						registerEnumIn("configKeys", ConfigManager::FREE_PREMIUM)
+							registerEnumIn("configKeys", ConfigManager::REPLACE_KICK_ON_LOGIN)
+								registerEnumIn("configKeys", ConfigManager::ALLOW_CLONES)
+									registerEnumIn("configKeys", ConfigManager::BIND_ONLY_GLOBAL_ADDRESS)
+										registerEnumIn("configKeys", ConfigManager::OPTIMIZE_DATABASE)
+											registerEnumIn("configKeys", ConfigManager::MARKET_PREMIUM)
+												registerEnumIn("configKeys", ConfigManager::EMOTE_SPELLS)
+													registerEnumIn("configKeys", ConfigManager::STAMINA_SYSTEM)
+														registerEnumIn("configKeys", ConfigManager::WARN_UNSAFE_SCRIPTS)
+															registerEnumIn("configKeys", ConfigManager::CONVERT_UNSAFE_SCRIPTS)
+																registerEnumIn("configKeys", ConfigManager::CLASSIC_EQUIPMENT_SLOTS)
+																	registerEnumIn("configKeys", ConfigManager::ALLOW_BLOCK_SPAWN)
+																		registerEnumIn("configKeys", ConfigManager::CLASSIC_ATTACK_SPEED)
+																			registerEnumIn("configKeys", ConfigManager::REMOVE_WEAPON_AMMO)
+																				registerEnumIn("configKeys", ConfigManager::REMOVE_WEAPON_CHARGES)
+																					registerEnumIn("configKeys", ConfigManager::REMOVE_POTION_CHARGES)
+																						registerEnumIn("configKeys", ConfigManager::STOREMODULES)
+																							registerEnumIn("configKeys", ConfigManager::WEATHER_RAIN)
+																								registerEnumIn("configKeys", ConfigManager::WEATHER_THUNDER)
+																									registerEnumIn("configKeys", ConfigManager::FREE_QUESTS)
+																										registerEnumIn("configKeys", ConfigManager::ALL_CONSOLE_LOG)
+																											registerEnumIn("configKeys", ConfigManager::SAVE_INTERVAL)
+																												registerEnumIn("configKeys", ConfigManager::SAVE_INTERVAL_CLEAN_MAP)
+																													registerEnumIn("configKeys", ConfigManager::SAVE_INTERVAL_TIME)
+																														registerEnumIn("configKeys", ConfigManager::STAMINA_TRAINER)
+																															registerEnumIn("configKeys", ConfigManager::STAMINA_PZ)
+																																registerEnumIn("configKeys", ConfigManager::STAMINA_ORANGE_DELAY)
+																																	registerEnumIn("configKeys", ConfigManager::STAMINA_GREEN_DELAY)
+																																		registerEnumIn("configKeys", ConfigManager::STAMINA_TRAINER_DELAY)
+																																			registerEnumIn("configKeys", ConfigManager::STAMINA_PZ_GAIN)
+																																				registerEnumIn("configKeys", ConfigManager::STAMINA_TRAINER_GAIN)
 
-	registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_NOTIFY_MESSAGE);
-	registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_NOTIFY_DURATION);
-	registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_CLEAN_MAP);
-	registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_CLOSE);
-	registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_SHUTDOWN);
-	registerEnumIn("configKeys", ConfigManager::SAVE_INTERVAL);
-	registerEnumIn("configKeys", ConfigManager::SAVE_INTERVAL_CLEAN_MAP);
-	registerEnumIn("configKeys", ConfigManager::SAVE_INTERVAL_TIME);
+																																					registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_NOTIFY_MESSAGE)
+																																						registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_NOTIFY_DURATION)
+																																							registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_CLEAN_MAP)
+																																								registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_CLOSE)
+																																									registerEnumIn("configKeys", ConfigManager::SERVER_SAVE_SHUTDOWN)
 
-	registerEnumIn("configKeys", ConfigManager::MAP_NAME);
-	registerEnumIn("configKeys", ConfigManager::MAP_CUSTOM_NAME);
-	registerEnumIn("configKeys", ConfigManager::MAP_CUSTOM_FILE);
-	registerEnumIn("configKeys", ConfigManager::MAP_CUSTOM_SPAWN);
-	registerEnumIn("configKeys", ConfigManager::MAP_CUSTOM_ENABLED);
-	registerEnumIn("configKeys", ConfigManager::HOUSE_RENT_PERIOD);
-	registerEnumIn("configKeys", ConfigManager::SERVER_NAME);
-	registerEnumIn("configKeys", ConfigManager::OWNER_NAME);
-	registerEnumIn("configKeys", ConfigManager::OWNER_EMAIL);
-	registerEnumIn("configKeys", ConfigManager::URL);
-	registerEnumIn("configKeys", ConfigManager::LOCATION);
-	registerEnumIn("configKeys", ConfigManager::IP);
-	registerEnumIn("configKeys", ConfigManager::MOTD);
-	registerEnumIn("configKeys", ConfigManager::WORLD_TYPE);
-	registerEnumIn("configKeys", ConfigManager::MYSQL_HOST);
-	registerEnumIn("configKeys", ConfigManager::MYSQL_USER);
-	registerEnumIn("configKeys", ConfigManager::MYSQL_PASS);
-	registerEnumIn("configKeys", ConfigManager::MYSQL_DB);
-	registerEnumIn("configKeys", ConfigManager::MYSQL_SOCK);
-	registerEnumIn("configKeys", ConfigManager::DEFAULT_PRIORITY);
-	registerEnumIn("configKeys", ConfigManager::MAP_AUTHOR);
-	registerEnumIn("configKeys", ConfigManager::STORE_IMAGES_URL);
-	registerEnumIn("configKeys", ConfigManager::CLIENT_VERSION_STR);
-	registerEnumIn("configKeys", ConfigManager::PARTY_LIST_MAX_DISTANCE);
+																																										registerEnumIn("configKeys", ConfigManager::MAP_NAME)
+																																											registerEnumIn("configKeys", ConfigManager::MAP_CUSTOM_NAME)
+																																												registerEnumIn("configKeys", ConfigManager::MAP_CUSTOM_FILE)
+																																													registerEnumIn("configKeys", ConfigManager::MAP_CUSTOM_SPAWN)
+																																														registerEnumIn("configKeys", ConfigManager::MAP_CUSTOM_ENABLED)
+																																															registerEnumIn("configKeys", ConfigManager::HOUSE_RENT_PERIOD)
+																																																registerEnumIn("configKeys", ConfigManager::SERVER_NAME)
+																																																	registerEnumIn("configKeys", ConfigManager::OWNER_NAME)
+																																																		registerEnumIn("configKeys", ConfigManager::OWNER_EMAIL)
+																																																			registerEnumIn("configKeys", ConfigManager::URL)
+																																																				registerEnumIn("configKeys", ConfigManager::LOCATION)
+																																																					registerEnumIn("configKeys", ConfigManager::IP)
+																																																						registerEnumIn("configKeys", ConfigManager::MOTD)
+																																																							registerEnumIn("configKeys", ConfigManager::WORLD_TYPE)
+																																																								registerEnumIn("configKeys", ConfigManager::MYSQL_HOST)
+																																																									registerEnumIn("configKeys", ConfigManager::MYSQL_USER)
+																																																										registerEnumIn("configKeys", ConfigManager::MYSQL_PASS)
+																																																											registerEnumIn("configKeys", ConfigManager::MYSQL_DB)
+																																																												registerEnumIn("configKeys", ConfigManager::MYSQL_SOCK)
+																																																													registerEnumIn("configKeys", ConfigManager::DEFAULT_PRIORITY)
+																																																														registerEnumIn("configKeys", ConfigManager::MAP_AUTHOR)
+																																																															registerEnumIn("configKeys", ConfigManager::STORE_IMAGES_URL)
+																																																																registerEnumIn("configKeys", ConfigManager::CLIENT_VERSION_STR)
+																																																																	registerEnumIn("configKeys", ConfigManager::PARTY_LIST_MAX_DISTANCE)
 
-	registerEnumIn("configKeys", ConfigManager::SQL_PORT);
-	registerEnumIn("configKeys", ConfigManager::MAX_PLAYERS);
-	registerEnumIn("configKeys", ConfigManager::PZ_LOCKED);
-	registerEnumIn("configKeys", ConfigManager::DEFAULT_DESPAWNRANGE);
-	registerEnumIn("configKeys", ConfigManager::DEFAULT_DESPAWNRADIUS);
-	registerEnumIn("configKeys", ConfigManager::RATE_EXPERIENCE);
-	registerEnumIn("configKeys", ConfigManager::RATE_SKILL);
-	registerEnumIn("configKeys", ConfigManager::RATE_LOOT);
-	registerEnumIn("configKeys", ConfigManager::RATE_MAGIC);
-	registerEnumIn("configKeys", ConfigManager::RATE_SPAWN);
-	registerEnumIn("configKeys", ConfigManager::HOUSE_PRICE);
-	registerEnumIn("configKeys", ConfigManager::MAX_MESSAGEBUFFER);
-	registerEnumIn("configKeys", ConfigManager::ACTIONS_DELAY_INTERVAL);
-	registerEnumIn("configKeys", ConfigManager::EX_ACTIONS_DELAY_INTERVAL);
-	registerEnumIn("configKeys", ConfigManager::KICK_AFTER_MINUTES);
-	registerEnumIn("configKeys", ConfigManager::PROTECTION_LEVEL);
-	registerEnumIn("configKeys", ConfigManager::DEATH_LOSE_PERCENT);
-	registerEnumIn("configKeys", ConfigManager::STATUSQUERY_TIMEOUT);
-	registerEnumIn("configKeys", ConfigManager::FRAG_TIME);
-	registerEnumIn("configKeys", ConfigManager::WHITE_SKULL_TIME);
-	registerEnumIn("configKeys", ConfigManager::GAME_PORT);
-	registerEnumIn("configKeys", ConfigManager::LOGIN_PORT);
-	registerEnumIn("configKeys", ConfigManager::STATUS_PORT);
-	registerEnumIn("configKeys", ConfigManager::STAIRHOP_DELAY);
-	registerEnumIn("configKeys", ConfigManager::MARKET_OFFER_DURATION);
-	registerEnumIn("configKeys", ConfigManager::CHECK_EXPIRED_MARKET_OFFERS_EACH_MINUTES);
-	registerEnumIn("configKeys", ConfigManager::MAX_MARKET_OFFERS_AT_A_TIME_PER_PLAYER);
-	registerEnumIn("configKeys", ConfigManager::EXP_FROM_PLAYERS_LEVEL_RANGE);
-	registerEnumIn("configKeys", ConfigManager::MAX_PACKETS_PER_SECOND);
-	registerEnumIn("configKeys", ConfigManager::STORE_COIN_PACKET);
-	registerEnumIn("configKeys", ConfigManager::CLIENT_VERSION);
-	registerEnumIn("configKeys", ConfigManager::DAY_KILLS_TO_RED);
-	registerEnumIn("configKeys", ConfigManager::WEEK_KILLS_TO_RED);
-	registerEnumIn("configKeys", ConfigManager::MONTH_KILLS_TO_RED);
-	registerEnumIn("configKeys", ConfigManager::RED_SKULL_DURATION);
-	registerEnumIn("configKeys", ConfigManager::BLACK_SKULL_DURATION);
-	registerEnumIn("configKeys", ConfigManager::ORANGE_SKULL_DURATION);
+																																																																		registerEnumIn("configKeys", ConfigManager::SQL_PORT)
+																																																																			registerEnumIn("configKeys", ConfigManager::MAX_PLAYERS)
+																																																																				registerEnumIn("configKeys", ConfigManager::PZ_LOCKED)
+																																																																					registerEnumIn("configKeys", ConfigManager::DEFAULT_DESPAWNRANGE)
+																																																																						registerEnumIn("configKeys", ConfigManager::DEFAULT_DESPAWNRADIUS)
+																																																																							registerEnumIn("configKeys", ConfigManager::RATE_EXPERIENCE)
+																																																																								registerEnumIn("configKeys", ConfigManager::RATE_SKILL)
+																																																																									registerEnumIn("configKeys", ConfigManager::RATE_LOOT)
+																																																																										registerEnumIn("configKeys", ConfigManager::RATE_MAGIC)
+																																																																											registerEnumIn("configKeys", ConfigManager::RATE_SPAWN)
+																																																																												registerEnumIn("configKeys", ConfigManager::HOUSE_PRICE)
+																																																																													registerEnumIn("configKeys", ConfigManager::MAX_MESSAGEBUFFER)
+																																																																														registerEnumIn("configKeys", ConfigManager::ACTIONS_DELAY_INTERVAL)
+																																																																															registerEnumIn("configKeys", ConfigManager::EX_ACTIONS_DELAY_INTERVAL)
+																																																																																registerEnumIn("configKeys", ConfigManager::KICK_AFTER_MINUTES)
+																																																																																	registerEnumIn("configKeys", ConfigManager::PROTECTION_LEVEL)
+																																																																																		registerEnumIn("configKeys", ConfigManager::DEATH_LOSE_PERCENT)
+																																																																																			registerEnumIn("configKeys", ConfigManager::STATUSQUERY_TIMEOUT)
+																																																																																				registerEnumIn("configKeys", ConfigManager::FRAG_TIME)
+																																																																																					registerEnumIn("configKeys", ConfigManager::WHITE_SKULL_TIME)
+																																																																																						registerEnumIn("configKeys", ConfigManager::GAME_PORT)
+																																																																																							registerEnumIn("configKeys", ConfigManager::LOGIN_PORT)
+																																																																																								registerEnumIn("configKeys", ConfigManager::STATUS_PORT)
+																																																																																									registerEnumIn("configKeys", ConfigManager::STAIRHOP_DELAY)
+																																																																																										registerEnumIn("configKeys", ConfigManager::MARKET_OFFER_DURATION)
+																																																																																											registerEnumIn("configKeys", ConfigManager::CHECK_EXPIRED_MARKET_OFFERS_EACH_MINUTES)
+																																																																																												registerEnumIn("configKeys", ConfigManager::MAX_MARKET_OFFERS_AT_A_TIME_PER_PLAYER)
+																																																																																													registerEnumIn("configKeys", ConfigManager::EXP_FROM_PLAYERS_LEVEL_RANGE)
+																																																																																														registerEnumIn("configKeys", ConfigManager::MAX_PACKETS_PER_SECOND)
+																																																																																															registerEnumIn("configKeys", ConfigManager::STORE_COIN_PACKET)
+																																																																																																registerEnumIn("configKeys", ConfigManager::CLIENT_VERSION)
+																																																																																																	registerEnumIn("configKeys", ConfigManager::DAY_KILLS_TO_RED)
+																																																																																																		registerEnumIn("configKeys", ConfigManager::WEEK_KILLS_TO_RED)
+																																																																																																			registerEnumIn("configKeys", ConfigManager::MONTH_KILLS_TO_RED)
+																																																																																																				registerEnumIn("configKeys", ConfigManager::RED_SKULL_DURATION)
+																																																																																																					registerEnumIn("configKeys", ConfigManager::BLACK_SKULL_DURATION)
+																																																																																																						registerEnumIn("configKeys", ConfigManager::ORANGE_SKULL_DURATION)
 
-	registerEnumIn("configKeys", ConfigManager::RATE_MONSTER_HEALTH);
-	registerEnumIn("configKeys", ConfigManager::RATE_MONSTER_ATTACK);
-	registerEnumIn("configKeys", ConfigManager::RATE_MONSTER_DEFENSE);
+																																																																																																							registerEnumIn("configKeys", ConfigManager::RATE_HEALTH_REGEN)
+																																																																																																								registerEnumIn("configKeys", ConfigManager::RATE_HEALTH_REGEN_SPEED)
+																																																																																																									registerEnumIn("configKeys", ConfigManager::RATE_MANA_REGEN)
+																																																																																																										registerEnumIn("configKeys", ConfigManager::RATE_MANA_REGEN_SPEED)
+																																																																																																											registerEnumIn("configKeys", ConfigManager::RATE_SOUL_REGEN)
+																																																																																																												registerEnumIn("configKeys", ConfigManager::RATE_SOUL_REGEN_SPEED)
 
-	// os
-	registerMethod("os", "mtime", LuaScriptInterface::luaSystemTime);
+																																																																																																													registerEnumIn("configKeys", ConfigManager::RATE_SPELL_COOLDOWN)
+																																																																																																														registerEnumIn("configKeys", ConfigManager::RATE_ATTACK_SPEED)
+																																																																																																															registerEnumIn("configKeys", ConfigManager::RATE_OFFLINE_TRAINING_SPEED)
+																																																																																																																registerEnumIn("configKeys", ConfigManager::RATE_EXERCISE_TRAINING_SPEED)
+
+																																																																																																																	registerEnumIn("configKeys", ConfigManager::RATE_MONSTER_HEALTH)
+																																																																																																																		registerEnumIn("configKeys", ConfigManager::RATE_MONSTER_ATTACK)
+																																																																																																																			registerEnumIn("configKeys", ConfigManager::RATE_MONSTER_DEFENSE)
+
+		// os
+		registerMethod("os", "mtime", LuaScriptInterface::luaSystemTime);
 
 	// table
 	registerMethod("table", "create", LuaScriptInterface::luaTableCreate);
@@ -3073,6 +3092,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Vocation", "getMaxSoul", LuaScriptInterface::luaVocationGetMaxSoul);
 	registerMethod("Vocation", "getSoulGainTicks", LuaScriptInterface::luaVocationGetSoulGainTicks);
 
+	registerMethod("Vocation", "getBaseAttackSpeed", LuaScriptInterface::luaVocationGetBaseAttackSpeed);
 	registerMethod("Vocation", "getAttackSpeed", LuaScriptInterface::luaVocationGetAttackSpeed);
 	registerMethod("Vocation", "getBaseSpeed", LuaScriptInterface::luaVocationGetBaseSpeed);
 
@@ -4846,6 +4866,7 @@ SHIFTOP(RightShift, >>)
 const luaL_Reg LuaScriptInterface::luaConfigManagerTable[] = {
 	{"getString", LuaScriptInterface::luaConfigManagerGetString},
 	{"getNumber", LuaScriptInterface::luaConfigManagerGetNumber},
+	{"getFloat", LuaScriptInterface::luaConfigManagerGetFloat},
 	{"getBoolean", LuaScriptInterface::luaConfigManagerGetBoolean},
 	{nullptr, nullptr}};
 
@@ -4858,6 +4879,12 @@ int LuaScriptInterface::luaConfigManagerGetString(lua_State *L)
 int LuaScriptInterface::luaConfigManagerGetNumber(lua_State *L)
 {
 	lua_pushnumber(L, g_config.getNumber(getNumber<ConfigManager::integer_config_t>(L, -1)));
+	return 1;
+}
+
+int LuaScriptInterface::luaConfigManagerGetFloat(lua_State *L)
+{
+	lua_pushnumber(L, g_config.getFloat(getNumber<ConfigManager::floating_config_t>(L, -1)));
 	return 1;
 }
 
@@ -15388,6 +15415,21 @@ int LuaScriptInterface::luaVocationGetSoulGainTicks(lua_State *L)
 	return 1;
 }
 
+int LuaScriptInterface::luaVocationGetBaseAttackSpeed(lua_State *L)
+{
+	// vocation:getBaseAttackSpeed()
+	Vocation *vocation = getUserdata<Vocation>(L, 1);
+	if (vocation)
+	{
+		lua_pushnumber(L, vocation->getBaseAttackSpeed());
+	}
+	else
+	{
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
 int LuaScriptInterface::luaVocationGetAttackSpeed(lua_State *L)
 {
 	// vocation:getAttackSpeed()
@@ -21174,41 +21216,53 @@ int LuaScriptInterface::luaSpellAggressive(lua_State *L)
 	return 1;
 }
 
-int LuaScriptInterface::luaSpellAllowOnSelf(lua_State* L)
+int LuaScriptInterface::luaSpellAllowOnSelf(lua_State *L)
 {
 	// spell:allowOnSelf(bool)
-	Spell* spell = getUserdata<Spell>(L, 1);
-	if (spell) {
-		if (lua_gettop(L) == 1) {
+	Spell *spell = getUserdata<Spell>(L, 1);
+	if (spell)
+	{
+		if (lua_gettop(L) == 1)
+		{
 			pushBoolean(L, spell->getAllowOnSelf());
-		} else {
+		}
+		else
+		{
 			spell->setAllowOnSelf(getBoolean(L, 2));
 			pushBoolean(L, true);
 		}
-	} else {
+	}
+	else
+	{
 		lua_pushnil(L);
 	}
 	return 1;
 }
 
-int LuaScriptInterface::luaSpellPzLocked(lua_State* L)
+int LuaScriptInterface::luaSpellPzLocked(lua_State *L)
 {
 	// spell:isPzLocked(bool)
-	Spell* spell = getUserdata<Spell>(L, 1);
-	if (spell) {
-		if (lua_gettop(L) == 1) {
+	Spell *spell = getUserdata<Spell>(L, 1);
+	if (spell)
+	{
+		if (lua_gettop(L) == 1)
+		{
 			pushBoolean(L, spell->getLockedPZ());
-		} else {
+		}
+		else
+		{
 			spell->setLockedPZ(getBoolean(L, 2));
 			pushBoolean(L, true);
 		}
-	} else {
+	}
+	else
+	{
 		lua_pushnil(L);
 	}
 	return 1;
 }
 
-int LuaScriptInterface::luaSpellVocation(lua_State* L)
+int LuaScriptInterface::luaSpellVocation(lua_State *L)
 {
 	// spell:vocation(vocation)
 	Spell *spell = getUserdata<Spell>(L, 1);
