@@ -47,7 +47,7 @@ function fireFields.onStepIn(creature, item, position, fromPosition)
 	if item.itemid == 13882 then
 		player:sendTextMessage(
 			MESSAGE_EVENT_ADVANCE,
-			"This fire is much too hot to walk through it. Use the destroy field rune on the fire to weaken the flames!"
+			"This fire is much too hot to walk through it. You should look for another way."
 		)
 		player:teleportTo(fromPosition, true)
 	end

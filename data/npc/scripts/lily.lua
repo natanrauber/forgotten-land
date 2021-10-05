@@ -93,8 +93,7 @@ mission4:addChildKeyword(
 	function(player)
 		player:setStorageValue(Storage.TheRookieGuard.Mission04, 2)
 		player:addItemEx(Game.createItem(13827, 1), true, CONST_SLOT_WHEREEVER)
-		player:addMapMark({x = 32091, y = 32178, z = 7}, MAPMARK_GREENNORTH, "North Exit")
-		player:addMapMark({x = 32139, y = 32176, z = 7}, MAPMARK_GREENNORTH, "To Hyacinth")
+		player:addMapMark({x = 32084, y = 32155, z = 7}, MAPMARK_GREENNORTH, "To Hyacinth")
 	end
 )
 

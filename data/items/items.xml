@@ -3617,7 +3617,7 @@
 	<item id="2411" article="a" name="poison dagger">
 		<attribute key="weight" value="880" />
 		<attribute key="defense" value="8" />
-		<attribute key="attack" value="18" />
+		<attribute key="attack" value="16" />
 		<attribute key="elementEarth" value="2" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="loottype" value="sword" />
@@ -24404,7 +24404,6 @@
 		<attribute key="description" value="Use your skinning knife on the head of this war wolf to retrieve its skin." />
 	</item>
 	<item id="13879" article="a" name="war wolf skin">
-		<attribute key="description" value="This is a quest item and cannot be used for anything else." />
 		<attribute key="weight" value="40" />
 	</item>
 	<item id="13880" article="a" name="shimmer wand">
@@ -24460,7 +24459,7 @@
 		<attribute key="description" value="He doesn't seem to notice your presence." />
 	</item>
 	<item id="13930" article="an" name="unconscious orc">
-		<attribute key="description" value="Use it quickly to steal his outfit." />
+		<!-- <attribute key="description" value="Use it quickly to steal his outfit." /> -->
 	</item>
 	<item id="13931" article="an" name="elite orc guard" />
 	<item id="13934" article="a" name="energy barrier" />

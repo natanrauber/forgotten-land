@@ -895,7 +895,7 @@ TileAction = {
 			{x = 32128, y = 32198, z = 7},
 			{x = 32129, y = 32198, z = 7}
 		}
-	}
+	},
 	-- Unholy crypt entrance
 	-- [50347] = {
 	-- 	itemId = false,
@@ -938,23 +938,30 @@ TileAction = {
 	-- 	itemPos = {{x = 32065, y = 32156, z = 7}}
 	-- },
 	-- Orc land entrance
-	-- [50352] = {
-	-- 	itemId = false,
-	-- 	itemPos = {
-	-- 		{x = 32002, y = 32152, z = 7},
-	-- 		{x = 32003, y = 32152, z = 7},
-	-- 		{x = 32004, y = 32152, z = 7},
-	-- 		{x = 32005, y = 32152, z = 7}
-	-- 	}
-	-- }
+	[50352] = {
+		itemId = false,
+		itemPos = {
+			{x = 31942, y = 32124, z = 7},
+			{x = 31942, y = 32125, z = 7},
+			{x = 31942, y = 32126, z = 7},
+			{x = 31942, y = 32127, z = 7},
+			{x = 31943, y = 32127, z = 7},
+			{x = 31943, y = 32128, z = 7},
+			{x = 31944, y = 32128, z = 7},
+			{x = 31946, y = 32131, z = 7},
+			{x = 31947, y = 32131, z = 7},
+			{x = 31948, y = 32132, z = 7},
+			{x = 31949, y = 32132, z = 7}
+		}
+	},
 	-- Wasp lair entrance
-	-- [50353] = {
-	-- 	itemId = 9025,
-	-- 	itemPos = {
-	-- 		{x = 31999, y = 32142, z = 7},
-	-- 		{x = 32000, y = 32142, z = 7}
-	-- 	}
-	-- },
+	[50353] = {
+		itemId = false,
+		itemPos = {
+			{x = 31999, y = 32142, z = 7},
+			{x = 32000, y = 32142, z = 7}
+		}
+	},
 	-- Academy downfloor trasure door entrance
 	-- [50354] = {
 	-- 	itemId = 414,
@@ -973,33 +980,33 @@ TileAction = {
 	-- 	}
 	-- },
 	-- Orc fortress entrance
-	-- [50356] = {
-	-- 	itemId = 194,
-	-- 	itemPos = {
-	-- 		{x = 31986, y = 32158, z = 7},
-	-- 		{x = 31986, y = 32159, z = 7}
-	-- 	}
-	-- },
+	[50356] = {
+		itemId = false,
+		itemPos = {
+			{x = 31918, y = 32136, z = 7},
+			{x = 31918, y = 32137, z = 7},
+			{x = 31918, y = 32138, z = 7},
+			{x = 31919, y = 32136, z = 7},
+			{x = 31919, y = 32137, z = 7},
+			{x = 31919, y = 32138, z = 7},
+			{x = 31919, y = 32139, z = 7},
+			{x = 31920, y = 32136, z = 7},
+			{x = 31920, y = 32137, z = 7}
+		}
+	},
 	-- Orc fortress near elite orc guard
-	-- [50357] = {
-	-- 	itemId = 194,
-	-- 	itemPos = {
-	-- 		{x = 31976, y = 32151, z = 7},
-	-- 		{x = 31978, y = 32151, z = 7},
-	-- 		{x = 31976, y = 32152, z = 7},
-	-- 		{x = 31978, y = 32152, z = 7},
-	-- 		{x = 31972, y = 32152, z = 7},
-	-- 		{x = 31973, y = 32152, z = 7},
-	-- 		{x = 31974, y = 32152, z = 7},
-	-- 		{x = 31975, y = 32152, z = 7},
-	-- 		{x = 31976, y = 32152, z = 7},
-	-- 		{x = 31978, y = 32152, z = 7},
-	-- 		{x = 31979, y = 32152, z = 7},
-	-- 		{x = 31980, y = 32152, z = 7},
-	-- 		{x = 31981, y = 32152, z = 7},
-	-- 		{x = 31982, y = 32152, z = 7}
-	-- 	}
-	-- },
+	[50357] = {
+		itemId = false,
+		itemPos = {
+			{x = 31908, y = 32129, z = 7},
+			{x = 31907, y = 32130, z = 7},
+			{x = 31908, y = 32130, z = 7},
+			{x = 31909, y = 32130, z = 7},
+			{x = 31907, y = 32131, z = 7},
+			{x = 31908, y = 32131, z = 7},
+			{x = 31909, y = 32131, z = 7}
+		}
+	}
 	-- Orc fortress in front elite orc guard
 	-- [50358] = {
 	-- 	itemId = 194,
@@ -1157,7 +1164,7 @@ TileUnique = {
 	-- Path: data\scripts\actions\quests\the_rookie_guard\mission05_web_terror.lua
 	-- Spider lair entrance hole
 	-- [25022] = {
-	-- 	itemId = 13869,
+	-- 	itemId = 383,
 	-- 	itemPos = {x = 32051, y = 32110, z = 7}
 	-- },
 	-- Spider queen chamber hole
@@ -1190,10 +1197,10 @@ TileUnique = {
 	-- The Rookie Guard Quest - Mission 09: Rock 'n Troll
 	-- Path: data\scripts\actions\quests\the_rookie_guard\mission09_rock_troll.lua
 	-- Troll caves dug tunnel hole
-	-- [25028] = {
-	-- 	itemId = 13869,
-	-- 	itemPos = {x = 32059, y = 32135, z = 9}
-	-- },
+	[25028] = {
+		itemId = 383,
+		itemPos = {x = 32004, y = 32114, z = 9}
+	},
 	-- Remove/create item on stepIn
 	-- Reserved uniques range from 29001/30000
 

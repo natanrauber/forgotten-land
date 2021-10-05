@@ -189,12 +189,6 @@ local missionTiles = {
 	-- Orc land entrance
 	[50352] = {
 		{
-			mission = Storage.TheRookieGuard.Mission11,
-			states = {1},
-			message = "This is not the way to the wasps' lair. Choose the northern path to reach it.",
-			arrowPosition = {x = 32003, y = 32148, z = 7}
-		},
-		{
 			mission = Storage.TheRookieGuard.Mission12,
 			states = {2},
 			extra = {

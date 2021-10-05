@@ -161,7 +161,7 @@ local function greetCallback(cid)
 		-- Started but not finished mission 9
 		npcHandler:setMessage(
 			MESSAGE_GREET,
-			"Now that you know how to store your money, it's time to go after the trolls. I'm even going to give you some more equipment as reward. Do you feel ready for that mission?"
+			"It's time to go after the trolls. I'm even going to give you some more equipment as reward. Do you feel ready for that mission?"
 		)
 	elseif
 		player:getStorageValue(Storage.TheRookieGuard.Mission09) >= 1 and
@@ -557,7 +557,7 @@ keywordHandler:addKeyword(
 	end,
 	function(player)
 		player:setStorageValue(Storage.TheRookieGuard.Mission05, 1)
-		player:addMapMark({x = 32051, y = 32110, z = 7}, MAPMARK_GREENSOUTH, "Spider Lair")
+		player:addMapMark({x = 31996, y = 32089, z = 7}, MAPMARK_GREENSOUTH, "Spider Lair")
 	end
 )
 
@@ -620,7 +620,7 @@ local mission7 =
 		text = {
 			"Time is of the essence now. The library vault is on fire! It's where Rookgaard's oldest and most important books are stored. ...",
 			"The trolls from the northern ruins somehow found their way into the vault by digging a tunnel from the other side and set everything on fire. ...",
-			"You HAVE to go down there and look for our copy of the book of orc language. Be careful and don't run into open fire, it can and will hurt you. There should be a rune in the vault that can at least weaken fire, just in case. ...",
+			"You HAVE to go down there and look for our copy of the book of orc language. Be careful and don't run into open fire, it can and will hurt you. ...",
 			"Are you ready to go?"
 		}
 	},
@@ -638,7 +638,7 @@ mission7:addChildKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"You can find the vault if you go down the stairs in the northern part of the academy. The book should be in a large blue chest somewhere down there - I hope it's not burnt yet. ...",
+			"You can find the vault if you go down the stairs in the northern part of the academy. You'll find the book somewhere on the shelves down there - I hope it's not burnt yet. ...",
 			"Make sure you're healthy. Good luck!"
 		}
 	},
@@ -753,7 +753,7 @@ keywordHandler:addKeyword(
 			player:getStorageValue(Storage.TheRookieGuard.Mission08) == -1
 	end,
 	function(player)
-		player:setStorageValue(Storage.TheRookieGuard.Mission08, 1)
+		player:setStorageValue(Storage.TheRookieGuard.Mission08, 2)
 	end
 )
 
@@ -789,10 +789,10 @@ keywordHandler:addKeyword(
 			player:getStorageValue(Storage.TheRookieGuard.Mission09) == -1
 	end,
 	function(player)
-		player:setStorageValue(Storage.TheRookieGuard.Mission09, 1)
+		player:setStorageValue(Storage.TheRookieGuard.Mission09, 2)
 		player:setStorageValue(Storage.TheRookieGuard.TrollChests, 0)
 		player:setStorageValue(Storage.TheRookieGuard.TunnelPillars, 0)
-		player:addMapMark({x = 32094, y = 32137, z = 7}, MAPMARK_GREENSOUTH, "Troll Caves")
+		player:addMapMark({x = 32039, y = 32116, z = 7}, MAPMARK_GREENSOUTH, "Troll Caves")
 	end
 )
 
@@ -865,7 +865,7 @@ keywordHandler:addKeyword(
 		player:setStorageValue(Storage.TheRookieGuard.UnholyCryptDoor, 1)
 		player:setStorageValue(Storage.TheRookieGuard.UnholyCryptChests, 0)
 		player:addItemEx(Game.createItem(2199, 1), true, CONST_SLOT_WHEREEVER)
-		player:addMapMark({x = 32131, y = 32201, z = 7}, MAPMARK_GREENSOUTH, "Unholy Crypt")
+		player:addMapMark({x = 32076, y = 32180, z = 7}, MAPMARK_GREENSOUTH, "Unholy Crypt")
 	end
 )
 
@@ -1038,7 +1038,7 @@ mission11:addChildKeyword(
 		player:setStorageValue(Storage.TheRookieGuard.Mission11, 1)
 		player:addItemEx(Game.createItem(2170, 1), true, CONST_SLOT_WHEREEVER)
 		player:addItemEx(Game.createItem(13924, 1), true, CONST_SLOT_WHEREEVER)
-		player:addMapMark({x = 32000, y = 32139, z = 7}, MAPMARK_GREENSOUTH, "Wasps' Nest")
+		player:addMapMark({x = 31945, y = 32118, z = 7}, MAPMARK_GREENSOUTH, "Wasps' Nest")
 	end
 )
 
@@ -1111,8 +1111,7 @@ keywordHandler:addKeyword(
 		npcHandler = npcHandler,
 		text = {
 			"|PLAYERNAME|, I must say I'm impressed. Not everyone would dare go into that region of Rookgaard and face creatures as strong as wasps. Wait, let me give something to you... ...",
-			"Here, with a drop of the wasp poison this potion turned into an effective antidote. Should you get poisoned again and are losing a lot of health, use the antidote potion to cure yourself. ...",
-			"There is also a rune and a spell to remove poison available once you leave this island and arrive on the mainland. It's always good to protect yourself! ...",
+			"Here, with a drop of the wasp poison this potion turned into an effective antidote. Should you get poisoned again and are losing a lot of health, use the antidote potion to cure yourself. It's always good to protect yourself! ...",
 			"And I have a good shield for you, too. Here, can you carry it?"
 		}
 	},
@@ -1221,7 +1220,7 @@ keywordHandler:addKeyword(
 		npcHandler = npcHandler,
 		text = {
 			"The air smells like victory today. I've kept the items you brought from your journeys safe - the time has come to use them. ...",
-			"Enter the small treasure room under the academy - just down the stairs and to the right, near Paulie - and open the large blue chest to retrieve them. You'll find a rolling pin, the fleshy bone, the wasp poison and a tarantula trap. ...",
+			"Open the large blue chest - just down the stairs, on the lower level - to retrieve them. You'll find a rolling pin, the fleshy bone, the wasp poison and a tarantula trap. ...",
 			"Now let me explain the plan in detail. Go to the orc fortress - you've already been nearby when hunting for the wasp poison, it's the same way, but I'll mark it on your map just in case. ...",
 			"There you will have to find a way to sneak past the guards, they are much too strong for you. The rolling pin might come in handy during that part. Afterwards, the fleshy bone will help to create a distraction to get into the fortress. ...",
 			"Once you're inside the fortress, find the orc kitchen and pour the wasp poison into Kraknaknork's soup! The tarantula trap will come in handy if you meet a guard who might seem simply too fast for you. You can use it on him to slow him down. ...",
@@ -1263,10 +1262,9 @@ keywordHandler:addKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"You DID kill him indeed! Incredible! This little village can finally live in peace again - and you've grown so strong, too. I'm proud of you, Synanceia Horrida. My work here is done, and yours too. Thank you for all you've done for us. ...",
-			"Now all that is left for you to do here is to talk to the oracle above the academy and travel to the Isle of Destiny. There, you will determine your future - which I'm sure is a bright one. ...",
-			"What will become of you? A mighty sorcerer? A fierce knight? A skilled paladin? Or a powerful druid? Only you can decide. ...",
-			"Rookgaard will miss you, but the whole world of Tibia is open to you now. Take care, |PLAYERNAME|. It's good to know you."
+			"You DID kill him indeed! Incredible! This little village can finally live in peace again - and you've grown so strong, too. I'm proud of you, |PLAERNAME|. My work here is done, and yours too. Thank you for all you've done for us. ...",
+			"What will become of you? Only you can decide your future now. ...",
+			"Rookgaard will miss you. Take care, |PLAYERNAME|. It's good to know you."
 		}
 	},
 	function(player)

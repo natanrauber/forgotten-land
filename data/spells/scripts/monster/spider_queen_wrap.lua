@@ -14,7 +14,7 @@ conditionOutfit:setOutfit({lookType = 422})
 local function moveToSpiderNest(uid)
 	local player = Player(uid)
 	if player then
-		player:teleportTo({x = 32013, y = 32087, z = 10})
+		player:teleportTo({x = 31958, y = 32066, z = 10})
 	end
 end
 

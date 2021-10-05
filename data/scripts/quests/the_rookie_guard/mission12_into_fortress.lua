@@ -1,7 +1,6 @@
 -- The Rookie Guard Quest - Mission 12: Into The Fortress
 
 -- Treasure chest (gather final mission items)
-
 local reward = {
 	containerId = 1987,
 	itemIds = {
@@ -35,6 +34,7 @@ function treasureChest.onUse(player, item, frompos, item2, topos)
 			player:setStorageValue(Storage.TheRookieGuard.AcademyChest, 1)
 			player:setStorageValue(Storage.TheRookieGuard.AcademyChestTimer, os.time() + 24 * 60 * 60)
 			player:addItemEx(container, true, CONST_SLOT_WHEREEVER)
+			player:setStorageValue(Storage.TheRookieGuard.Mission12, 2)
 		else
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The " .. item:getName() .. " is empty.")
 		end
@@ -45,14 +45,40 @@ end
 treasureChest:uid(40056)
 treasureChest:register()
 
--- Rolling pin (Knock out peeing orc)
+-- Orc Fortress entrance tiles
+local fortressEntrance = MoveEvent()
 
+function fortressEntrance.onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
+	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission12)
+	local guardPos = Position(31919, 32135, 7)
+	local toPos = Position(31922, 32137, 7)
+
+	if not player then
+		return true
+	end
+
+	local guard = Tile(guardPos):getItemById(13931)
+
+	if guard then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The guard kicked you out.")
+		player:teleportTo(toPos, true)
+	elseif missionState == 3 then
+		player:setStorageValue(Storage.TheRookieGuard.Mission12, 5)
+	end
+	return true
+end
+
+fortressEntrance:aid(50356)
+fortressEntrance:register()
+
+-- Rolling pin (Knock out guard)
 local function orcRecovery(position)
 	local tile = Tile(position)
 	if tile then
 		local item = tile:getItemById(13930)
 		if item then
-			item:transform(13929, 1)
+			item:transform(13931, 1)
 		end
 	end
 end
@@ -61,12 +87,9 @@ local rollingPin = Action()
 
 function rollingPin.onUse(player, item, frompos, item2, topos)
 	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission12)
-	if missionState >= 2 and missionState <= 13 and item2.itemid == 13929 then
-		player:sendTextMessage(
-			MESSAGE_EVENT_ADVANCE,
-			"You knock the unsuspicious orc unconscious. Use him to disguise yourself as orc!"
-		)
-		if missionState == 2 then
+	if missionState >= 1 and missionState <= 13 and item2.itemid == 13931 and topos == Position(31919, 32135, 7) then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You knock the orc guard. The fortress gates are unguarded!")
+		if missionState < 3 then
 			player:setStorageValue(Storage.TheRookieGuard.Mission12, 3)
 			player:addExperience(50, true)
 		end
@@ -79,50 +102,41 @@ end
 rollingPin:id(13928)
 rollingPin:register()
 
--- Unconscious orc (Disguise like orc)
+-- Elite Orc Guard tiles
+local fortressEntrance = MoveEvent()
 
-local unconsciousOrc = Action()
+function fortressEntrance.onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
+	local guardPos = Position(31908, 32129, 7)
+	local toPos = Position(31908, 32134, 7)
 
-function unconsciousOrc.onUse(player, item, frompos, item2, topos)
-	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission12)
-	if missionState >= 3 and missionState <= 13 then
-		player:sendTextMessage(
-			MESSAGE_EVENT_ADVANCE,
-			"You look almost like an orc. It won't fool all orcs, but the stupid guardsman in front of the fortress should fall for it."
-		)
-		if missionState == 3 then
-			player:setStorageValue(Storage.TheRookieGuard.Mission12, 4)
-		end
-		local conditionOutfit = Condition(CONDITION_OUTFIT)
-		conditionOutfit:setTicks(300000)
-		conditionOutfit:setOutfit({lookType = 5})
-		player:addCondition(conditionOutfit)
+	if not player then
+		return true
+	end
+
+	local guard = Tile(guardPos):getItemById(13931)
+
+	if guard then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The guard kicked you out.")
+		player:teleportTo(toPos, true)
 	end
 	return true
 end
 
-unconsciousOrc:id(13930)
-unconsciousOrc:register()
+fortressEntrance:aid(50357)
+fortressEntrance:register()
 
 -- Fleshy bone (Distract elite orc guard)
-
 local monstersList = {
 	{name = "Running Elite Orc Guard", amount = 1},
-	{name = "Wild Dog", amount = 8}
+	{name = "Wild Dog", amount = 5}
 }
 local monsters = {}
 
 local function eliteOrcGuardRecovery(position)
-	local spectators = Game.getSpectators(position, false, true, 2, 2, 2, 2)
-	if #spectators > 0 then
-		local hidePosition = Position(31977, 32154, 7)
-		for i = 1, #spectators do
-			spectators[i]:teleportTo(hidePosition, false)
-		end
-	end
 	if monsters then
 		for i = 1, #monsters do
-			monsters[i]:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			monsters[i]:getPosition():sendMagicEffect(CONST_ME_POFF)
 			monsters[i]:remove()
 		end
 	end
@@ -133,7 +147,7 @@ local fleshyBone = Action()
 
 function fleshyBone.onUse(player, item, frompos, item2, topos)
 	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission12)
-	if missionState >= 5 and item2.itemid == 13931 then
+	if missionState >= 5 and item2.itemid == 13931 and topos == Position(31908, 32129, 7) then
 		player:sendTextMessage(
 			MESSAGE_EVENT_ADVANCE,
 			"This should be enough distraction for you to sneak into the fortress! Hurry up!"
@@ -155,7 +169,7 @@ function fleshyBone.onUse(player, item, frompos, item2, topos)
 			end
 		end
 		position:sendMagicEffect(CONST_ME_TELEPORT)
-		addEvent(eliteOrcGuardRecovery, 120000, position)
+		addEvent(eliteOrcGuardRecovery, 60000, position)
 	end
 	return true
 end
@@ -164,7 +178,6 @@ fleshyBone:id(13830)
 fleshyBone:register()
 
 -- Wasp poison flask (Poison cauldron)
-
 local poisonFlask = Action()
 
 function poisonFlask.onUse(player, item, frompos, item2, topos)
@@ -367,7 +380,6 @@ end
 missionLevers:register()
 
 -- Kraknaknork room
-
 local boss = {
 	uid = nil,
 	fight = nil,
@@ -400,7 +412,6 @@ local function finishBossFight(playerUid, bossUid)
 end
 
 -- Kraknaknork room enter teleport
-
 local enterBossRoomTeleport = MoveEvent()
 
 function enterBossRoomTeleport.onStepIn(creature, item, position, fromPosition)
@@ -450,7 +461,6 @@ enterBossRoomTeleport:uid(40070)
 enterBossRoomTeleport:register()
 
 -- Kraknaknork room exit teleport
-
 local exitBossRoomTeleport = MoveEvent()
 
 function exitBossRoomTeleport.onStepIn(creature, item, position, fromPosition)
@@ -479,7 +489,6 @@ exitBossRoomTeleport:uid(40071)
 exitBossRoomTeleport:register()
 
 -- Kraknaknork treasure room enter teleport
-
 local enterTreasureRoomTeleport = MoveEvent()
 
 function enterTreasureRoomTeleport.onStepIn(creature, item, position, fromPosition)
@@ -516,7 +525,6 @@ enterTreasureRoomTeleport:uid(40072)
 enterTreasureRoomTeleport:register()
 
 -- Boss treasure chests (Rewards: small ruby and 2 platinum coins)
-
 local CHEST_ID = {
 	LEFT = 1,
 	RIGHT = 2
@@ -577,7 +585,6 @@ bossChests:uid(40073, 40074)
 bossChests:register()
 
 -- Kraknaknork treasure room exit teleport
-
 local exitTreasureRoomTeleport = MoveEvent()
 
 function exitTreasureRoomTeleport.onStepIn(creature, item, position, fromPosition)
@@ -610,7 +617,6 @@ exitTreasureRoomTeleport:uid(40075)
 exitTreasureRoomTeleport:register()
 
 -- Orc fortress and Kraknaknork lair chests
-
 local CHEST_ID = {
 	FORTRESS_TREASURE_CHEST = 1,
 	FORTRESS_TRUNK = 2,

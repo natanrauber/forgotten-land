@@ -109,7 +109,7 @@ mission6:addChildKeyword(
 	nil,
 	function(player)
 		player:setStorageValue(Storage.TheRookieGuard.Mission06, 2)
-		player:addMapMark({x = 32138, y = 32132, z = 7}, MAPMARK_GREENSOUTH, "War Wolf Den")
+		player:addMapMark({x = 32083, y = 32111, z = 7}, MAPMARK_GREENSOUTH, "War Wolf Den")
 	end
 )
 

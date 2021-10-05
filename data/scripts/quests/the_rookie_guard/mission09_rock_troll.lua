@@ -1,7 +1,6 @@
 -- The Rookie Guard Quest - Mission 09: Rock 'n Troll
 
 -- Troll caves dug tunnel hole
-
 local tunnelHole = MoveEvent()
 
 function tunnelHole.onStepIn(creature, item, position, fromPosition)
@@ -13,6 +12,12 @@ function tunnelHole.onStepIn(creature, item, position, fromPosition)
 	if missionState == -1 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have no business down there.")
 		player:teleportTo(fromPosition, true)
+	elseif missionState == 1 then
+		player:setStorageValue(Storage.TheRookieGuard.Mission09, 2)
+		player:sendTextMessage(
+			MESSAGE_EVENT_ADVANCE,
+			"Find a pick and use it on the 5 beams to weaken the structure and make the tunnel collapse."
+		)
 	elseif missionState >= 7 then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The cave has collapsed. It's not safe to go down there anymore.")
 		player:teleportTo(fromPosition, true)
@@ -48,8 +53,7 @@ function trunkChest.onUse(player, item, frompos, item2, topos)
 	-- Skip if not was started
 	if missionState == -1 then
 		return true
-	end
-	if missionState >= 2 then
+	elseif missionState >= 2 then
 		local chest = chests[item.uid]
 		local chestsState = player:getStorageValue(Storage.TheRookieGuard.TrollChests)
 		local hasOpenedChest = testFlag(chestsState, chest.id)
@@ -72,7 +76,6 @@ trunkChest:uid(40048, 40049)
 trunkChest:register()
 
 -- Pick (use pick on pillars)
-
 local PILLAR_ID = {
 	BOTOM_RIGHT = 1,
 	BOTTOM_LEFT = 2,
@@ -120,3 +123,23 @@ function onUsePickAtTunnelPillar(player, item, fromPosition, item2, toPosition)
 	end
 	return true
 end
+
+-- exit ladder
+local exitLadder = Action()
+
+function exitLadder.onUse(player, item)
+	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission09)
+	-- Skip if not was started
+	if missionState == 7 then
+		player:setStorageValue(Storage.TheRookieGuard.Mission09, missionState + 1)
+		player:sendTextMessage(
+			MESSAGE_EVENT_ADVANCE,
+			"You've already weakened this beam. Better leave it alone now so it won't collapse before you are out of here."
+		)
+	end
+	player:teleportTo(Position(32004, 32115, 9))
+	return true
+end
+
+exitLadder:uid(40076)
+exitLadder:register()

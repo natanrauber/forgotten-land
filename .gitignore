@@ -386,3 +386,4 @@ vcpkg_installed
 # CLION
 src/cmake-build-debug
 client_assertions.txt
+data/world/forgotten-land-spawn.xml

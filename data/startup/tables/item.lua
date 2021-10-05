@@ -359,6 +359,9 @@ ItemUnique = {
 		itemId = 6966,
 		itemPos = {x = 32078, y = 31217, z = 7}
 	},
+	--
+	-- THE ROOKIE GUARD QUEST START
+	--
 	-- The Rookie Guard Quest - Mission 06: Run Like a Wolf
 	-- Path: data\scripts\actions\quests\the_rookie_guard\mission06_run_like_wolf.lua
 	-- Poacher corpse
@@ -419,6 +422,11 @@ ItemUnique = {
 	[40054] = {
 		itemId = 3511,
 		itemPos = {x = 32021, y = 32108, z = 10}
+	},
+	-- Troll tunnel exit ladder
+	[40076] = {
+		itemId = 5543,
+		itemPos = {x = 32004, y = 32114, z = 10}
 	},
 	-- The Rookie Guard Quest - Mission 10: Tomb Raiding
 	-- Path: data\scripts\actions\quests\the_rookie_guard\mission10_tomb_raiding.lua
@@ -559,6 +567,10 @@ ItemUnique = {
 		itemId = 12665,
 		itemPos = {x = 31906, y = 32162, z = 10}
 	},
+	--
+	-- THE ROOKIE GUARD QUEST END
+	--
+
 	-- The Sharttered Isles Quest
 	-- Path: data\scripts\movements\quests\the_sharttered_isles\energy_barrier.lua
 	-- Energy Barrier
