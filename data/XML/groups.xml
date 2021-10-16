@@ -115,7 +115,7 @@
 			<flag cansummonall="1" />
 			<flag canillusionall="1" />
 			<flag cansenseinvisibility="1" />
-			<flag ignoredbymonsters="1" />
+			<flag ignoredbymonsters="0" />
 			<flag notgaininfight="1" />
 			<flag hasinfinitemana="1" />
 			<flag hasinfinitesoul="1" />

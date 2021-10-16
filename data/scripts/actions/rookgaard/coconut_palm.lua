@@ -12,8 +12,6 @@ function coconutPalm.onUse(player)
         elseif chance < 25 and chance >= 22 then
             player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found three coconuts.")
             player:addItem(2678, 3)
-        else
-            player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "There's nothing here.")
         end
         player:setStorageValue(Storage.QuestChests.CoconutPalm, os.time() + 3600)
     end
