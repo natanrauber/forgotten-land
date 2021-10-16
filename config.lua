@@ -193,8 +193,8 @@ rateMonsterAttack = 1.0
 rateMonsterDefense = 1.0
 
 -- Monsters
-deSpawnRange = 2
-deSpawnRadius = 50
+deSpawnRange = 0
+deSpawnRadius = 0
 
 -- Stamina
 staminaSystem = true
