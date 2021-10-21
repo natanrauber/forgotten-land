@@ -86,7 +86,7 @@ if not Quests then
 						[1] = "Oldrak told you that the fearsome Hugo was accidentally created by the mage Yenny the Gentle. Try to find out more about this.",
 						[2] = "Zoltan told you about Crunor's Caress, a druid order originating from Carlin. Try to find out more about this.",
 						[3] = "Padreia told you that Crunor's Caress founded the inn Crunor's Cottage south of Mt. Sternum. Try to find out more about this.",
-						[4] = "Lubo told you about a magical experiment that went wrong and created a demonbunny. Someone might be interested in this...",
+						[4] = "Lubo told you about a magical experiment that went wrong and created a demonbunny. Someone might be interested in this..."
 					}
 				},
 				[2] = {
@@ -200,7 +200,7 @@ if not Quests then
 			}
 		},
 		[4] = {
-			name = "A Father\'s Burden",
+			name = "A Father's Burden",
 			startStorageId = Storage.FathersBurden.QuestLog,
 			startStorageValue = 1,
 			missions = {
@@ -224,7 +224,7 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[1] = "Find the wyvern Heoni in the Edron mountains and take his sinew to Tereban.",
-						[2] = "You delivered Heoni\'s sinew to Tereban."
+						[2] = "You delivered Heoni's sinew to Tereban."
 					}
 				},
 				[3] = {
@@ -310,7 +310,7 @@ if not Quests then
 			}
 		},
 		[5] = {
-			name = "Bigfoot\'s Burden",
+			name = "Bigfoot's Burden",
 			startStorageId = Storage.BigfootBurden.QuestLine,
 			startStorageValue = 1,
 			missions = {
@@ -339,7 +339,7 @@ if not Quests then
 					startValue = 5,
 					endValue = 7,
 					states = {
-						[5] = "Pass Gnomerik\'s test by answering his questions. \z
+						[5] = "Pass Gnomerik's test by answering his questions. \z
 							If you fail to get a high enough score drink a mushroom beer and start again.",
 						[6] = "You have passed the gnomish psychology test and can proceed to the medical exam. \z
 							Talk to Gnomespector about your next examination."
@@ -432,7 +432,7 @@ if not Quests then
 						\nReputation   30 - I \nReputation  120 - II \nReputation  480 - III \nReputation 1440 - IV \n",
 							(math.max(player:getStorageValue(Storage.BigfootBurden.Rank), 0))
 						)
-						end
+					end
 				},
 				[12] = {
 					name = "Daily Minor: Crystal Keeper",
@@ -503,7 +503,7 @@ if not Quests then
 					}
 				},
 				[17] = {
-					name = "Daily Major: The Tinker\'s Bell",
+					name = "Daily Major: The Tinker's Bell",
 					storageId = Storage.BigfootBurden.GolemCount,
 					missionId = 1049,
 					startValue = 0,
@@ -540,7 +540,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 2,
 					states = {
-						[1] = "Deliver the Deathstrike\'s snippet to gnomission to enter the first warzone for free.",
+						[1] = "Deliver the Deathstrike's snippet to gnomission to enter the first warzone for free.",
 						[2] = "You may enter the first warzone without using a mission crystal."
 					}
 				},
@@ -551,7 +551,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 2,
 					states = {
-						[1] = "Deliver the Gnomevil\'s hat to gnomission to enter the second warzone for free.",
+						[1] = "Deliver the Gnomevil's hat to gnomission to enter the second warzone for free.",
 						[2] = "You may enter the second warzone without using a mission crystal."
 					}
 				},
@@ -562,7 +562,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 2,
 					states = {
-						[1] = "Deliver the Abyssador\'s lash to gnomission to enter the third warzone for free.",
+						[1] = "Deliver the Abyssador's lash to gnomission to enter the third warzone for free.",
 						[2] = "You may enter the third warzone without using a mission crystal."
 					}
 				}
@@ -638,7 +638,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 3,
 					states = {
-						[1] = "Go to the Temple of Equilibrium (it\'s marked on your map) and find out what happened there.",
+						[1] = "Go to the Temple of Equilibrium (it's marked on your map) and find out what happened there.",
 						[2] = "The temple has been corrupted and is lost. Zalamon should be informed about this as soon as possible.",
 						[3] = "You already reported Zalamon about the Temple! Ask him for new mission!"
 					}
@@ -665,9 +665,9 @@ if not Quests then
 					startValue = 1,
 					endValue = 3,
 					states = {
-						[1] = "Get the poison from Zalamon\'s storage room. Then go to the teleporter to the Muggy Plains and head \z
+						[1] = "Get the poison from Zalamon's storage room. Then go to the teleporter to the Muggy Plains and head \z
 							east from there to the rice fields. Go to the very top rice field and use the poison anywhere on the water.",
-						[2] = "The rice has been poisoned. This will weaken the Emperor\'s army significantly. \z
+						[2] = "The rice has been poisoned. This will weaken the Emperor's army significantly. \z
 							Return and tell Zalamon about your success.",
 						[3] = "You already reported Zalamon about your success! Ask him for new mission!"
 					}
@@ -682,7 +682,7 @@ if not Quests then
 						[1] = "Your mission is to find a way to enter the north of the valley and find a \z
 						passage to the great gate itself. Search any temples or settlements you come across for hidden passages.",
 						[2] = "Report Zalamon about the strange symbols that you found.",
-						[3] = "Get the greasy oil from Zalamon\'s storage room and put them on the levers that you found.",
+						[3] = "Get the greasy oil from Zalamon's storage room and put them on the levers that you found.",
 						[4] = "Due to being extra greasy, the leavers can now be moved.",
 						[5] = "You found the right combination for the puzzle in the mountains and triggered some kind of mechanism. \z
 							You should head back to Zalamon to report your success.",
@@ -789,23 +789,23 @@ if not Quests then
 						[1] = "Quentin told you about an old prayer which can bind holy energy to an object. \z
 							Each of its ten lines has to be recited by a different priest though. \z
 							Bring Quentin a wooden stake from Gamon to start.",
-						[2] = "You received Quentin\'s prayer: &quot;Light shall be near - and darkness afar&quot;. \z
+						[2] = "You received Quentin's prayer: &quot;Light shall be near - and darkness afar&quot;. \z
 							Now, bring your stake to Tibra in the Carlin church for the next line of the prayer.",
-						[3] = "You received Tibra\'s prayer: &quot;Hope may fill your heart - doubt shall be banned&quot;. \z
+						[3] = "You received Tibra's prayer: &quot;Hope may fill your heart - doubt shall be banned&quot;. \z
 							Now, bring your stake to Maealil in the Elven settlement for the next line of the prayer.",
-						[4] = "You received Maealil\'s prayer: &quot;Peace may fill your soul - evil shall be cleansed&quot;. \z
+						[4] = "You received Maealil's prayer: &quot;Peace may fill your soul - evil shall be cleansed&quot;. \z
 							Now, bring your stake to Yberius in the Venore temple for the next line of the prayer.",
 						[5] = "You received Yberius' prayer: &quot;Protection will be granted - from dangers at hand&quot;. \z
 							Now, bring your stake to Isimov in the dwarven settlement for the next line of the prayer.",
-						[6] = "You received Isimov\'s prayer: &quot;Unclean spirits shall be repelled&quot;. \z
+						[6] = "You received Isimov's prayer: &quot;Unclean spirits shall be repelled&quot;. \z
 							Now, bring your stake to Amanda in Edron for the next line of the prayer.",
-						[7] = "You received Amanda\'s prayer: &quot;Wicked curses shall be broken&quot;. \z
+						[7] = "You received Amanda's prayer: &quot;Wicked curses shall be broken&quot;. \z
 							Now, bring your stake to Kasmir in Darashia for the next line of the prayer.",
-						[8] = "You received Kasmir\'s prayer: &quot;Let there be honor and humility&quot;. \z
+						[8] = "You received Kasmir's prayer: &quot;Let there be honor and humility&quot;. \z
 							Now, bring your stake to Rahkem in Ankrahmun for the next line of the prayer.",
-						[9] = "You received Rahkem\'s prayer: &quot;Let there be power and compassion&quot;. \z
+						[9] = "You received Rahkem's prayer: &quot;Let there be power and compassion&quot;. \z
 							Now, bring your stake to Brewster in Port Hope for the next line of the prayer.",
-						[10] = "You received Brewster\'s prayer: &quot;Your hand shall be guided - your feet shall \z
+						[10] = "You received Brewster's prayer: &quot;Your hand shall be guided - your feet shall \z
 							walk in harmony&quot;. Now, bring your stake to Tyrias in Liberty Bay for the next line of the prayer.",
 						[11] = "You received Tyrias' prayer: &quot;Your mind shall be a vessel for joy, light \z
 							and wisdom&quot;. He wasn't exactly happy though and said that if you need some mumbo jumbo again, \z
@@ -849,7 +849,7 @@ if not Quests then
 						[10] = "You have completed the ninth dish, the tenth dish he will teach you to prepare is Carrot Cake. \z
 							Bring him the ingredients he told you.",
 						[11] = "You have completed the tenth dish. You are now able to obtain the cookbook from \z
-							Jean Pierre\'s room upstairs.",
+							Jean Pierre's room upstairs.",
 						[12] = "The eleventh dish he will teach you to prepare is Coconut Shrimp Bake. \z
 							Bring him the ingredients he told you.",
 						[13] = "You have completed the eleventh dish, the twelfth dish he will teach you to prepare is Blackjack. \z
@@ -1015,8 +1015,8 @@ if not Quests then
 					startValue = 1,
 					endValue = 2,
 					states = {
-						[1] = "You now need to decide between supporting Palimuth or the Yalahari\'s goal. \z
-							To choose Palimuth\'s good side go to him, and simply ask him for a mission mission. \z
+						[1] = "You now need to decide between supporting Palimuth or the Yalahari's goal. \z
+							To choose Palimuth's good side go to him, and simply ask him for a mission mission. \z
 							Likewise, to join the Yalahari (Azerus) (bad side) go to him and say the same.",
 						[2] = "you already decided!"
 					}
@@ -1972,7 +1972,7 @@ if not Quests then
 						[7] = "In order to make a shirt as a present for Ajax, Bron wants you to bring him 50 Pieces of \z
 							Red Cloth and 50 Pieces of Green Cloth.",
 						[8] = "Bron wants you to bring him 10 Spider Silk Yarn.",
-						[9] = "Bron wants you to bring him the Warrior\'s Sweat.",
+						[9] = "Bron wants you to bring him the Warrior's Sweat.",
 						[10] = "You brought him all required items! accept it!",
 						[11] = "You got the Barbarian Wig Addon! Bring now the present from Bron to Ajax!",
 						[12] = "Bring Ajax in Northport 100 Iron Ore.",
@@ -1995,7 +1995,7 @@ if not Quests then
 							If you don't know how to get leather, you should ask Kalvin.",
 						[3] = "Your current task is to bring 10 bat wings to Hugo.",
 						[4] = "Your current task is to bring 30 heaven blossoms to Hugo. Elves are said to cultivate these flowers.",
-						[5] = "You brought all items required for the &quot;poor man\'s look&quot; to Hugo. \z
+						[5] = "You brought all items required for the &quot;poor man's look&quot; to Hugo. \z
 							He told you to come back to him after a whole day has passed, then the outfit should be finished.",
 						[6] = "You got the outfit!"
 					}
@@ -2015,9 +2015,9 @@ if not Quests then
 						[4] = "Ask Ceiron for task.",
 						[5] = "Bring Ceiron 100 ounces of demon dust.",
 						[6] = "Ask Ceiron for task.",
-						[7] = "The last mission is to find and retrieve Ceiron\'s Wolf Tooth Chain lost inside the Orc Fortress.",
+						[7] = "The last mission is to find and retrieve Ceiron's Wolf Tooth Chain lost inside the Orc Fortress.",
 						[8] = "Ask Ceiron for Faolan.",
-						[9] = "Head over to Cormaya, find A Majestic Warwolf\'s Cave and ask her about an addon.",
+						[9] = "Head over to Cormaya, find A Majestic Warwolf's Cave and ask her about an addon.",
 						[10] = "You got the Outfit!"
 					}
 				},
@@ -2045,7 +2045,7 @@ if not Quests then
 						[1] = "Your current task is to bring 100 perfect behemoth fangs to Gregor in Thais.",
 						[2] = "Your current task is to retrieve the helmet of Ramsay the Reckless from Banuta. \z
 							These pesky apes steal everything they can get their dirty hands on.",
-						[3] = "Your current task is to obtain a flask of warrior\'s sweat, which can be magicially extracted \z
+						[3] = "Your current task is to obtain a flask of warrior's sweat, which can be magicially extracted \z
 							from headgear worn by a true warrior, but only in small amounts. Djinns are said to be good at this.",
 						[4] = "Your current task is to bring royal steel to Gregor in Thais. \z
 							Royal steel can only be refined by very skilled smiths.",
@@ -2066,7 +2066,7 @@ if not Quests then
 						[2] = "Lynda send you to bring her a sample of all five wands and five rods \z
 							(Snakebite, Moonlight, Necrotic, Terra, Hailstorm, Vortex, Dragonbreath, Decay, Cosmic Energy and Inferno)",
 						[3] = "Bring Lynda 10 ounces of magic sulphur",
-						[4] = "Bring Lynda the Necromancer\'s soul stone",
+						[4] = "Bring Lynda the Necromancer's soul stone",
 						[5] = "Bring Lynda 20 ankhs now to complete the ritual.",
 						[6] = "You need to wait 3 hours for the ritual to be completed",
 						[7] = "You got the Outfit!"
@@ -2180,7 +2180,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 2,
 					states = {
-						[1] = "Your current task is to find a mermaid\'s comb. \z
+						[1] = "Your current task is to find a mermaid's comb. \z
 							If you have ever encountered a mermaid, you should ask her. \z
 							Bring the comb to Habdel if you are male or to Ishina if you are female.",
 						[2] = "You have received the first oriental addon."
@@ -2228,7 +2228,7 @@ if not Quests then
 			}
 		},
 		[14] = {
-			name = "Sam\'s Old Backpack",
+			name = "Sam's Old Backpack",
 			startStorageId = Storage.SamsOldBackpack,
 			startStorageValue = 1,
 			missions = {
@@ -2293,9 +2293,9 @@ if not Quests then
 					startValue = 1,
 					endValue = 4,
 					states = {
-						[1] = "In order to access the lair of the Collector, you will need to find the creature\'s well on \z
-							an ice isle near Carlin. To donate the rare crystal overcome your greed and use it at the well\'s pedestal.",
-						[2] = "You offered the rare crystal to the creature and can now enter the Collector\'s lair. \z
+						[1] = "In order to access the lair of the Collector, you will need to find the creature's well on \z
+							an ice isle near Carlin. To donate the rare crystal overcome your greed and use it at the well's pedestal.",
+						[2] = "You offered the rare crystal to the creature and can now enter the Collector's lair. \z
 							Its crystal chamber cannot be accessed by outsiders. You need to find a way to snatch the Mirror Crystal.",
 						[3] = "The Collector has been defeated. \z
 							You packed the fragile Mirror Crystal into the device Spectulus gave you. \z
@@ -2333,7 +2333,7 @@ if not Quests then
 					states = {
 						[1] = "Your first task is to deliver a letter to Gamel in thais, If he is a bit reluctant, be persuasive.",
 						[2] = "Gamel sent his thugs on you, defeat them and deliver the letter to Gamel!",
-						[3] = "After defeating Gamel\'s thugs, he found you to be persuasive enough to accept the letter. \z
+						[3] = "After defeating Gamel's thugs, he found you to be persuasive enough to accept the letter. \z
 							Report back to Uncle!",
 						[4] = "You have reported back that you have completed your task. Ask Uncle for a new mission!"
 					}
@@ -2358,7 +2358,7 @@ if not Quests then
 					states = {
 						[1] = "Your next mission is to find some information about one of \z
 							their missing agents in The Green Claw Swamp.",
-						[2] = "You have delivered the Black Knight\'s notes to Chester, ask him for a new mission!"
+						[2] = "You have delivered the Black Knight's notes to Chester, ask him for a new mission!"
 					}
 				},
 				[5] = {
@@ -2441,7 +2441,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 3,
 					states = {
-						[1] = "Your next task is to travel to the Black Knight\'s Villa and kill the Black Knight!",
+						[1] = "Your next task is to travel to the Black Knight's Villa and kill the Black Knight!",
 						[2] = "You have killed the Black Knight, report back to Uncle!",
 						[3] = "You have reported back that you have completed your task, ask Uncle for a new mission!"
 					}
@@ -2499,7 +2499,7 @@ if not Quests then
 					endValue = 3,
 					states = {
 						[1] = "Your next mission is to disguise yourself as an amazon and destroy a \z
-							beer casket in the north-east corner in the cellar of Svargrond\'s Tavern.",
+							beer casket in the north-east corner in the cellar of Svargrond's Tavern.",
 						[2] = "You have succesfully destroyed the beer casket disguised as an amazon, report back to Chester!",
 						[3] = "You have reported back that you have completed your mission, ask Chester for a new mission!"
 					}
@@ -2547,7 +2547,7 @@ if not Quests then
 			startStorageValue = 1,
 			missions = {
 				[1] = {
-					name = "Omruc\'s Treasure",
+					name = "Omruc's Treasure",
 					storageId = Storage.TheAncientTombs.OmrucsTreasure,
 					missionId = 10210,
 					startValue = 1,
@@ -2563,7 +2563,7 @@ if not Quests then
 					description = "You defeated Thalas and received a Gem Holder"
 				},
 				[3] = {
-					name = "Diphtrah\'s Treasure",
+					name = "Diphtrah's Treasure",
 					storageId = Storage.TheAncientTombs.DiphtrahsTreasure,
 					missionId = 10212,
 					startValue = 1,
@@ -2579,12 +2579,12 @@ if not Quests then
 					description = "You defeated Mahrdis and received a Helmet Ornament"
 				},
 				[5] = {
-					name = "Vashresamun\'s Treasure",
+					name = "Vashresamun's Treasure",
 					storageId = Storage.TheAncientTombs.VashresamunsTreasure,
 					missionId = 10214,
 					startValue = 1,
 					endValue = 1,
-					description = "You solved the musical riddles of Vashresamun\'s Tomb and received a left horn."
+					description = "You solved the musical riddles of Vashresamun's Tomb and received a left horn."
 				},
 				[6] = {
 					name = "Morguthis' Treasure",
@@ -2674,7 +2674,7 @@ if not Quests then
 							Maybe you should talk to him again to find out more.",
 						[2] = "Santiago asked you to go into his house. Upstairs you will find a chest. \z
 							You can keep what you find inside of it. Once you got that, talk to Santiago again.",
-						[3] = "You have found Santiago\'s Coat and reported back to him. \z
+						[3] = "You have found Santiago's Coat and reported back to him. \z
 							Your quest is not done yet, you should talk to him a bit more.",
 						[4] = "Santiago gave you a weapon. After equipping it, go to the cellar of his house to find out \z
 							about the cockroach plague.",
@@ -2732,7 +2732,7 @@ if not Quests then
 						[7] = "You sucessfully learnt how to change your outfit and how to trade with NPCs. \z
 							Time to head over the bridge to Rookgaard!",
 						[8] = "You have passed the bridge to Rookgaard and have sucessfully completed the Tutorial. \z
-							If you want to skip the tutorial in the future with a new character, simply say \'skip tutorial' to Santiago."
+							If you want to skip the tutorial in the future with a new character, simply say 'skip tutorial' to Santiago."
 					}
 				}
 			}
@@ -2766,7 +2766,7 @@ if not Quests then
 						[1] = "Sneak into Ashta'daramai and steal a &quot;Tear of Daraman&quot;. \z
 							For more information about these gems visit the Efreet library.",
 						[2] = "You have successfully managed to steal a Tear of Daraman from Ashta'daramai. Bring it to Alesar.",
-						[3] = "You have delivered Daraman\'s Tear. \z
+						[3] = "You have delivered Daraman's Tear. \z
 							Alesar seemed very satisfied and told you that Malor himself might have another mission for you."
 					}
 				},
@@ -2777,8 +2777,8 @@ if not Quests then
 					startValue = 1,
 					endValue = 3,
 					states = {
-						[1] = "Malor asked you to find Fa'hradin\'s sleeping lamp in the orc fortress at Ulderek\'s Rock. \z
-							Then, sneak into Ashta'daramai and exchange Gabel\'s sleeping lamp with Fa'hradin\'s lamp.",
+						[1] = "Malor asked you to find Fa'hradin's sleeping lamp in the orc fortress at Ulderek's Rock. \z
+							Then, sneak into Ashta'daramai and exchange Gabel's sleeping lamp with Fa'hradin's lamp.",
 						[2] = "You successfully exchanged the lamps. Malor will be happy to hear about this.",
 						[3] = "The Efreet are very satisfied with your help. King Malor allowed you to trade with Yaman and Alesar."
 					}
@@ -2823,7 +2823,7 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[1] = "You have promised Rata'Mari cheese. Once you deliver some to him, he will hand over his spyreport.",
-						[2] = "You got Rata'Mari\'s spyreport. He seems to be quite happy with the cheese you brought him."
+						[2] = "You got Rata'Mari's spyreport. He seems to be quite happy with the cheese you brought him."
 					}
 				},
 				[4] = {
@@ -2833,8 +2833,8 @@ if not Quests then
 					startValue = 1,
 					endValue = 3,
 					states = {
-						[1] = "Gabel asked you to find Fa'hradin\'s sleeping lamp in the orc fortress at Ulderek\'s Rock. \z
-							Then, sneak into Mal'ouqhah and exchange Malor\'s sleeping lamp with Fa'hradin\'s lamp.",
+						[1] = "Gabel asked you to find Fa'hradin's sleeping lamp in the orc fortress at Ulderek's Rock. \z
+							Then, sneak into Mal'ouqhah and exchange Malor's sleeping lamp with Fa'hradin's lamp.",
 						[2] = "You successfully exchanged the lamps. Gabel will be happy to hear about this.",
 						[3] = "The Marid deeply appreciate your help. King Gabel allowed you to trade with Haroun and Nah'bob."
 					}
@@ -2870,7 +2870,7 @@ if not Quests then
 							Furthermore you should try to find that ring which belongs to Rerun.",
 						[2] = "You should talking to Grombur about Nokmir.",
 						[3] = "You should try to find that ring which belongs to Rerun everywhere in the mine.",
-						[4] = "You have found Rerun\'s ring. Bring the ring to the emperor Rehal and talk to him about Nokmir.",
+						[4] = "You have found Rerun's ring. Bring the ring to the emperor Rehal and talk to him about Nokmir.",
 						[5] = "You informed emperor Rehal about your recent discoveries and he acquitted Nokmir of being a thief.",
 						[6] = "You told Nokmir about his acquittal and he granted you access to the northern mine."
 					}
@@ -3037,7 +3037,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 4,
 					states = {
-						[1] = "Get out of Nibelor and go to the Svargrond Explorer\'s Society. Ask Lurik for the mission.",
+						[1] = "Get out of Nibelor and go to the Svargrond Explorer's Society. Ask Lurik for the mission.",
 						[2] = "Get to the raider camp, then follow to the extreme south where you find lots of barbarians. \z
 						Near the southern most coastline, try looking for the NPC Nor. Ask him about Memory Crystal.",
 						[3] = "Go back to Lurik and deliver him the memory crystal.",
@@ -3145,7 +3145,7 @@ if not Quests then
 					endValue = 6,
 					states = {
 						[1] = "Henricus wants you to find the Dwarfish Vampire Hunter, Storkus, located west of the Dwarf Bridge. \z
-						It\'s good idea bring your 20 Vampire Dusts with you to save some time.",
+						It's good idea bring your 20 Vampire Dusts with you to save some time.",
 						[2] = "Go Back to Storkus the Dwarf and ask for Mission.",
 						[3] = "Now Storkus wants you to kill a vampire lord, The Count in the Green Claw Swamp, \z
 						The Count is located near to the Blood Herb Quest. To summon The Count, \z
@@ -3444,7 +3444,7 @@ if not Quests then
 					endValue = 3,
 					states = {
 						[1] = "Kevin wants you to deliver a bill to the stage magician David Brassacres. \z
-						He\'s hiding from his creditors somewhere in Venore.",
+						He's hiding from his creditors somewhere in Venore.",
 						[2] = "You have delivered the bill to the stage magician David Brassacres, report back to Kevin!",
 						[3] = "You have reported back that you have completed the mission."
 					}
@@ -3585,7 +3585,7 @@ if not Quests then
 						[3] = "Ocelus told you to get a poem for him, if you didn't buy one already, \z
 						head to Ab'Dendriel and buy a Love Poem from Elvith.",
 						[4] = "You need to go recite the poem to Marina and impress her \z
-						with the Djinn\'s romantic and poetic abilities.",
+						with the Djinn's romantic and poetic abilities.",
 						[5] = "After reciting the poem to Marina, she decided to date Ocelus and release Ray Striker from her spell."
 					}
 				},
@@ -3619,7 +3619,7 @@ if not Quests then
 					missionId = 10277,
 					startValue = 1,
 					endValue = 1,
-					description = "After arranging a date for Marina and Ocelus, you are allowed to use Marina\'s sea turtles. \z
+					description = "After arranging a date for Marina and Ocelus, you are allowed to use Marina's sea turtles. \z
 						They will bring you to the idyllic Laguna Islands."
 				},
 				[5] = {
@@ -3628,7 +3628,7 @@ if not Quests then
 					missionId = 10278,
 					startValue = 1,
 					endValue = 1,
-					description = "After earning the trust of the governor\'s daughter Eleonore, \z
+					description = "After earning the trust of the governor's daughter Eleonore, \z
 						Captain Waverider in Liberty Bay will bring you to Meriana if you tell him the secret codeword 'peg leg'."
 				},
 				[6] = {
@@ -3641,7 +3641,7 @@ if not Quests then
 					Sebastian will sail you to Nargor."
 				},
 				[7] = {
-					name = "Ray\'s Mission 1: Fafnar\'s Fire",
+					name = "Ray's Mission 1: Fafnar's Fire",
 					storageId = Storage.TheShatteredIsles.RaysMission1,
 					missionId = 10280,
 					startValue = 1,
@@ -3651,12 +3651,12 @@ if not Quests then
 						whom the other pirates sent to get the fire. When she asks for a payment, tell her \z
 						'Your continued existence is payment enough'.",
 						[2] = "Sandra will be enraged and will cut any deals with pirates. Report back to Raymond Striker.",
-						[3] = "Ray Striker was pleased to hear about Sandra\'s rage. If you haven't done so yet, \z
+						[3] = "Ray Striker was pleased to hear about Sandra's rage. If you haven't done so yet, \z
 						ask him for other missions."
 					}
 				},
 				[8] = {
-					name = "Ray\'s Mission 2: Sabotage",
+					name = "Ray's Mission 2: Sabotage",
 					storageId = Storage.TheShatteredIsles.RaysMission2,
 					missionId = 10281,
 					startValue = 1,
@@ -3664,27 +3664,27 @@ if not Quests then
 					states = {
 						[1] = "Buy a fire bug at Liberty Bay and infiltrate Nargor. \z
 						Find the pirates' harbor and use the fire bug to sabotage their catapult there.",
-						[2] = "You were able to sabotage the catapult in the pirate\'s harbor. \z
+						[2] = "You were able to sabotage the catapult in the pirate's harbor. \z
 						Report back to Ray Striker to tell him about mission.",
 						[3] = "Ray Striker was pleased to hear about successful sabotage. \z
 						If you haven't done so yet, ask him for other missions."
 					}
 				},
 				[9] = {
-					name = "Ray\'s Mission 3: Spy Mission",
+					name = "Ray's Mission 3: Spy Mission",
 					storageId = Storage.TheShatteredIsles.RaysMission3,
 					missionId = 10282,
 					startValue = 1,
 					endValue = 2,
 					states = {
-						[1] = "Travel to Nargor and try to enter de pirate\'s tavern by deceiving the guard in front of it. \z
+						[1] = "Travel to Nargor and try to enter de pirate's tavern by deceiving the guard in front of it. \z
 						Read all the plans which you can find in the tavern and report back to Striker.",
-						[2] = "You studied all of the pirate\'s plans in their tavern which will give insight about their next strikes. \z
+						[2] = "You studied all of the pirate's plans in their tavern which will give insight about their next strikes. \z
 						If you haven't done so yet, ask Ray for another mission."
 					}
 				},
 				[10] = {
-					name = "Ray\'s Mission 4: Proof of Death",
+					name = "Ray's Mission 4: Proof of Death",
 					storageId = Storage.TheShatteredIsles.RaysMission4,
 					missionId = 10283,
 					startValue = 1,
@@ -3774,11 +3774,11 @@ if not Quests then
 					startValue = 1,
 					endValue = 4,
 					states = {
-						[1] = "You have begun Chondur\'s ritual. Bring him a fresh dead chicken so that he can begin to \z
+						[1] = "You have begun Chondur's ritual. Bring him a fresh dead chicken so that he can begin to \z
 						create a counterspell which will allow you to pass the magical barrier on Goroma.",
-						[2] = "You have begun Chondur\'s ritual. Bring him a fresh dead rat so that he can continue \z
+						[2] = "You have begun Chondur's ritual. Bring him a fresh dead rat so that he can continue \z
 						creating a counterspell which will allow you to pass the magical barrier on Goroma.",
-						[3] = "You have begun Chondur\'s ritual. Bring him a fresh dead black sheep so that he can \z
+						[3] = "You have begun Chondur's ritual. Bring him a fresh dead black sheep so that he can \z
 						complete his counterspell which will allow you to pass the magical barrier on Goroma.",
 						[4] = "You may pass the energy barrier on Goroma. The counterspell Chondur created for you \z
 						with his ritual will allow you to withstand the evil magic of the cultist."
@@ -3797,13 +3797,13 @@ if not Quests then
 					}
 				},
 				[17] = {
-					name = "The Governor\'s Daughter",
+					name = "The Governor's Daughter",
 					storageId = Storage.TheShatteredIsles.TheGovernorDaughter,
 					missionId = 10290,
 					startValue = 1,
 					endValue = 3,
 					states = {
-						[1] = "You promised to find Eleonore\'s lost ring. She told you that a parrot stole it from her \z
+						[1] = "You promised to find Eleonore's lost ring. She told you that a parrot stole it from her \z
 						dressing table and flew to the nearby mountains. You might need a rake to retrieve the ring.",
 						[2] = "You found the ring. Return it to Eleonore.",
 						[3] = "You returned the ring to Eleonore."
@@ -3834,7 +3834,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 3,
 					states = {
-						[1] = "Dorian wants you to steal a vase from Sarina, the owner of Carlin\'s general store.",
+						[1] = "Dorian wants you to steal a vase from Sarina, the owner of Carlin's general store.",
 						[2] = "You have stolen the vase, report back to Dorian!",
 						[3] = "You have delivered the stolen vase to Dorian, ask him for a new mission!"
 					}
@@ -3846,8 +3846,8 @@ if not Quests then
 					startValue = 1,
 					endValue = 3,
 					states = {
-						[1] = "Your task is to somehow convince Oswald to hand you an invitation to the king\'s ball.",
-						[2] = "You have received the invitation to the King\'s ball, report back to Dorian!",
+						[1] = "Your task is to somehow convince Oswald to hand you an invitation to the king's ball.",
+						[2] = "You have received the invitation to the King's ball, report back to Dorian!",
 						[3] = "You have delivered the invitation to Dorian, ask him for a new mission!"
 					}
 				},
@@ -4075,13 +4075,13 @@ if not Quests then
 					startValue = 17,
 					endValue = 26,
 					states = {
-						[17] = "Take botanist\'s container. Use it on a jungle bells plant to collect a sample.",
+						[17] = "Take botanist's container. Use it on a jungle bells plant to collect a sample.",
 						[18] = "Report about your plant collection to Explorer Society representative.",
 						[19] = "Ask for plant collection when you are ready to continue.",
-						[20] = "Use botanist\'s container on a witches cauldron to collect a sample.",
+						[20] = "Use botanist's container on a witches cauldron to collect a sample.",
 						[21] = "Report about your plant collection to Explorer Society representative.",
 						[22] = "Ask for plant collection when you are ready to continue.",
-						[23] = "Use this botanist\'s container on a giant jungle rose to obtain a sample.",
+						[23] = "Use this botanist's container on a giant jungle rose to obtain a sample.",
 						[24] = "Report about your plant collection to Explorer Society representative."
 					}
 				},
@@ -4294,8 +4294,8 @@ if not Quests then
 			missions = {
 				[1] = {
 					name = "Access to the Isle of Kings",
-                    storageId = Storage.WhiteRavenMonastery.Passage,
-                    missionId = 10316,
+					storageId = Storage.WhiteRavenMonastery.Passage,
+					missionId = 10316,
 					startValue = 1,
 					endValue = 2,
 					states = {
@@ -4311,7 +4311,7 @@ if not Quests then
 					endValue = 2,
 					states = {
 						[1] = "Investigate the catacombs. Abbot Costello should be interested in information about brother Fugio.",
-						[2] = "You returned Fugio\'s Diary. \z
+						[2] = "You returned Fugio's Diary. \z
 						Costello was very thankful about your help and gave you a blessed ankh as reward."
 					}
 				}
@@ -4324,20 +4324,20 @@ if not Quests then
 			missions = {
 				[1] = {
 					name = "To Appease the Mighty",
-                    storageId = Storage.TibiaTales.ToAppeaseTheMightyQuest,
-                    missionId = 10318,
+					storageId = Storage.TibiaTales.ToAppeaseTheMightyQuest,
+					missionId = 10318,
 					startValue = 0,
 					endValue = 4,
 					states = {
 						[1] = "Kazzan sent you to talk with Ubaid and Umar to offer an appeasement treaty to the Djinn races. \z
 						Talk to Umar first.",
-						[2] = "Umar said he won't be part of Kazzan\'s plans. Now you need to try with Ubaid.",
+						[2] = "Umar said he won't be part of Kazzan's plans. Now you need to try with Ubaid.",
 						[3] = "Umar and Ubaid said they won't be part of those plans. Return to Kazzan and collect your reward.",
 						[4] = "You have completed the quest!"
 					}
 				},
 				[2] = {
-					name = "Arito\'s Task",
+					name = "Arito's Task",
 					storageId = Storage.TibiaTales.AritosTask,
 					missionId = 10319,
 					startValue = 1,
@@ -4349,7 +4349,7 @@ if not Quests then
 					}
 				},
 				[3] = {
-					name = "Lion\'s Rock",
+					name = "Lion's Rock",
 					storageId = Storage.LionsRock.Questline,
 					missionId = 10320,
 					startValue = 1,
@@ -4511,22 +4511,22 @@ if not Quests then
 					endValue = 11,
 					states = {
 						[1] = "Spectulus told you about a failed experiment he once did, involving an intern \z
-						named Jack, and asked you to help him rescue Jack. Go to Jack\'s house and talk to him \z
+						named Jack, and asked you to help him rescue Jack. Go to Jack's house and talk to him \z
 						about Spectulus.",
 						[2] = "You have talked to Jack and found out that he is not remembering the time \z
 						accident or Spectulus. Return to Spectulus in the Edron Academy to tell him about \z
 						your findings.",
-						[3] = "Spectulus wants you to trigger Jack\'s memory. Jack used to like his red cushioned \z
+						[3] = "Spectulus wants you to trigger Jack's memory. Jack used to like his red cushioned \z
 						chair, an old globe, a telescope, a large amphora and a rocking horse. Place those in his \z
 						room and ask him about it.",
 						[4] = "You have talked to Jack about the furniture you placed in his house. Report it back \z
 						to Spectulus in the Edron Academy.",
 						[5] = "Spectulus sent you once again to his former intern Jack. Explain the incident to the \z
-						people close to him. Talk to Jack\'s mother and sister and return to Spectulus to report their reaction.",
-						[6] = "You have talked with Jack\'s mother and sister. Report it back to Spectulus.",
+						people close to him. Talk to Jack's mother and sister and return to Spectulus to report their reaction.",
+						[6] = "You have talked with Jack's mother and sister. Report it back to Spectulus.",
 						[7] = "Spectulus suggested asking Jack abouthis hobbies. Make Jack leave his hobby be by whateber \z
 						means it takes. Only by doing this he will be separated from what distracts him from his former self.",
-						[8] = "You found out and destroyed Jack\'s hobby. Jack is now finally ready and beginning to change. \z
+						[8] = "You found out and destroyed Jack's hobby. Jack is now finally ready and beginning to change. \z
 						He event seems to start remembering Spectulus and the Academy.",
 						[9] = "Jack is finally remembering Spectulus and the Academy. Report back your mission.",
 						[10] = "Spectulus found out that you were convincing the wrong Jack. His real intern was transported \z
@@ -4710,7 +4710,7 @@ if not Quests then
 					endValue = 3,
 					states = {
 						[1] = "Get 18 vials of wine for Bozo. Then report to Bozo about your mission.",
-						[2] = "Exchange the crates in front of Xodet\'s house and return to Bozo with the swapped crate.",
+						[2] = "Exchange the crates in front of Xodet's house and return to Bozo with the swapped crate.",
 						[3] = "You have finished your fourth mission and should ask Bozo for the next mission."
 					}
 				},
@@ -4738,7 +4738,7 @@ if not Quests then
 						[1] = "Get Bozo 4 pieces of minotaur leather.",
 						[2] = "Get Bozo a piece of giant spider silk.",
 						[3] = "Ask Bozo about your mission, he might be finished with the whoopee cushion by now.",
-						[4] = "Place the whoopee cushion on the queen\'s throne in Carlin by using the cushion with the throne.",
+						[4] = "Place the whoopee cushion on the queen's throne in Carlin by using the cushion with the throne.",
 						[5] = "You have finished your sixth mission and should ask Bozo for the next mission."
 					}
 				},
@@ -4749,7 +4749,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 2,
 					states = {
-						[1] = "Get the toy mouse of Queen Eloise\'s cat and show it to Carina, the jeweler in Venore, to scare her.",
+						[1] = "Get the toy mouse of Queen Eloise's cat and show it to Carina, the jeweler in Venore, to scare her.",
 						[2] = "You have finished your seventh mission and should ask Bozo for the next mission."
 					}
 				},
@@ -4768,7 +4768,7 @@ if not Quests then
 					}
 				},
 				[9] = {
-					name = "What a foolish Quest - A fool\'s bargain",
+					name = "What a foolish Quest - A fool's bargain",
 					storageId = Storage.WhatAFoolish.Mission9,
 					missionId = 10344,
 					startValue = 1,
@@ -4807,7 +4807,7 @@ if not Quests then
 						cloth an old and worn look. Some ancient altar should suit your needs best - use the white cloth on it.",
 						[3] = "Use your mummy disguise to scare the caliph Kazzan in Darashia. \z
 						DON'T use the disguise too early or you will fail the quest.",
-						[4] = "You have finished all of Bozo\'s missions and you are a complete fool now. Yay!"
+						[4] = "You have finished all of Bozo's missions and you are a complete fool now. Yay!"
 					}
 				},
 				[12] = {
@@ -4963,15 +4963,15 @@ if not Quests then
 						Report back to Zizzle.",
 						[2] = "You possess the key to enter the inner realms of the emperor. \z
 						Start with the one in the north-west and work your way clockwise trough the room and kill those manifestation. \z
-						Then use your sceptre on the remain to destroy the emperor\'s influence over the crystal.",
+						Then use your sceptre on the remain to destroy the emperor's influence over the crystal.",
 						[3] = "You possess the key to enter the inner realms of the emperor. \z
-						You destroyed 1 of 4 emperor\'s influences.",
+						You destroyed 1 of 4 emperor's influences.",
 						[4] = "You possess the key to enter the inner realms of the emperor. \z
-						You destroyed 2 of 4 emperor\'s influences.",
+						You destroyed 2 of 4 emperor's influences.",
 						[5] = "You possess the key to enter the inner realms of the emperor. \z
-						You destroyed 3 of 4 emperor\'s influences.",
+						You destroyed 3 of 4 emperor's influences.",
 						[6] = "You possess the key to enter the inner realms of the emperor. \z
-						You destroyed all emperor\'s influences."
+						You destroyed all emperor's influences."
 					}
 				},
 				[11] = {
@@ -5060,7 +5060,7 @@ if not Quests then
 					endValue = 1522018605,
 					states = {
 						[1] = "With help of Ivalisse from the temple of the Astral Shapers in Thais and her father, \z
-						you averted the Dragon King\'s menace deep in the Zao Muggy Plains."
+						you averted the Dragon King's menace deep in the Zao Muggy Plains."
 					}
 				},
 				[5] = {
@@ -5070,7 +5070,7 @@ if not Quests then
 					startValue = 0,
 					endValue = 1522018605,
 					states = {
-						[1] = "You saved the Dragon Mother\'s egg and she melted the ice wall that blocked your way."
+						[1] = "You saved the Dragon Mother's egg and she melted the ice wall that blocked your way."
 					}
 				},
 				[6] = {
@@ -5118,7 +5118,7 @@ if not Quests then
 					startValue = 0,
 					endValue = 20,
 					description = "Treasure is the favorite of the dragon lords. \z
-					Find and take Kalyassa\'s treasures spread across the world."
+					Find and take Kalyassa's treasures spread across the world."
 				},
 				[3] = {
 					name = "Knowledge",
@@ -5126,8 +5126,8 @@ if not Quests then
 					missionId = 10370,
 					startValue = 0,
 					endValue = 1,
-					description = "You learned that frost dragon\'s incitement is the thirst for knowledge, \z
-					perhaps if you bring some to Gelidrazah\'s you'll meet him."
+					description = "You learned that frost dragon's incitement is the thirst for knowledge, \z
+					perhaps if you bring some to Gelidrazah's you'll meet him."
 				},
 				[4] = {
 					name = "Life",
@@ -5182,7 +5182,7 @@ if not Quests then
 					endValue = 15,
 					states = {
 						[1] = "The Druid of Cronor gave you the hint that the Thais exhibition has expanded. \z
-						The new section is called MOTA (Museum of Tibian Arts). It\'s really worth a visit.",
+						The new section is called MOTA (Museum of Tibian Arts). It's really worth a visit.",
 						[2] = "Gareth told you how to become a patron of the arts. To fulfil your duty you have to manage some tasks. \z
 						First you have to investigate the crime scene of a theft in the museum.",
 						[3] = "You found a ransom note, wich requests you to pay some money for \z
@@ -5194,7 +5194,7 @@ if not Quests then
 						[6] = "You have to go to Angelo and get a magnifier to investigate all small \z
 						pictures in the entrance hall of the MOTA. One of them should be a fake.",
 						[7] = "Angelo allowed you to take a magnifier from a crate next to the cave entrance.",
-						[8] = "You've fetched the magnifier from Angelo\'s crate. You're ready for your job in the museum.",
+						[8] = "You've fetched the magnifier from Angelo's crate. You're ready for your job in the museum.",
 						[9] = "Indeed! One of the investigated small pictures is fake. Report to Gareth!",
 						[10] = "After you told Gareth about the fake painting, he asked you to go to Angelo to get a new picture.",
 						[11] = "Angelo was not willing to give you a new picture. \z
@@ -5221,7 +5221,9 @@ if not Quests then
 						The hardest part, however, is yet to come. Give your life to the ice... to become true and purified.",
 						[3] = function(player)
 							return ("You survived the Trial. Barkless now have the right to see the cult leader but a \z
-							powerful relic is sealing the path. Barkless markings broken to reverse the power of the cult object: \z %d of 10"):format(math.max(player:getStorageValue(Storage.CultsOfTibia.Barkless.Objects), 0))
+							powerful relic is sealing the path. Barkless markings broken to reverse the power of the cult object: \z %d of 10"):format(
+								math.max(player:getStorageValue(Storage.CultsOfTibia.Barkless.Objects), 0)
+							)
 						end,
 						[4] = "You broke enough Barkless markings to now reverse the seal \z
 						held up by the cult object in the ritual chamber. \z
@@ -5247,7 +5249,9 @@ if not Quests then
 						hinted at something weird going on in a cave. He seemed too confused to decide whether to stop you.",
 						[3] = function(player)
 							return ("While rubbish, the amulet you equipe emits a strange aura of splendour. \z
-							You feel an urge to fulfill the amulets hunger for especific deaths... Exorcisms: %d/5 "):format(math.max(player:getStorageValue(Storage.CultsOfTibia.Misguided.Exorcisms), 0))
+							You feel an urge to fulfill the amulets hunger for especific deaths... Exorcisms: %d/5 "):format(
+								math.max(player:getStorageValue(Storage.CultsOfTibia.Misguided.Exorcisms), 0)
+							)
 						end,
 						[4] = "You defeated the cult leader of Misguided by uncovering the true master to pull his strings \z
 						and freeing this world from its malicious existance. Return to Gerimor to tell him about the victory.",
@@ -5488,7 +5492,7 @@ if not Quests then
 						[14] = "STATE 14",
 						[15] = "STATE 15",
 						[16] = "STATE 16",
-						[17] = "STATE 17",
+						[17] = "STATE 17"
 					}
 				},
 				[2] = {
@@ -5583,7 +5587,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 5,
 					states = {
-						[1] = "The key to the adventurer\'s dormitory has disappeared. Maybe you can find it. Ask around to find out who was the last to have seen it.",
+						[1] = "The key to the adventurer's dormitory has disappeared. Maybe you can find it. Ask around to find out who was the last to have seen it.",
 						[2] = "use the fishing rod in the nearby lake to fish old nasty",
 						[3] = "Come back to Woblin with Old Nasty",
 						[4] = "Come back to Mr Morris with key 0010",
@@ -5596,10 +5600,8 @@ if not Quests then
 					missionId = 10394,
 					startValue = 0,
 					endValue = 20,
-					description =
-					function(player)
-						return string.format("You already hunted %d/20 Mountain Trolls.",
-						(math.max(player:getStorageValue(65062), 0)))
+					description = function(player)
+						return string.format("You already hunted %d/20 Mountain Trolls.", (math.max(player:getStorageValue(65062), 0)))
 					end
 				},
 				[7] = {
@@ -5608,10 +5610,11 @@ if not Quests then
 					missionId = 10395,
 					startValue = 0,
 					endValue = 20,
-					description =
-					function(player)
-						return string.format("You already hunted %d/20 Muglex Clan Footman.",
-						(math.max(player:getStorageValue(65061), 0)))
+					description = function(player)
+						return string.format(
+							"You already hunted %d/20 Muglex Clan Footman.",
+							(math.max(player:getStorageValue(65061), 0))
+						)
 					end
 				},
 				[8] = {
@@ -5620,12 +5623,10 @@ if not Quests then
 					missionId = 10396,
 					startValue = 0,
 					endValue = 20,
-					description =
-					function(player)
-						return string.format("You already hunted %d/20 Minotaurs Bruisers.",
-						(math.max(player:getStorageValue(65060), 0)))
+					description = function(player)
+						return string.format("You already hunted %d/20 Minotaurs Bruisers.", (math.max(player:getStorageValue(65060), 0)))
 					end
-				},
+				}
 			}
 		},
 		[45] = {
@@ -5666,7 +5667,7 @@ if not Quests then
 					states = {
 						[1] = function(player)
 							return string.format(
-								"Vascalir sent you to the Rookgaard sewers to kill 5 rats. You have already killed %d/5. Return to Vascalir once you're done.",
+								"Vascalir sent you to the Rookgaard sewers to kill 10 rats. You have already killed %d/10. Return to Vascalir once you're done.",
 								player:getStorageValue(Storage.TheRookieGuard.RatKills)
 							)
 						end,
@@ -5800,7 +5801,7 @@ if not Quests then
 						[5] = "You managed to sneak into the fortress. Use the fleshy bone and click on the elite orc guard with the crosshairs to create a distraction!",
 						[6] = "The guard is indeed very distracted - he smells delicious. At least to the wild dogs that entered the scene. This is the perfect time to enter the lower levels of the orc fortress.",
 						[7] = "You're inside the orc fortress! Now you need to find a kitchen and something that looks like a soup cauldron. Use the wasp poison on the cauldron to create an evil surprise for Kraknaknork.",
-						[8] = "You \"spiced up\" Kraknaknork's breakfast. Let's see how strong he still is after his meal. Proceed further into the fortress - and keep your tarantula trap ready.",
+						[8] = 'You "spiced up" Kraknaknork\'s breakfast. Let\'s see how strong he still is after his meal. Proceed further into the fortress - and keep your tarantula trap ready.',
 						[9] = "You managed to slow down the furious orc berserker. Now, run through the teleporter while he isn't close to it!",
 						[10] = "You've entered Kraknaknork's room. Find a way to get rid of the energy barriers.",
 						[11] = "You solved the riddle of the energy barriers. The way to the throne room should be clear - for a short time. Be prepared for a massive fight!",
@@ -6017,7 +6018,10 @@ end
 
 function Player.questIsStarted(self, questId)
 	local quest = Game.getQuest(questId)
-	if quest and self:getStorageValue(quest.startStorageId) ~= -1 or self:getStorageValue(quest.startStorageId) >= quest.startStorageValue then
+	if
+		quest and self:getStorageValue(quest.startStorageId) ~= -1 or
+			self:getStorageValue(quest.startStorageId) >= quest.startStorageValue
+	 then
 		return true
 	end
 	return false
@@ -6186,8 +6190,7 @@ function Player.updateStorage(self, key, value, oldValue, currentFrameTime)
 end
 
 local function sendPrint(questId, index)
-	Spdlog.warn(string.format("[sendPrint] - Quest id:[%d] mission:[%d]",
-		questId, index))
+	Spdlog.warn(string.format("[sendPrint] - Quest id:[%d] mission:[%d]", questId, index))
 end
 
 for questId = 1, #Quests do
