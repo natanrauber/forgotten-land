@@ -24,23 +24,23 @@ local voices = {
 npcHandler:addModule(VoiceModule:new(voices))
 
 -- NPC shop
-local shopModule = ShopModule:new()
-npcHandler:addModule(shopModule)
--- Buyable
--- Name, id, price, count/charges
-shopModule:addBuyableItem({"bread"}, 2689, 3, 1)
-shopModule:addBuyableItem({"cheese"}, 2696, 5, 1)
-shopModule:addBuyableItem({"ham"}, 2671, 8, 1)
-shopModule:addBuyableItem({"meat"}, 2666, 5, 1)
--- Sellable
-shopModule:addSellableItem({"bread"}, 2689, 1, 1)
-shopModule:addSellableItem({"cheese"}, 2696, 2, 1)
-shopModule:addSellableItem({"ham"}, 2671, 4, 1)
-shopModule:addSellableItem({"meat"}, 2666, 2, 1)
-shopModule:addSellableItem({"cherry"}, 2679, 1, 1)
-shopModule:addSellableItem({"egg"}, 2695, 1, 1)
-shopModule:addSellableItem({"salmon"}, 2668, 2, 1)
-shopModule:addSellableItem({"veal"}, 36844, 5, 1)
+-- local shopModule = ShopModule:new()
+-- npcHandler:addModule(shopModule)
+-- -- Buyable
+-- -- Name, id, price, count/charges
+-- shopModule:addBuyableItem({"bread"}, 2689, 3, 1)
+-- shopModule:addBuyableItem({"cheese"}, 2696, 5, 1)
+-- shopModule:addBuyableItem({"ham"}, 2671, 8, 1)
+-- shopModule:addBuyableItem({"meat"}, 2666, 5, 1)
+-- -- Sellable
+-- shopModule:addSellableItem({"bread"}, 2689, 1, 1)
+-- shopModule:addSellableItem({"cheese"}, 2696, 2, 1)
+-- shopModule:addSellableItem({"ham"}, 2671, 4, 1)
+-- shopModule:addSellableItem({"meat"}, 2666, 2, 1)
+-- shopModule:addSellableItem({"cherry"}, 2679, 1, 1)
+-- shopModule:addSellableItem({"egg"}, 2695, 1, 1)
+-- shopModule:addSellableItem({"salmon"}, 2668, 2, 1)
+-- shopModule:addSellableItem({"veal"}, 36844, 5, 1)
 
 -- Basic keywords
 keywordHandler:addKeyword(
