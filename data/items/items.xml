@@ -24230,8 +24230,16 @@
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item fromid="13822" toid="13824" name="water pump" />
-	<item fromid="13825" toid="13826" article="a" name="star ring">
-		<attribute key="description" value="If you wear it on your ring slot, it will boost your health regeneration when you're not hungry. Professions: players without vocation" />
+	<item id="13825" article="a" name="star ring">
+		<attribute key="description" value="A super bright ring forged with the energy of a star." />
+		<attribute key="weight" value="80" />
+		<attribute key="slotType" value="ring" />
+		<attribute key="loottype" value="ring" />
+		<attribute key="decayTo" value="13826" />
+		<attribute key="duration" value="900" />
+	</item>
+	<item id="13826" article="a" name="star ring">
+		<attribute key="description" value="A super bright ring forged with the energy of a star." />
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ring" />
 		<attribute key="loottype" value="ring" />
@@ -24240,7 +24248,7 @@
 		<attribute key="weight" value="1000" />
 	</item>
 	<item id="13828" name="skinning knife">
-		<attribute key="description" value="Use this knife on a dead war wolf to retrieve some leather. Don't lose it and don't leave the cave." />
+		<attribute key="description" value="Use this knife on a dead body to retrieve some leather." />
 		<attribute key="weight" value="800" />
 	</item>
 	<item id="13829" article="a" name="wooden sword">

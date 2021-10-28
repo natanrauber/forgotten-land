@@ -7146,33 +7146,21 @@ if not equipmentsTable then
 			itemid = 13826,
 			type = "equip",
 			slot = "ring",
-			vocation = {
-				{"None", true}
-			}
 		}, -- star ring
 		{
 			itemid = 13826,
 			type = "deequip",
 			slot = "ring",
-			vocation = {
-				{"None", true}
-			}
 		}, -- star ring
 		{
 			itemid = 13825,
 			type = "equip",
 			slot = "ring",
-			vocation = {
-				{"None", true}
-			}
 		}, -- star ring
 		{
 			itemid = 13825,
 			type = "deequip",
 			slot = "ring",
-			vocation = {
-				{"None", true}
-			}
 		}, -- star ring
 		{
 			itemid = 13760,

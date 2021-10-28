@@ -122,7 +122,7 @@ keywordHandler:addKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Take this star ring. Wear it to improve your regeneration, as long as you're not hungry. ...",
+			"Take this star ring. This can save you in hard situations. ...",
 			"Anyway, thanks so much for your help. I can brew a lot of potions from these herbs. If you're in the area and find yourself in need of potions, don't hesitate to drop by and ask me for a {trade}. ..."
 		}
 	},
@@ -131,7 +131,7 @@ keywordHandler:addKeyword(
 	end,
 	function(player)
 		player:setStorageValue(Storage.TheRookieGuard.Mission04, 5)
-		player:addItemEx(Game.createItem(13825, 1), true, CONST_SLOT_BACKPACK)
+		player:addItemEx(Game.createItem(13826, 1), true, CONST_SLOT_BACKPACK)
 	end
 )
 
