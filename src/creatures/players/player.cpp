@@ -580,41 +580,50 @@ void Player::updateInventoryWeight()
 void Player::updateInventoryImbuement(bool init /* = false */)
 {
 	uint8_t imbuementsToCheck = g_game.getPlayerActiveImbuements(getID());
-	for (int items = CONST_SLOT_FIRST; items <= CONST_SLOT_LAST; ++items) {
+	for (int items = CONST_SLOT_FIRST; items <= CONST_SLOT_LAST; ++items)
+	{
 		/*
 		 * Small optimization to avoid unneeded iteration.
 		 */
-		if (!init && imbuementsToCheck == 0) {
+		if (!init && imbuementsToCheck == 0)
+		{
 			break;
 		}
 
-		Item* item = inventory[items];
-		if (!item) {
+		Item *item = inventory[items];
+		if (!item)
+		{
 			continue;
 		}
 
-		const Tile* playerTile = getTile();
-		if (playerTile && playerTile->hasFlag(TILESTATE_PROTECTIONZONE)) {
+		const Tile *playerTile = getTile();
+		if (playerTile && playerTile->hasFlag(TILESTATE_PROTECTIONZONE))
+		{
 			continue;
 		}
 
-		if (!hasCondition(CONDITION_INFIGHT)) {
+		if (!hasCondition(CONDITION_INFIGHT))
+		{
 			continue;
 		}
 
-		for (uint8_t slotid = 0; slotid < item->getImbuementSlot(); slotid++) {
+		for (uint8_t slotid = 0; slotid < item->getImbuementSlot(); slotid++)
+		{
 			ImbuementInfo imbuementInfo;
-			if (!item->getImbuementInfo(slotid, &imbuementInfo)) {
+			if (!item->getImbuementInfo(slotid, &imbuementInfo))
+			{
 				continue;
 			}
 
-			if (init) {
+			if (init)
+			{
 				g_game.increasePlayerActiveImbuements(getID());
 			}
 
 			int32_t duration = std::max<int32_t>(0, imbuementInfo.duration - EVENT_IMBUEMENT_INTERVAL / 1000);
 			item->setImbuement(slotid, imbuementInfo.imbuement->getID(), duration);
-			if (duration == 0) {
+			if (duration == 0)
+			{
 				removeItemImbuementStats(imbuementInfo.imbuement);
 				g_game.decreasePlayerActiveImbuements(getID());
 			}
@@ -624,9 +633,12 @@ void Player::updateInventoryImbuement(bool init /* = false */)
 	}
 }
 
-void Player::setTraining(bool value) {
-	for (const auto& it : g_game.getPlayers()) {
-		if (!this->isInGhostMode() || it.second->isAccessPlayer()) {
+void Player::setTraining(bool value)
+{
+	for (const auto &it : g_game.getPlayers())
+	{
+		if (!this->isInGhostMode() || it.second->isAccessPlayer())
+		{
 			it.second->notifyStatusChange(this, value ? VIPSTATUS_TRAINING : VIPSTATUS_ONLINE, false);
 		}
 	}
@@ -641,7 +653,7 @@ void Player::addSkillAdvance(skills_t skill, uint64_t count)
 	uint64_t nextReqTries = vocation->getReqSkillTries(skill, skills[skill].level + 1);
 	if (currReqTries >= nextReqTries)
 	{
-		//player has reached max skill
+		// player has reached max skill
 		return;
 	}
 
@@ -1370,13 +1382,15 @@ Item *Player::getWriteItem(uint32_t &retWindowTextId, uint16_t &retMaxWriteLen)
 	return writeItem;
 }
 
-void Player::setImbuingItem(Item* item)
+void Player::setImbuingItem(Item *item)
 {
-	if (imbuingItem) {
+	if (imbuingItem)
+	{
 		imbuingItem->decrementReferenceCounter();
 	}
 
-	if (item) {
+	if (item)
+	{
 		item->incrementReferenceCounter();
 	}
 
@@ -1435,12 +1449,13 @@ void Player::sendHouseWindow(House *house, uint32_t listId) const
 
 void Player::onApplyImbuement(Imbuement *imbuement, Item *item, uint8_t slot, bool protectionCharm)
 {
-	if (!imbuement || !item) {
+	if (!imbuement || !item)
+	{
 		return;
 	}
 
-	const auto& items = imbuement->getItems();
-	for (auto& [key, value] : items)
+	const auto &items = imbuement->getItems();
+	for (auto &[key, value] : items)
 	{
 		if (this->getItemTypeCount(key) + this->getStashItemCount(key) < value)
 		{
@@ -1466,7 +1481,7 @@ void Player::onApplyImbuement(Imbuement *imbuement, Item *item, uint8_t slot, bo
 	uint32_t price = baseImbuement->price;
 	price += protectionCharm ? baseImbuement->protectionPrice : 0;
 
-	if (!g_game.removeMoney(this, price, 0, false))
+	if (!g_game.removeMoney(this, price, 0, true))
 	{
 		std::string message = "You don't have " + std::to_string(price) + " gold coins.";
 
@@ -1475,7 +1490,7 @@ void Player::onApplyImbuement(Imbuement *imbuement, Item *item, uint8_t slot, bo
 		return;
 	}
 
-	for (auto& [key, value] : items)
+	for (auto &[key, value] : items)
 	{
 		uint32_t invertoryItemCount = getItemTypeCount(key);
 		if (invertoryItemCount >= value)
@@ -1501,15 +1516,19 @@ void Player::onApplyImbuement(Imbuement *imbuement, Item *item, uint8_t slot, bo
 		return;
 	}
 
-	item->setImbuement(slot, imbuement->getID(), baseImbuement->duration);
+	if (item->getParent() == this)
+	{
+		addItemImbuementStats(imbuement);
+	}
 
-	addItemImbuementStats(imbuement);
+	item->setImbuement(slot, imbuement->getID(), baseImbuement->duration);
 	openImbuementWindow(item);
 }
 
-void Player::onClearImbuement(Item* item, uint8_t slot)
+void Player::onClearImbuement(Item *item, uint8_t slot)
 {
-	if (!item) {
+	if (!item)
+	{
 		return;
 	}
 
@@ -1522,11 +1541,12 @@ void Player::onClearImbuement(Item* item, uint8_t slot)
 	}
 
 	const BaseImbuement *baseImbuement = g_imbuements->getBaseByID(imbuementInfo.imbuement->getBaseID());
-	if (!baseImbuement) {
+	if (!baseImbuement)
+	{
 		return;
 	}
 
-	if (!g_game.removeMoney(this, baseImbuement->removeCost, 0, false))
+	if (!g_game.removeMoney(this, baseImbuement->removeCost, 0, true))
 	{
 		std::string message = "You don't have " + std::to_string(baseImbuement->removeCost) + " gold coins.";
 
@@ -1536,11 +1556,16 @@ void Player::onClearImbuement(Item* item, uint8_t slot)
 		return;
 	}
 
+	if (item->getParent() == this)
+	{
+		removeItemImbuementStats(imbuementInfo.imbuement);
+	}
+
 	item->setImbuement(slot, imbuementInfo.imbuement->getID(), 0);
 	this->openImbuementWindow(item);
 }
 
-void Player::openImbuementWindow(Item* item)
+void Player::openImbuementWindow(Item *item)
 {
 	if (!client || !item)
 	{
@@ -1554,7 +1579,8 @@ void Player::openImbuementWindow(Item* item)
 		return;
 	}
 
-	if (item->getImbuementSlot() <= 0) {
+	if (item->getImbuementSlot() <= 0)
+	{
 		this->sendTextMessage(MESSAGE_FAILURE, "This item is not imbuable.");
 		return;
 	}
@@ -1570,7 +1596,7 @@ void Player::sendMarketEnter(uint32_t depotId)
 	}
 }
 
-//container
+// container
 void Player::sendAddContainerItem(const Container *container, const Item *item)
 {
 	if (!client)
@@ -1852,7 +1878,7 @@ void Player::onAttackedCreatureChangeZone(ZoneType_t zone)
 	}
 	else if (zone == ZONE_NORMAL)
 	{
-		//attackedCreature can leave a pvp zone if not pzlocked
+		// attackedCreature can leave a pvp zone if not pzlocked
 		if (g_game.getWorldType() == WORLD_TYPE_NO_PVP)
 		{
 			if (attackedCreature->getPlayer())
@@ -1936,7 +1962,7 @@ void Player::openShopWindow(Npc *npc, const std::vector<ShopInfo> &shop)
 
 bool Player::closeShopWindow(bool sendCloseShopWindow /*= true*/)
 {
-	//unreference callbacks
+	// unreference callbacks
 	int32_t onBuy;
 	int32_t onSell;
 
@@ -1984,7 +2010,7 @@ void Player::onCreatureMove(Creature *creature, const Tile *newTile, const Posit
 
 	if (tradeState != TRADE_TRANSFER)
 	{
-		//check if we should close trade
+		// check if we should close trade
 		if (tradeItem && !Position::areInRange<1, 1, 0>(tradeItem->getPosition(), getPosition()))
 		{
 			g_game.internalCloseTrade(this);
@@ -2036,7 +2062,7 @@ void Player::onCreatureMove(Creature *creature, const Tile *newTile, const Posit
 	}
 }
 
-//container
+// container
 void Player::onAddContainerItem(const Item *item)
 {
 	checkTradeState(item);
@@ -2107,7 +2133,7 @@ void Player::onSendContainer(const Container *container)
 	}
 }
 
-//inventory
+// inventory
 void Player::onUpdateInventoryItem(Item *oldItem, Item *newItem)
 {
 	if (oldItem != newItem)
@@ -2242,7 +2268,7 @@ void Player::setNextPotionActionTask(SchedulerTask *task)
 	if (task)
 	{
 		actionPotionTaskEvent = g_scheduler.addEvent(task);
-		//resetIdleTime();
+		// resetIdleTime();
 	}
 }
 
@@ -2387,7 +2413,7 @@ void Player::addManaSpent(uint64_t amount)
 	uint64_t nextReqMana = vocation->getReqMana(magLevel + 1);
 	if (currReqMana >= nextReqMana)
 	{
-		//player has reached max magic level
+		// player has reached max magic level
 		return;
 	}
 
@@ -2451,7 +2477,7 @@ void Player::addExperience(Creature *source, uint64_t exp, bool sendText /* = fa
 	uint64_t rawExp = exp;
 	if (currLevelExp >= nextLevelExp)
 	{
-		//player has reached max level
+		// player has reached max level
 		levelPercent = 0;
 		sendStats();
 		return;
@@ -2516,7 +2542,7 @@ void Player::addExperience(Creature *source, uint64_t exp, bool sendText /* = fa
 		nextLevelExp = Player::getExpForLevel(level + 1);
 		if (currLevelExp >= nextLevelExp)
 		{
-			//player has reached max level
+			// player has reached max level
 			break;
 		}
 	}
@@ -2699,7 +2725,7 @@ void Player::onAttackedCreatureBlockHit(BlockType_t blockType)
 	case BLOCK_DEFENSE:
 	case BLOCK_ARMOR:
 	{
-		//need to draw blood every 30 hits
+		// need to draw blood every 30 hits
 		if (bloodHitCount > 0)
 		{
 			addAttackSkillPoint = true;
@@ -2822,9 +2848,10 @@ BlockType_t Player::blockHit(Creature *attacker, CombatType_t combatType, int32_
 					continue;
 				}
 
-				const int16_t& imbuementAbsorbPercent = imbuementInfo.imbuement->absorbPercent[combatTypeToIndex(combatType)];
+				const int16_t &imbuementAbsorbPercent = imbuementInfo.imbuement->absorbPercent[combatTypeToIndex(combatType)];
 
-				if (imbuementAbsorbPercent != 0) {
+				if (imbuementAbsorbPercent != 0)
+				{
 					damage -= std::ceil(damage * (imbuementAbsorbPercent / 100.));
 				}
 			}
@@ -2888,11 +2915,11 @@ void Player::death(Creature *lastHitCreature)
 			unfairFightReduction = std::max<uint8_t>(20, std::floor((reduce * 100) + 0.5));
 		}
 
-		//Magic level loss
+		// Magic level loss
 		uint64_t sumMana = 0;
 		uint64_t lostMana = 0;
 
-		//sum up all the mana
+		// sum up all the mana
 		for (uint32_t i = 1; i <= magLevel; ++i)
 		{
 			sumMana += vocation->getReqMana(i);
@@ -2936,12 +2963,12 @@ void Player::death(Creature *lastHitCreature)
 			magLevelPercent = 0;
 		}
 
-		//Skill loss
+		// Skill loss
 		for (uint8_t i = SKILL_FIRST; i <= SKILL_LAST; ++i)
-		{ //for each skill
+		{ // for each skill
 			uint64_t sumSkillTries = 0;
 			for (uint16_t c = 11; c <= skills[i].level; ++c)
-			{ //sum up all required tries for all skill levels
+			{ // sum up all required tries for all skill levels
 				sumSkillTries += vocation->getReqSkillTries(i, c);
 			}
 
@@ -2968,7 +2995,7 @@ void Player::death(Creature *lastHitCreature)
 			skills[i].percent = Player::getPercentLevel(skills[i].tries, vocation->getReqSkillTries(i, skills[i].level));
 		}
 
-		//Level loss
+		// Level loss
 		uint64_t expLoss = static_cast<uint64_t>(experience * deathLossPercent);
 		g_events->eventPlayerOnLoseExperience(this, expLoss);
 
@@ -3008,11 +3035,11 @@ void Player::death(Creature *lastHitCreature)
 			}
 		}
 
-		//Make player lose bless
+		// Make player lose bless
 		uint8_t maxBlessing = 8;
 		if (pvpDeath && hasBlessing(1))
 		{
-			removeBlessing(1, 1); //Remove TOF only
+			removeBlessing(1, 1); // Remove TOF only
 		}
 		else
 		{
@@ -3252,7 +3279,7 @@ bool Player::editVIP(uint32_t vipGuid, const std::string &description, uint32_t 
 	return true;
 }
 
-//close container and its child containers
+// close container and its child containers
 void Player::autoCloseContainers(const Container *container)
 {
 	std::vector<uint32_t> closeList;
@@ -3312,7 +3339,7 @@ ReturnValue Player::queryAdd(int32_t index, const Thing &thing, uint32_t count, 
 	bool childIsOwner = hasBitSet(FLAG_CHILDISOWNER, flags);
 	if (childIsOwner)
 	{
-		//a child container is querying the player, just check if enough capacity
+		// a child container is querying the player, just check if enough capacity
 		bool skipLimit = hasBitSet(FLAG_NOLIMIT, flags);
 		if (skipLimit || hasCapacity(item, count))
 		{
@@ -3590,14 +3617,14 @@ ReturnValue Player::queryAdd(int32_t index, const Thing &thing, uint32_t count, 
 
 	if (ret == RETURNVALUE_NOERROR || ret == RETURNVALUE_NOTENOUGHROOM)
 	{
-		//need an exchange with source?
+		// need an exchange with source?
 		const Item *inventoryItem = getInventoryItem(static_cast<slots_t>(index));
 		if (inventoryItem && (!inventoryItem->isStackable() || inventoryItem->getID() != item->getID()))
 		{
 			return RETURNVALUE_NEEDEXCHANGE;
 		}
 
-		//check if enough capacity
+		// check if enough capacity
 		if (!hasCapacity(item, count))
 		{
 			return RETURNVALUE_NOTENOUGHCAPACITY;
@@ -3636,7 +3663,7 @@ ReturnValue Player::queryMaxCount(int32_t index, const Thing &thing, uint32_t co
 					subContainer->queryMaxCount(INDEX_WHEREEVER, *item, item->getItemCount(), queryCount, flags);
 					n += queryCount;
 
-					//iterate through all items, including sub-containers (deep search)
+					// iterate through all items, including sub-containers (deep search)
 					for (ContainerIterator it = subContainer->iterator(); it.hasNext(); it.advance())
 					{
 						if (Container *tmpContainer = (*it)->getContainer())
@@ -3658,7 +3685,7 @@ ReturnValue Player::queryMaxCount(int32_t index, const Thing &thing, uint32_t co
 				}
 			}
 			else if (queryAdd(slotIndex, *item, item->getItemCount(), flags) == RETURNVALUE_NOERROR)
-			{ //empty slot
+			{ // empty slot
 				if (item->isStackable())
 				{
 					n += 100;
@@ -3694,7 +3721,7 @@ ReturnValue Player::queryMaxCount(int32_t index, const Thing &thing, uint32_t co
 			}
 		}
 		else if (queryAdd(index, *item, count, flags) == RETURNVALUE_NOERROR)
-		{ //empty slot
+		{ // empty slot
 			if (item->isStackable())
 			{
 				maxQueryCount = 100;
@@ -3780,7 +3807,7 @@ Cylinder *Player::queryDestination(int32_t &index, const Thing &thing, Item **de
 
 				if (autoStack && isStackable)
 				{
-					//try find an already existing item to stack with
+					// try find an already existing item to stack with
 					if (queryAdd(slotIndex, *item, item->getItemCount(), 0) == RETURNVALUE_NOERROR)
 					{
 						if (inventoryItem->equals(item) && inventoryItem->getItemCount() < 100)
@@ -3802,7 +3829,7 @@ Cylinder *Player::queryDestination(int32_t &index, const Thing &thing, Item **de
 				}
 			}
 			else if (queryAdd(slotIndex, *item, item->getItemCount(), flags) == RETURNVALUE_NOERROR)
-			{ //empty slot
+			{ // empty slot
 				index = slotIndex;
 				*destItem = nullptr;
 				return this;
@@ -3815,7 +3842,7 @@ Cylinder *Player::queryDestination(int32_t &index, const Thing &thing, Item **de
 			Container *tmpContainer = containers[i++];
 			if (!autoStack || !isStackable)
 			{
-				//we need to find first empty container as fast as we can for non-stackable items
+				// we need to find first empty container as fast as we can for non-stackable items
 				uint32_t n = tmpContainer->capacity() - tmpContainer->size();
 				while (n)
 				{
@@ -3854,7 +3881,7 @@ Cylinder *Player::queryDestination(int32_t &index, const Thing &thing, Item **de
 					continue;
 				}
 
-				//try find an already existing item to stack with
+				// try find an already existing item to stack with
 				if (tmpItem->equals(item) && tmpItem->getItemCount() < 100)
 				{
 					index = n;
@@ -3916,7 +3943,7 @@ void Player::addThing(int32_t index, Thing *thing)
 	item->setParent(this);
 	inventory[index] = item;
 
-	//send to client
+	// send to client
 	sendInventoryItem(static_cast<slots_t>(index), item);
 }
 
@@ -3937,10 +3964,10 @@ void Player::updateThing(Thing *thing, uint16_t itemId, uint32_t count)
 	item->setID(itemId);
 	item->setSubType(count);
 
-	//send to client
+	// send to client
 	sendInventoryItem(static_cast<slots_t>(index), item);
 
-	//event methods
+	// event methods
 	onUpdateInventoryItem(item, item);
 }
 
@@ -3963,10 +3990,10 @@ void Player::replaceThing(uint32_t index, Thing *thing)
 		return /*RETURNVALUE_NOTPOSSIBLE*/;
 	}
 
-	//send to client
+	// send to client
 	sendInventoryItem(static_cast<slots_t>(index), item);
 
-	//event methods
+	// event methods
 	onUpdateInventoryItem(oldItem, item);
 
 	item->setParent(this);
@@ -3992,10 +4019,10 @@ void Player::removeThing(Thing *thing, uint32_t count)
 	{
 		if (count == item->getItemCount())
 		{
-			//send change to client
+			// send change to client
 			sendInventoryItem(static_cast<slots_t>(index), nullptr);
 
-			//event methods
+			// event methods
 			onRemoveInventoryItem(item);
 
 			item->setParent(nullptr);
@@ -4006,19 +4033,19 @@ void Player::removeThing(Thing *thing, uint32_t count)
 			uint8_t newCount = static_cast<uint8_t>(std::max<int32_t>(0, item->getItemCount() - count));
 			item->setItemCount(newCount);
 
-			//send change to client
+			// send change to client
 			sendInventoryItem(static_cast<slots_t>(index), item);
 
-			//event methods
+			// event methods
 			onUpdateInventoryItem(item, item);
 		}
 	}
 	else
 	{
-		//send change to client
+		// send change to client
 		sendInventoryItem(static_cast<slots_t>(index), nullptr);
 
-		//event methods
+		// event methods
 		onRemoveInventoryItem(item);
 
 		item->setParent(nullptr);
@@ -4342,7 +4369,7 @@ void Player::postAddNotification(Thing *thing, const Cylinder *oldParent, int32_
 {
 	if (link == LINK_OWNER)
 	{
-		//calling movement scripts
+		// calling movement scripts
 		g_moveEvents->onPlayerEquip(this, thing->getItem(), static_cast<slots_t>(index), false);
 	}
 
@@ -4387,7 +4414,7 @@ void Player::postAddNotification(Thing *thing, const Cylinder *oldParent, int32_
 	{
 		if (creature == this)
 		{
-			//check containers
+			// check containers
 			std::vector<Container *> containers;
 
 			for (const auto &it : openContainers)
@@ -4411,7 +4438,7 @@ void Player::postRemoveNotification(Thing *thing, const Cylinder *newParent, int
 {
 	if (link == LINK_OWNER)
 	{
-		//calling movement scripts
+		// calling movement scripts
 		g_moveEvents->onPlayerDeEquip(this, thing->getItem(), static_cast<slots_t>(index));
 	}
 
@@ -4440,8 +4467,10 @@ void Player::postRemoveNotification(Thing *thing, const Cylinder *newParent, int
 		sendStats();
 	}
 
-	if (const Item* item = thing->getItem()) {
-		if (const Container* container = item->getContainer()) {
+	if (const Item *item = thing->getItem())
+	{
+		if (const Container *container = item->getContainer())
+		{
 			checkLootContainers(container);
 
 			if (container->isRemoved() || !Position::areInRange<1, 1, 0>(getPosition(), container->getPosition()))
@@ -4539,7 +4568,7 @@ void Player::internalAddThing(uint32_t index, Thing *thing)
 		return;
 	}
 
-	//index == 0 means we should equip this item at the most appropiate slot (no action required here)
+	// index == 0 means we should equip this item at the most appropiate slot (no action required here)
 	if (index >= CONST_SLOT_FIRST && index <= CONST_SLOT_LAST)
 	{
 		if (inventory[index])
@@ -4579,7 +4608,7 @@ bool Player::setAttackedCreature(Creature *creature)
 	{
 		if (followCreature != creature)
 		{
-			//chase opponent
+			// chase opponent
 			setFollowCreature(creature);
 		}
 	}
@@ -4709,7 +4738,7 @@ void Player::setChaseMode(bool mode)
 		{
 			if (!followCreature && attackedCreature)
 			{
-				//chase opponent
+				// chase opponent
 				setFollowCreature(attackedCreature);
 			}
 		}
@@ -4857,16 +4886,16 @@ void Player::onEndCondition(ConditionType_t type)
 
 void Player::onCombatRemoveCondition(Condition *condition)
 {
-	//Creature::onCombatRemoveCondition(condition);
+	// Creature::onCombatRemoveCondition(condition);
 	if (condition->getId() > 0)
 	{
-		//Means the condition is from an item, id == slot
+		// Means the condition is from an item, id == slot
 		if (g_game.getWorldType() == WORLD_TYPE_PVP_ENFORCED)
 		{
 			Item *item = getInventoryItem(static_cast<slots_t>(condition->getId()));
 			if (item)
 			{
-				//25% chance to destroy the item
+				// 25% chance to destroy the item
 				if (25 >= uniform_random(1, 100))
 				{
 					g_game.internalRemoveItem(item);
@@ -4880,7 +4909,8 @@ void Player::onCombatRemoveCondition(Condition *condition)
 		{
 			const uint32_t delay = getNextActionTime();
 			const int32_t ticks = delay - (delay % EVENT_CREATURE_THINK_INTERVAL);
-			if (ticks < 0 || condition->getType() == CONDITION_PARALYZE) {
+			if (ticks < 0 || condition->getType() == CONDITION_PARALYZE)
+			{
 				removeCondition(condition);
 			}
 			else
@@ -4976,7 +5006,7 @@ void Player::onIdleStatus()
 
 void Player::onPlacedCreature()
 {
-	//scripting event - onLogin
+	// scripting event - onLogin
 	if (!g_creatureEvents->playerLogin(this))
 	{
 		kickPlayer(true);
@@ -4996,7 +5026,7 @@ void Player::onAttackedCreatureDrainHealth(Creature *target, int32_t points)
 			Monster *tmpMonster = target->getMonster();
 			if (tmpMonster && tmpMonster->isHostile())
 			{
-				//We have fulfilled a requirement for shared experience
+				// We have fulfilled a requirement for shared experience
 				party->updatePlayerTicks(this, points);
 			}
 		}
@@ -5102,7 +5132,7 @@ void Player::onGainExperience(uint64_t gainExp, Creature *target)
 	if (target && !target->getPlayer() && party && party->isSharedExperienceActive() && party->isSharedExperienceEnabled())
 	{
 		party->shareExperience(gainExp, target);
-		//We will get a share of the experience through the sharing mechanism
+		// We will get a share of the experience through the sharing mechanism
 		return;
 	}
 
@@ -5558,13 +5588,13 @@ void Player::addUnjustifiedDead(const Player *attacked)
 		if (dayKills >= 2 * g_config.getNumber(ConfigManager::DAY_KILLS_TO_RED) || weekKills >= 2 * g_config.getNumber(ConfigManager::WEEK_KILLS_TO_RED) || monthKills >= 2 * g_config.getNumber(ConfigManager::MONTH_KILLS_TO_RED))
 		{
 			setSkull(SKULL_BLACK);
-			//start black skull time
+			// start black skull time
 			skullTicks = static_cast<int64_t>(g_config.getNumber(ConfigManager::BLACK_SKULL_DURATION)) * 24 * 60 * 60 * 1000;
 		}
 		else if (dayKills >= g_config.getNumber(ConfigManager::DAY_KILLS_TO_RED) || weekKills >= g_config.getNumber(ConfigManager::WEEK_KILLS_TO_RED) || monthKills >= g_config.getNumber(ConfigManager::MONTH_KILLS_TO_RED))
 		{
 			setSkull(SKULL_RED);
-			//reset red skull time
+			// reset red skull time
 			skullTicks = static_cast<int64_t>(g_config.getNumber(ConfigManager::RED_SKULL_DURATION)) * 24 * 60 * 60 * 1000;
 		}
 	}
@@ -6464,7 +6494,7 @@ void Player::setGuild(Guild *newGuild)
 	}
 }
 
-//Custom: Anti bug of market
+// Custom: Anti bug of market
 bool Player::isMarketExhausted() const
 {
 	uint32_t exhaust_time = 3000; // half second 500
@@ -6490,38 +6520,38 @@ uint16_t Player::getFreeBackpackSlots() const
 	return counter;
 }
 
-void Player::addItemImbuementStats(const Imbuement* imbuement)
+void Player::addItemImbuementStats(const Imbuement *imbuement)
 {
 	bool requestUpdate = false;
 	// Check imbuement skills
-	for (int32_t i = SKILL_FIRST; i <= SKILL_LAST; ++i) {
-		if (imbuement->skills[i]) {
+	for (int32_t i = SKILL_FIRST; i <= SKILL_LAST; ++i)
+	{
+		if (imbuement->skills[i])
+		{
 			requestUpdate = true;
 			setVarSkill(static_cast<skills_t>(i), imbuement->skills[i]);
 		}
 	}
 
-	if (requestUpdate)
-	{
-		sendSkills();
-		requestUpdate = false;
-	}
-
 	// Check imbuement magic level
-	for (int32_t s = STAT_FIRST; s <= STAT_LAST; ++s) {
-		if (imbuement->stats[s]) {
+	for (int32_t s = STAT_FIRST; s <= STAT_LAST; ++s)
+	{
+		if (imbuement->stats[s])
+		{
 			requestUpdate = true;
 			setVarStats(static_cast<stats_t>(s), imbuement->stats[s]);
 		}
 	}
 
 	// Add imbuement speed
-	if (imbuement->speed != 0) {
+	if (imbuement->speed != 0)
+	{
 		g_game.changeSpeed(this, imbuement->speed);
 	}
 
 	// Add imbuement capacity
-	if (imbuement->capacity != 0) {
+	if (imbuement->capacity != 0)
+	{
 		requestUpdate = true;
 		bonusCapacity = (capacity * imbuement->capacity) / 100;
 	}
@@ -6535,39 +6565,39 @@ void Player::addItemImbuementStats(const Imbuement* imbuement)
 	return;
 }
 
-void Player::removeItemImbuementStats(const Imbuement* imbuement)
+void Player::removeItemImbuementStats(const Imbuement *imbuement)
 {
 	bool requestUpdate = false;
 
 	// Check imbuement skills
-	for (int32_t i = SKILL_FIRST; i <= SKILL_LAST; ++i) {
-		if (imbuement->skills[i]) {
+	for (int32_t i = SKILL_FIRST; i <= SKILL_LAST; ++i)
+	{
+		if (imbuement->skills[i])
+		{
 			requestUpdate = true;
 			setVarSkill(static_cast<skills_t>(i), -imbuement->skills[i]);
 		}
 	}
 
-	if (requestUpdate)
-	{
-		sendSkills();
-		requestUpdate = false;
-	}
-
 	// Check imbuement magic level
-	for (int32_t s = STAT_FIRST; s <= STAT_LAST; ++s) {
-		if (imbuement->stats[s]) {
+	for (int32_t s = STAT_FIRST; s <= STAT_LAST; ++s)
+	{
+		if (imbuement->stats[s])
+		{
 			requestUpdate = true;
 			setVarStats(static_cast<stats_t>(s), -imbuement->stats[s]);
 		}
 	}
 
 	// Remove imbuement speed
-	if (imbuement->speed != 0) {
+	if (imbuement->speed != 0)
+	{
 		g_game.changeSpeed(this, -imbuement->speed);
 	}
 
 	// Remove imbuement capacity
-	if (imbuement->capacity != 0) {
+	if (imbuement->capacity != 0)
+	{
 		requestUpdate = true;
 		bonusCapacity = 0;
 	}
