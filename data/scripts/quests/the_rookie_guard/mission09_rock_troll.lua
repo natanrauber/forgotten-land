@@ -29,7 +29,6 @@ tunnelHole:uid(25028)
 tunnelHole:register()
 
 -- Trunk chests (gather leather legs and pick)
-
 local CHEST_ID = {
 	LEATHER_LEGS = 1,
 	PICK = 2

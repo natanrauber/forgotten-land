@@ -24,7 +24,13 @@ local voices = {
 npcHandler:addModule(VoiceModule:new(voices))
 
 -- Greeting and Farewell
-keywordHandler:addGreetKeyword({"hi"}, {npcHandler = npcHandler, text = "Greetings, |PLAYERNAME|!"})
+keywordHandler:addGreetKeyword(
+	{"hi"},
+	{npcHandler = npcHandler, text = "Greetings, |PLAYERNAME|!"},
+	function(player)
+		return player:getSex() == PLAYERSEX_MALE
+	end
+)
 keywordHandler:addAliasKeyword({"hello"})
 
 keywordHandler:addGreetKeyword(

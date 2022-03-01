@@ -1006,6 +1006,13 @@ TileAction = {
 			{x = 31908, y = 32131, z = 7},
 			{x = 31909, y = 32131, z = 7}
 		}
+	},
+	-- Orc fortress elite orc guard back trapdoor tile
+	[50358] = {
+		itemId = 5545,
+		itemPos = {
+			{x = 31908, y = 32128, z = 7}
+		}
 	}
 	-- Orc fortress in front elite orc guard
 	-- [50358] = {
@@ -1175,10 +1182,10 @@ TileUnique = {
 	-- The Rookie Guard Quest - Mission 06: Run Like a Wolf
 	-- Path: data\scripts\actions\quests\the_rookie_guard\mission06_run_like_wolf.lua
 	-- War wolf den entrance hole
-	-- [25024] = {
-	-- 	itemId = 13869,
-	-- 	itemPos = {x = 32138, y = 32132, z = 7}
-	-- },
+	[25024] = {
+		itemId = 383,
+		itemPos = {x = 32083, y = 32111, z = 7}
+	},
 	-- War wolf den fall tile
 	-- [25025] = {
 	-- 	itemId = 9023,
@@ -1189,11 +1196,18 @@ TileUnique = {
 	-- 	itemId = 9024,
 	-- 	itemPos = {x = 32106, y = 32130, z = 11}
 	-- },
-	-- War wolf den last floor ramp tile
-	-- [25027] = {
-	-- 	itemId = 8372,
-	-- 	itemPos = {x = 32147, y = 32125, z = 11}
-	-- },
+	-- War wolf den exit ladder
+	[25027] = {
+		itemId = 5543,
+		itemPos = {x = 32087, y = 32103, z = 8}
+	},
+	-- The Rookie Guard Quest - Mission 07: Attack
+	-- Path: data\scripts\actions\quests\the_rookie_guard\mission07_attack.lua
+	-- Library entrance tile
+	[25025] = {
+		itemId = 4837,
+		itemPos = {x = 32038, y = 32131, z = 9}
+	},
 	-- The Rookie Guard Quest - Mission 09: Rock 'n Troll
 	-- Path: data\scripts\actions\quests\the_rookie_guard\mission09_rock_troll.lua
 	-- Troll caves dug tunnel hole

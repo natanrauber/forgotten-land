@@ -30,14 +30,14 @@ local function greetCallback(cid)
 		npcHandler:setMessage(MESSAGE_GREET, "Hey there, |PLAYERNAME|. Did Vascalir send you to me for a {mission}?")
 	elseif
 		player:getStorageValue(Storage.TheRookieGuard.Mission06) > 1 and
-			player:getStorageValue(Storage.TheRookieGuard.Mission06) < 3
+			player:getStorageValue(Storage.TheRookieGuard.Mission06) < 5
 	 then
 		-- Finishing mission 6
 		npcHandler:setMessage(
 			MESSAGE_GREET,
 			"Now, now - we can't work with that. Go back to that wolf den and fulfil your mission! Unless there is anything else I can help you with."
 		)
-	elseif player:getStorageValue(Storage.TheRookieGuard.Mission06) == 3 then
+	elseif player:getStorageValue(Storage.TheRookieGuard.Mission06) == 5 then
 		npcHandler:setMessage(
 			MESSAGE_GREET,
 			"Hey there, |PLAYERNAME|. You look... exhausted. Were you able to find some war wolf leather?"
@@ -133,14 +133,15 @@ keywordHandler:addKeyword(
 		text = {
 			"Hmm... unfortunately the skin is damaged too badly. Whoever skinned this wolf wasn't very skilled at it. Hmm. ...",
 			"Ah, no need to fret. Tell you what kid, I'm gonna give you some normal leather boots instead. They should keep your feet warm as well. Here you go. ...",
-			"Now off with you and back to Vascalir, I have work to do."
+			"Now off with you and back to Vascalir, I have work to do.",
+			ungreet = true
 		}
 	},
 	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission06) == 3 and player:getItemCount(13879) >= 1
+		return player:getStorageValue(Storage.TheRookieGuard.Mission06) == 5 and player:getItemCount(13879) >= 1
 	end,
 	function(player)
-		player:setStorageValue(Storage.TheRookieGuard.Mission06, 4)
+		player:setStorageValue(Storage.TheRookieGuard.Mission06, 6)
 		player:removeItem(13879, 1)
 		player:addItemEx(Game.createItem(2643, 1), true, CONST_SLOT_WHEREEVER)
 	end
@@ -155,7 +156,7 @@ keywordHandler:addKeyword(
 		text = "Are you sure? I think I see some war wolf leather on you."
 	},
 	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission06) == 3 and player:getItemCount(13879) >= 1
+		return player:getStorageValue(Storage.TheRookieGuard.Mission06) == 5 and player:getItemCount(13879) >= 1
 	end
 )
 

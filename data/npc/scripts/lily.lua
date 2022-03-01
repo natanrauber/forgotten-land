@@ -55,7 +55,7 @@ local mission4 =
 	{
 		npcHandler = npcHandler,
 		text = {
-			"That's great to hear! You see, I'm not the only potion brewer on Rookgaard. The hermit Hyacinth has his little alchemy lab outside the village. ...",
+			"That's great to hear! You see, I'm not the only potion brewer on Rookgaard. The hermit Hyacinth has his alchemy lab outside the village. ...",
 			"He moved away from here some time ago and prefers to be alone, but needs some of the herbs that grow only around here. Could you please deliver a bag of herbs to him?"
 		}
 	},
@@ -86,7 +86,8 @@ mission4:addChildKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Here you go. I really appreciate your help. To find Hyacinth, leave the village to the north and go pretty much straight to the east. His little alchemy lab is on top of a mountain."
+			"Here you go. I really appreciate your help. To find Hyacinth, leave the village to the north and go pretty much straight to the east. His alchemy lab is on top of a mountain.",
+			ungreet = true
 		}
 	},
 	nil,
@@ -165,7 +166,7 @@ mission4AcceptAnotherHerbs:addChildKeyword(
 		npcHandler = npcHandler,
 		text = {
 			"Here you go, honey. I really appreciate your help. To find Hyacinth, leave the village to the north and go pretty much straight to the east. ...",
-			"His little alchemy lab is on top of a mountain. I'll mark the ramp leading up on your map, here. Don't stray from the path! There are dangerous monsters roaming the island."
+			"His alchemy lab is on top of a mountain. I'll mark on your map, here. Don't stray from the path! There are dangerous monsters roaming the island."
 		},
 		reset = true
 	},

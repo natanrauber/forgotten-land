@@ -1,7 +1,28 @@
 -- The Rookie Guard Quest - Mission 07: Attack!
 
--- Cough inside library vault
+-- War wolf den entrance hole
+local libraryEntranceHole = MoveEvent()
 
+function libraryEntranceHole.onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
+	if not player then
+		return true
+	end
+	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission07)
+	if missionState < 1 or missionState == 4 then
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have no business down there.")
+		player:teleportTo(fromPosition, true)
+	elseif missionState == 1 then
+		player:setStorageValue(Storage.TheRookieGuard.Mission07, 2)
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You entered the library.")
+	end
+	return true
+end
+
+libraryEntranceHole:uid(25025)
+libraryEntranceHole:register()
+
+-- Cough inside library vault
 local libraryVaultSteps = MoveEvent()
 
 function libraryVaultSteps.onStepIn(creature, item, position, fromPosition)
@@ -36,7 +57,6 @@ libraryVaultSteps:aid(50339)
 libraryVaultSteps:register()
 
 -- Fire fields (walk back on big fire fields)
-
 local fireFields = MoveEvent()
 
 function fireFields.onStepIn(creature, item, position, fromPosition)
@@ -57,39 +77,7 @@ end
 fireFields:aid(40011)
 fireFields:register()
 
--- Destroy field rune (destroy fire fields)
-
-local function restoreFirefield(position)
-	local tile = Tile(position)
-	if tile then
-		local item = tile:getItemById(13883)
-		if item then
-			item:transform(13882, 1)
-		end
-	end
-end
-
--- local destroyFieldRune = Action()
-
--- function destroyFieldRune.onUse(player, item, frompos, item2, topos)
--- 	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission07)
--- 	if missionState == 1 and item2.itemid == 13882 then
--- 		player:sendTextMessage(
--- 			MESSAGE_EVENT_ADVANCE,
--- 			"Fire in this stadium can be crossed without taking damage. Open the chest and get out of here!"
--- 		)
--- 		item2:getPosition():sendMagicEffect(CONST_ME_POFF)
--- 		item2:transform(13883, 1)
--- 		addEvent(restoreFirefield, 25000, item2:getPosition())
--- 	end
--- 	return true
--- end
-
--- destroyFieldRune:uid(40046)
--- destroyFieldRune:register()
-
 -- Treasure chest (gather orc language book)
-
 local treasureChest = Action()
 
 function treasureChest.onUse(player, item, frompos, item2, topos)
@@ -98,7 +86,7 @@ function treasureChest.onUse(player, item, frompos, item2, topos)
 	if missionState == -1 then
 		return true
 	end
-	if missionState == 1 then
+	if missionState >= 2 then
 		local libraryChestState = player:getStorageValue(Storage.TheRookieGuard.LibraryChest)
 		if libraryChestState == -1 then
 			local reward = Game.createItem(13831, 1)
@@ -108,6 +96,7 @@ function treasureChest.onUse(player, item, frompos, item2, topos)
 			)
 			player:setStorageValue(Storage.TheRookieGuard.LibraryChest, 1)
 			player:addItemEx(reward, true, CONST_SLOT_WHEREEVER)
+			player:setStorageValue(Storage.TheRookieGuard.Mission07, 3)
 		else
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The " .. item:getName() .. " is empty.")
 		end

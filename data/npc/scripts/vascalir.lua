@@ -34,6 +34,7 @@ local function greetCallback(cid)
 			MESSAGE_GREET,
 			"Welcome, adventurer |PLAYERNAME|. These are dire times for Rookgaard... have you come to help in our {mission}?"
 		)
+		npcHandler.topic[cid] = 0
 	elseif
 		player:getStorageValue(Storage.TheRookieGuard.Mission02) >= 1 and
 			player:getStorageValue(Storage.TheRookieGuard.Mission02) <= 3
@@ -105,7 +106,7 @@ local function greetCallback(cid)
 		)
 	elseif
 		player:getStorageValue(Storage.TheRookieGuard.Mission06) >= 1 and
-			player:getStorageValue(Storage.TheRookieGuard.Mission06) <= 3
+			player:getStorageValue(Storage.TheRookieGuard.Mission06) <= 5
 	 then
 		-- Finished mission 6 but not started mission 7
 		npcHandler:say(
@@ -114,7 +115,7 @@ local function greetCallback(cid)
 		)
 		return false
 	elseif
-		player:getStorageValue(Storage.TheRookieGuard.Mission06) == 4 and
+		player:getStorageValue(Storage.TheRookieGuard.Mission06) == 6 and
 			player:getStorageValue(Storage.TheRookieGuard.Mission07) == -1
 	 then
 		-- Started but not finished mission 7
@@ -123,17 +124,17 @@ local function greetCallback(cid)
 			"|PLAYERNAME|! Thank the gods you are back! While you were gone, something horrible happened. Do you smell the fire?"
 		)
 	elseif
-		player:getStorageValue(Storage.TheRookieGuard.Mission07) == 1 and
+		player:getStorageValue(Storage.TheRookieGuard.Mission07) == 3 and
 			player:getStorageValue(Storage.TheRookieGuard.LibraryChest) == -1
 	 then
 		-- Finishing mission 7
 		npcHandler:say(
-			"You can find the vault if you go down the stairs in the northern part of the academy. The book should be in a large blue chest somewhere down there - I hope it's not burnt yet.",
+			"You can find the vault if you go down the stairs in the northern part of the academy. The book should be in a bookcase somewhere down there - I hope it's not burnt yet.",
 			cid
 		)
 		return false
 	elseif
-		player:getStorageValue(Storage.TheRookieGuard.Mission07) == 1 and
+		player:getStorageValue(Storage.TheRookieGuard.Mission07) == 3 and
 			player:getStorageValue(Storage.TheRookieGuard.LibraryChest) == 1
 	 then
 		-- Finished mission 7 but not started mission 8
@@ -142,7 +143,7 @@ local function greetCallback(cid)
 			"Oh my, what happened to your hair? Your face is all black, too - it must have been a hell of flames down there. Did you get the book?"
 		)
 	elseif
-		player:getStorageValue(Storage.TheRookieGuard.Mission07) == 2 and
+		player:getStorageValue(Storage.TheRookieGuard.Mission07) == 3 and
 			player:getStorageValue(Storage.TheRookieGuard.Mission08) == -1
 	 then
 		-- Started but not finished mission 8
@@ -279,7 +280,23 @@ local mission2 =
 		return player:getStorageValue(Storage.TheRookieGuard.Mission02) == -1
 	end
 )
-keywordHandler:addAliasKeyword({"mission"})
+
+-- Mission 2: Start [alt]
+local mission2 =
+	keywordHandler:addKeyword(
+	{"mission"},
+	StdModule.say,
+	{
+		npcHandler = npcHandler,
+		text = {
+			"Have you ever heard of Kraknaknork? He's a powerful orc shaman who has recently risen from the orc tribe and started to terrorise Rookgaard. Maybe we can kill several birds with one stone. Listen: ...",
+			"What would you say about you defeat Kraknaknork, save Rookgaard and earn some experience and better equipment on the way? Sounds good?"
+		}
+	},
+	function(player)
+		return player:getStorageValue(Storage.TheRookieGuard.Mission02) == -1
+	end
+)
 
 -- Mission 2: Decline
 keywordHandler:addKeyword(
@@ -471,7 +488,8 @@ keywordHandler:addKeyword(
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
-		text = "Good job. Here's your promised reward - a sabre. I think you're well enough equipped now to leave the village for another small task. Find Lily south-west of here, she will tell you what she needs done."
+		text = "Good job. Here's your promised reward - a sabre. I think you're well enough equipped now to leave the village for another small task. Find Lily south-west of here, she will tell you what she needs done.",
+		ungreet = true
 	},
 	function(player)
 		return player:getStorageValue(Storage.TheRookieGuard.Mission03) == 1 and
@@ -625,11 +643,11 @@ local mission7 =
 		}
 	},
 	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission06) == 4 and
+		return player:getStorageValue(Storage.TheRookieGuard.Mission06) == 6 and
 			player:getStorageValue(Storage.TheRookieGuard.Mission07) == -1
 	end
 )
---keywordHandler:addAliasKeyword({"no"})
+keywordHandler:addAliasKeyword({"no"})
 
 -- Mission 7: Accept
 mission7:addChildKeyword(
@@ -639,7 +657,8 @@ mission7:addChildKeyword(
 		npcHandler = npcHandler,
 		text = {
 			"You can find the vault if you go down the stairs in the northern part of the academy. You'll find the book somewhere on the shelves down there - I hope it's not burnt yet. ...",
-			"Make sure you're healthy. Good luck!"
+			"Make sure you're healthy. Good luck!",
+			ungreet = true
 		}
 	},
 	nil,
@@ -673,12 +692,12 @@ keywordHandler:addKeyword(
 		}
 	},
 	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 1 and
+		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 3 and
 			player:getStorageValue(Storage.TheRookieGuard.LibraryChest) == 1 and
 			player:getItemCount(13831) <= 0
 	end,
 	function(player)
-		player:setStorageValue(Storage.TheRookieGuard.Mission07, 2)
+		player:setStorageValue(Storage.TheRookieGuard.Mission07, 4)
 		player:setStorageValue(Storage.TheRookieGuard.LibraryDoor, -1)
 		player:addExperience(100, true)
 	end
@@ -692,18 +711,18 @@ keywordHandler:addKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Great job down there! You do deserve a reward for your courage. Here is a platinum coin for you, worth 100 gold coins. Let me take a look at the book... ...",
+			"Great job down there! You do deserve a reward for your courage. Here is a platinum coin for you, worth 100 gold coins. Let me take a look at the book...",
 			"Argh... the pages are barely readable anymore. I was trying to figure out a way to get into the orc fortress by maybe using their language... but that won't work now I fear. ...",
 			"We do have to stop the trolls though before taking care of the orcs. I found their tunnel in the northern ruins. Are you prepared for your next mission?"
 		}
 	},
 	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 1 and
+		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 3 and
 			player:getStorageValue(Storage.TheRookieGuard.LibraryChest) == 1 and
 			player:getItemCount(13831) >= 1
 	end,
 	function(player)
-		player:setStorageValue(Storage.TheRookieGuard.Mission07, 2)
+		player:setStorageValue(Storage.TheRookieGuard.Mission07, 4)
 		player:setStorageValue(Storage.TheRookieGuard.LibraryDoor, -1)
 		player:removeItem(13831, 1)
 		player:addExperience(100, true)
@@ -724,12 +743,12 @@ keywordHandler:addKeyword(
 		}
 	},
 	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 1 and
+		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 3 and
 			player:getStorageValue(Storage.TheRookieGuard.LibraryChest) == 1 and
 			player:getItemCount(13831) >= 1
 	end,
 	function(player)
-		player:setStorageValue(Storage.TheRookieGuard.Mission07, 2)
+		player:setStorageValue(Storage.TheRookieGuard.Mission07, 4)
 		player:setStorageValue(Storage.TheRookieGuard.LibraryDoor, -1)
 		player:addExperience(100, true)
 		player:addItemEx(Game.createItem(2152, 1), true, CONST_SLOT_WHEREEVER)
@@ -749,11 +768,11 @@ keywordHandler:addKeyword(
 		}
 	},
 	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 2 and
+		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 4 and
 			player:getStorageValue(Storage.TheRookieGuard.Mission08) == -1
 	end,
 	function(player)
-		player:setStorageValue(Storage.TheRookieGuard.Mission08, 2)
+		player:setStorageValue(Storage.TheRookieGuard.Mission08, 1)
 	end
 )
 
@@ -767,7 +786,7 @@ keywordHandler:addKeyword(
 		ungreet = true
 	},
 	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 2 and
+		return player:getStorageValue(Storage.TheRookieGuard.Mission07) == 4 and
 			player:getStorageValue(Storage.TheRookieGuard.Mission08) == -1
 	end
 )
@@ -789,7 +808,7 @@ keywordHandler:addKeyword(
 			player:getStorageValue(Storage.TheRookieGuard.Mission09) == -1
 	end,
 	function(player)
-		player:setStorageValue(Storage.TheRookieGuard.Mission09, 2)
+		player:setStorageValue(Storage.TheRookieGuard.Mission09, 1)
 		player:setStorageValue(Storage.TheRookieGuard.TrollChests, 0)
 		player:setStorageValue(Storage.TheRookieGuard.TunnelPillars, 0)
 		player:addMapMark({x = 32039, y = 32116, z = 7}, MAPMARK_GREENSOUTH, "Troll Caves")
@@ -864,7 +883,7 @@ keywordHandler:addKeyword(
 		player:setStorageValue(Storage.TheRookieGuard.Mission10, 1)
 		player:setStorageValue(Storage.TheRookieGuard.UnholyCryptDoor, 1)
 		player:setStorageValue(Storage.TheRookieGuard.UnholyCryptChests, 0)
-		player:addItemEx(Game.createItem(2199, 1), true, CONST_SLOT_WHEREEVER)
+		player:addItemEx(Game.createItem(2199, 150), true, CONST_SLOT_WHEREEVER)
 		player:addMapMark({x = 32076, y = 32180, z = 7}, MAPMARK_GREENSOUTH, "Unholy Crypt")
 	end
 )
@@ -1036,7 +1055,7 @@ mission11:addChildKeyword(
 	nil,
 	function(player)
 		player:setStorageValue(Storage.TheRookieGuard.Mission11, 1)
-		player:addItemEx(Game.createItem(2170, 1), true, CONST_SLOT_WHEREEVER)
+		player:addItemEx(Game.createItem(2170, 200), true, CONST_SLOT_WHEREEVER)
 		player:addItemEx(Game.createItem(13924, 1), true, CONST_SLOT_WHEREEVER)
 		player:addMapMark({x = 31945, y = 32118, z = 7}, MAPMARK_GREENSOUTH, "Wasps' Nest")
 	end
@@ -1110,7 +1129,7 @@ keywordHandler:addKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"|PLAYERNAME|, I must say I'm impressed. Not everyone would dare go into that region of Rookgaard and face creatures as strong as wasps. Wait, let me give something to you... ...",
+			"|PLAYERNAME|, I must say I'm impressed. Not everyone would dare go into that region of Rookgaard and face creatures as strong as wasps. Wait, let me give something to you...",
 			"Here, with a drop of the wasp poison this potion turned into an effective antidote. Should you get poisoned again and are losing a lot of health, use the antidote potion to cure yourself. It's always good to protect yourself! ...",
 			"And I have a good shield for you, too. Here, can you carry it?"
 		}
@@ -1262,7 +1281,7 @@ keywordHandler:addKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"You DID kill him indeed! Incredible! This little village can finally live in peace again - and you've grown so strong, too. I'm proud of you, |PLAERNAME|. My work here is done, and yours too. Thank you for all you've done for us. ...",
+			"You DID kill him indeed! Incredible! This little village can finally live in peace again - and you've grown so strong, too. I'm proud of you, |PLAYERNAME|. My work here is done, and yours too. Thank you for all you've done for us. ...",
 			"What will become of you? Only you can decide your future now. ...",
 			"Rookgaard will miss you. Take care, |PLAYERNAME|. It's good to know you."
 		}

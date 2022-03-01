@@ -123,7 +123,7 @@ keywordHandler:addKeyword(
 		npcHandler = npcHandler,
 		text = {
 			"Take this star ring. This can save you in hard situations. ...",
-			"Anyway, thanks so much for your help. I can brew a lot of potions from these herbs. If you're in the area and find yourself in need of potions, don't hesitate to drop by and ask me for a {trade}. ..."
+			"Anyway, thanks so much for your help. I can brew a lot of potions from these herbs. If you're in the area and find yourself in need of potions, don't hesitate to drop by and ask me for a {trade}."
 		}
 	},
 	function(player)

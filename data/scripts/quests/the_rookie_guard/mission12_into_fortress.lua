@@ -50,8 +50,11 @@ local fortressEntrance = MoveEvent()
 
 function fortressEntrance.onStepIn(creature, item, position, fromPosition)
 	local player = creature:getPlayer()
+	if not player then
+		return true
+	end
 	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission12)
-	local guardPos = Position(31919, 32135, 7)
+	local guardPos = Position(31918, 32135, 7)
 	local toPos = Position(31922, 32137, 7)
 
 	if not player then
@@ -87,7 +90,7 @@ local rollingPin = Action()
 
 function rollingPin.onUse(player, item, frompos, item2, topos)
 	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission12)
-	if missionState >= 1 and missionState <= 13 and item2.itemid == 13931 and topos == Position(31919, 32135, 7) then
+	if missionState >= 1 and missionState <= 13 and item2.itemid == 13931 and topos == Position(31918, 32135, 7) then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You knock the orc guard. The fortress gates are unguarded!")
 		if missionState < 3 then
 			player:setStorageValue(Storage.TheRookieGuard.Mission12, 3)
@@ -175,7 +178,29 @@ function fleshyBone.onUse(player, item, frompos, item2, topos)
 end
 
 fleshyBone:id(13830)
+fleshyBone:allowFarUse(true)
 fleshyBone:register()
+
+-- Elite Orc Guard back tile
+local fortressTrapdoor = MoveEvent()
+
+function fortressTrapdoor.onStepIn(creature, item, position, fromPosition)
+	local player = creature:getPlayer()
+	local toPos = Position(31908, 32128, 8)
+
+	if not player then
+		return true
+	end
+
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You're inside the orc fortress.")
+	player:setStorageValue(Storage.TheRookieGuard.Mission12, 7)
+	player:teleportTo(toPos, true)
+
+	return true
+end
+
+fortressTrapdoor:aid(50358)
+fortressTrapdoor:register()
 
 -- Wasp poison flask (Poison cauldron)
 local poisonFlask = Action()
@@ -235,7 +260,17 @@ function bossLairTeleport.onStepIn(creature, item, position, fromPosition)
 	if missionState == -1 then
 		return true
 	end
-	if missionState >= 8 then
+	if missionState == 8 then
+		player:sendTextMessage(
+			MESSAGE_EVENT_ADVANCE,
+			"As long as the orc berserker is near that teleporter, you can't enter."
+		)
+		player:teleportTo(fromPosition, true)
+		position:sendMagicEffect(CONST_ME_TELEPORT)
+		fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
+		return true
+	end
+	if missionState >= 9 then
 		local spectators = Game.getSpectators(position, false, false, 2, 2, 2, 2)
 		for i = 1, #spectators do
 			if not spectators[i]:isPlayer() and spectators[i]:getName() == "Furious Orc Berserker" then
@@ -383,7 +418,7 @@ missionLevers:register()
 local boss = {
 	uid = nil,
 	fight = nil,
-	roomCenter = {x = 31937, y = 32170, z = 10}
+	roomCenter = {x = 31865, y = 32150, z = 10}
 }
 
 local function finishBossFight(playerUid, bossUid)
@@ -425,7 +460,7 @@ function enterBossRoomTeleport.onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 	if missionState >= 11 then
-		local spectators = Game.getSpectators(Position(boss.roomCenter), false, true, 8, 8, 5, 5)
+		local spectators = Game.getSpectators(Position(boss.roomCenter), false, true, 9, 9, 5, 5)
 		-- Check if there is a player inside the room
 		if #spectators > 0 then
 			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "A player is already inside the boss room.")
@@ -433,7 +468,7 @@ function enterBossRoomTeleport.onStepIn(creature, item, position, fromPosition)
 			return true
 		end
 		-- Spawn the boss
-		local bossCreature = Game.createMonster("Kraknaknork", Position(31930, 32170, 10))
+		local bossCreature = Game.createMonster("Kraknaknork", Position(31860, 32149, 10))
 		local bossDeath = CreatureEvent("KraknaknorkDeath")
 		function bossDeath.onDeath(player, corpse, killer, mostDamage, unjustified, mostDamage_unjustified)
 			stopEvent(boss.fight)
@@ -468,21 +503,35 @@ function exitBossRoomTeleport.onStepIn(creature, item, position, fromPosition)
 	if not player then
 		return true
 	end
-	-- Cancel boss fight timer
-	stopEvent(boss.fight)
-	-- Teleport the player
-	local roomExitPosition = Position(31878, 32152, 10)
-	player:teleportTo(roomExitPosition, false)
-	position:sendMagicEffect(CONST_ME_TELEPORT)
-	roomExitPosition:sendMagicEffect(CONST_ME_TELEPORT)
-	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You backed out of the fight. You may try again at any time.")
-	-- Despawn the boss
-	local boss = Creature(boss.uid)
-	if boss then
-		boss:getPosition():sendMagicEffect(CONST_ME_POFF)
-		boss:remove()
+	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission12)
+	local spectators = Game.getSpectators(Position(boss.roomCenter), false, false, 9, 9, 5, 5)
+	-- Check the boss do not exist
+	if #spectators > 0 then
+		for i = 1, #spectators do
+			if not spectators[i]:isPlayer() and spectators[i]:getName() == "Kraknaknork" then
+				-- Cancel boss fight timer
+				stopEvent(boss.fight)
+				-- Teleport the player
+				local roomExitPosition = Position(31878, 32152, 10)
+				player:teleportTo(roomExitPosition, false)
+				position:sendMagicEffect(CONST_ME_TELEPORT)
+				roomExitPosition:sendMagicEffect(CONST_ME_TELEPORT)
+				player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You backed out of the fight. You may try again at any time.")
+				-- Despawn the boss
+				local boss = Creature(boss.uid)
+				if boss then
+					boss:getPosition():sendMagicEffect(CONST_ME_POFF)
+					boss:remove()
+				end
+				return true
+			end
+		end
 	end
-	return true
+	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You already killed Kraknaknork, just proceed to the next teleport.")
+	player:teleportTo(fromPosition, false)
+	position:sendMagicEffect(CONST_ME_TELEPORT)
+	fromPosition:sendMagicEffect(CONST_ME_TELEPORT)
+	return false
 end
 
 exitBossRoomTeleport:uid(40071)
@@ -498,7 +547,7 @@ function enterTreasureRoomTeleport.onStepIn(creature, item, position, fromPositi
 	end
 	local missionState = player:getStorageValue(Storage.TheRookieGuard.Mission12)
 	if missionState == 12 then
-		local spectators = Game.getSpectators(Position(boss.roomCenter), false, false, 8, 8, 5, 5)
+		local spectators = Game.getSpectators(Position(boss.roomCenter), false, false, 9, 9, 5, 5)
 		-- Check the boss do not exist
 		if #spectators > 0 then
 			for i = 1, #spectators do
@@ -513,7 +562,7 @@ function enterTreasureRoomTeleport.onStepIn(creature, item, position, fromPositi
 		end
 		-- Teleport the player to the treasure room
 		player:setStorageValue(Storage.TheRookieGuard.Mission12, 13)
-		local treasureRoomPosition = Position(31932, 32171, 11)
+		local treasureRoomPosition = Position(31886, 32154, 11)
 		player:teleportTo(treasureRoomPosition, false)
 		position:sendMagicEffect(CONST_ME_TELEPORT)
 		treasureRoomPosition:sendMagicEffect(CONST_ME_TELEPORT)
@@ -605,7 +654,7 @@ function exitTreasureRoomTeleport.onStepIn(creature, item, position, fromPositio
 			"With Kraknaknork's final source of energy, you escape the fortress. Time to return to Vascalir."
 		)
 		player:setStorageValue(Storage.TheRookieGuard.Mission12, 14)
-		local exitPosition = Position(32016, 32150, 7)
+		local exitPosition = Position(31909, 32151, 9)
 		player:teleportTo(exitPosition, false)
 		position:sendMagicEffect(CONST_ME_TELEPORT)
 		exitPosition:sendMagicEffect(CONST_ME_TELEPORT)
