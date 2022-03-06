@@ -436,7 +436,8 @@ mission3:addChildKeyword(
 		text = {
 			"Nice. I've marked two rat dungeons on your map. Kill 10 rats and return to me. ...",
 			"If you should happen to forget how many you have killed in the meantime, simply check your questlog. So, good hunting!"
-		}
+		},
+		ungreet = true
 	},
 	nil,
 	function(player)
