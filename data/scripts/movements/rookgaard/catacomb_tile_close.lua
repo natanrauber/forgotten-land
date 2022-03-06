@@ -1,4 +1,4 @@
-local stairPosition = Position(32143, 32169, 10)
+local stairPosition = Position(32088, 32148, 10)
 
 local catacombTileClose = MoveEvent()
 
