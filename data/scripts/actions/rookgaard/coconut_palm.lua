@@ -3,6 +3,7 @@ local coconutPalm = Action()
 function coconutPalm.onUse(player)
     if player:getStorageValue(Storage.QuestChests.CoconutPalm) < os.time() then
         local chance = math.random(100)
+        player:getPosition():sendMagicEffect(CONST_ME_POFF)
         if chance >= 30 then
             player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have found a coconut.")
             player:addItem(2678, 1)
