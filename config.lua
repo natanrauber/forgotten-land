@@ -60,7 +60,6 @@ onlyPremiumAccount = false
 -- Customs
 weatherRain = false
 thunderEffect = false
-freeQuests = false
 allConsoleLog = false
 
 -- NOTE: saveIntervalTime in hours

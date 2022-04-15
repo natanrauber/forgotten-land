@@ -136,7 +136,6 @@ Storage = {
 	BlueberryCupcake = 30053,
 	FamiliarSummonEvent10 = 30054,
 	FamiliarSummonEvent60 = 30055,
-	FreeQuests = 990000,
 	PremiumAccount = 998899,
 
 	--[[
