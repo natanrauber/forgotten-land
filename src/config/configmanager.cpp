@@ -184,6 +184,7 @@ bool ConfigManager::load()
 
 	boolean[SORT_LOOT_BY_CHANCE] = getGlobalBoolean(L, "sortLootByChance", false);
 
+	boolean[FREE_QUESTS] = getGlobalBoolean(L, "freeQuests", false);
 	boolean[SAVE_INTERVAL] = getGlobalBoolean(L, "saveInterval", false);
 	boolean[SAVE_INTERVAL_CLEAN_MAP] = getGlobalBoolean(L, "saveIntervalCleanMap", false);
 	boolean[STAMINA_TRAINER] = getGlobalBoolean(L, "staminaTrainer", false);
