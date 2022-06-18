@@ -1509,7 +1509,7 @@ void Player::onApplyImbuement(Imbuement *imbuement, Item *item, uint8_t slot, bo
 
 		const ItemType &itemType = Item::items[key];
 
-		withdrawItemMessage << "Using " << mathItemCount << "x "<< itemType.name <<" from your supply stash. ";
+		withdrawItemMessage << "Using " << mathItemCount << "x " << itemType.name << " from your supply stash. ";
 		withdrawItem(itemType.clientId, mathItemCount);
 	}
 
@@ -1840,21 +1840,6 @@ void Player::onChangeZone(ZoneType_t zone)
 		{
 			setAttackedCreature(nullptr);
 			onAttackedCreatureDisappear(false);
-		}
-
-		if (!group->access && isMounted())
-		{
-			dismount();
-			g_game.internalCreatureChangeOutfit(this, defaultOutfit);
-			wasMounted = true;
-		}
-	}
-	else
-	{
-		if (wasMounted)
-		{
-			toggleMount(true);
-			wasMounted = false;
 		}
 	}
 
@@ -4822,6 +4807,7 @@ void Player::onAddCondition(ConditionType_t type)
 	if (type == CONDITION_OUTFIT && isMounted())
 	{
 		dismount();
+		wasMounted = true;
 	}
 
 	sendIcons();
@@ -4886,6 +4872,11 @@ void Player::onEndCondition(ConditionType_t type)
 		{
 			setSkull(SKULL_NONE);
 		}
+	}
+	else if (type == CONDITION_OUTFIT && wasMounted)
+	{
+		toggleMount(true);
+		wasMounted = false;
 	}
 
 	sendIcons();
