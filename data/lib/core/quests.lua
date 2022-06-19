@@ -2485,19 +2485,13 @@ if not Quests then
 					storageId = Storage.RookgaardTutorialIsland.SantiagoQuestLog,
 					missionId = 10218,
 					startValue = 1,
-					endValue = 11,
+					endValue = 5,
 					states = {
 						[1] = "You have found a fisherman called Santiago, who has a little problem. Maybe you should talk to him again to find out more.",
-						[2] = "Santiago asked you to go into his house. Upstairs you will find a chest. You can keep what you find inside of it. Once you got that, talk to Santiago again.",
-						[3] = "You have found Santiago's Coat and reported back to him. Your quest is not done yet, you should talk to him a bit more.",
-						[4] = "Santiago gave you a weapon. After equipping it, go to the cellar of his house to find out about the cockroach plague.",
-						[5] = "You brought the cockroach legs to Santiago. He still has something to tell you though.",
-						[6] = "Santiago asked you, if those cockroaches hurt you. You should reply to him!",
-						[7] = "Santiago has a valuable lesson for you. You should talk to him again.",
-						[8] = "Santiago showed you how some monsters might hurt you. Better to talk to him to learn a way to heal yourself.",
-						[9] = "Santiago gave you some fish! Just 'use' it to eat it and regain health. Afterwards, you should talk to Santiago again.",
-						[10] = "Santiago asked you if you had seen Zirella. Don't let him wait for the answer.",
-						[11] = "You have helped Santiago a lot by killing the cokcroaches in his cellar. In exchange, he gave you equipment and some valuable experience. Well done!"
+						[2] = "Santiago asked you to go into his house. Upstairs you will find a chest. You can keep what you find inside of it.",
+						[3] = "You have found Santiago's Coat and reported back to him. He's waiting for you to help him now.",
+						[4] = "Santiago gave you a weapon. Now go to the cellar of his house to find out about the cockroach plague.",
+						[5] = "You killed the cockroaches and brought the proof to Santiago, he doesn't need your help anymore, but he asked you to talk to Zirella."
 					}
 				},
 				[2] = {
