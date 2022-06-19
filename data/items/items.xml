@@ -17393,7 +17393,6 @@
 	<item id="8710" name="cockroach leg">
 		<attribute key="loottype" value="creatureproduct" />
 		<attribute key="weight" value="10" />
-		<attribute key="description" value="This is proof for Santiago that you have killed a cockroach." />
 	</item>
 	<item id="8711" article="a" name="shovel">
 		<attribute key="weight" value="3500" />
