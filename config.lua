@@ -60,7 +60,7 @@ onlyPremiumAccount = false
 -- Customs
 weatherRain = false
 thunderEffect = false
-allConsoleLog = false
+allConsoleLog = true
 
 -- NOTE: saveIntervalTime in hours
 saveInterval = false
