@@ -116,9 +116,6 @@ keywordHandler:addKeyword({'banor'}, StdModule.say, {npcHandler = npcHandler, te
 keywordHandler:addKeyword({'magic'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m not interested in such party tricks.'})
 keywordHandler:addKeyword({'tibia'}, StdModule.say, {npcHandler = npcHandler, text = 'A nice place for a hero, but nothing for whelps.'})
 
-keywordHandler:addKeyword({'rookgaard'}, StdModule.say, {npcHandler = npcHandler, text = 'It\'s my duty to protect this village and its {citizens}.'})
-keywordHandler:addAliasKeyword({'village'})
-
 keywordHandler:addKeyword({'monster'}, StdModule.say, {npcHandler = npcHandler, text = 'It looks like you have mastered the drill.'})
 
 keywordHandler:addKeyword({'trade'}, StdModule.say, {npcHandler = npcHandler, text = 'Sorry, I don\'t trade. Ask the shop owners for a trade instead.'})

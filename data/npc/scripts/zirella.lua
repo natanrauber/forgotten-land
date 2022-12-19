@@ -154,7 +154,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif -- mission not completed but needs no explanation
 		msgcontains(msg, "no") then
 		if storeTalkCid[cid] == 7 then
-			npcHandler:say("Well then, I hope you find nice and dry branches for me! Good {bye}!", cid)
+			npcHandler:say("Well then, I hope you find nice and dry branches for me! Good bye!", cid)
 			npcHandler:releaseFocus(cid)
 			npcHandler:resetNpc(cid)
 		end

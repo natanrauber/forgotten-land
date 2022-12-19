@@ -267,30 +267,15 @@ end
 -- Mission 2: Start
 local mission2 =
 	keywordHandler:addKeyword(
-	{"yes"},
-	StdModule.say,
-	{
-		npcHandler = npcHandler,
-		text = {
-			"Have you ever heard of Kraknaknork? He's a powerful orc shaman who has recently risen from the orc tribe and started to terrorise Rookgaard. Maybe we can kill several birds with one stone. Listen: ...",
-			"What would you say about you defeat Kraknaknork, save Rookgaard and earn some experience and better equipment on the way? Sounds good?"
-		}
-	},
-	function(player)
-		return player:getStorageValue(Storage.TheRookieGuard.Mission02) == -1
-	end
-)
-
--- Mission 2: Start [alt]
-local mission2 =
-	keywordHandler:addKeyword(
 	{"mission"},
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Have you ever heard of Kraknaknork? He's a powerful orc shaman who has recently risen from the orc tribe and started to terrorise Rookgaard. Maybe we can kill several birds with one stone. Listen: ...",
-			"What would you say about you defeat Kraknaknork, save Rookgaard and earn some experience and better equipment on the way? Sounds good?"
+			"Have you ever heard of Kraknaknork? ...",
+			"He's a powerful orc shaman who has recently risen from the orc tribe and started to terrorise Rookgaard. Our mission is to stop him. ...",
+			"Maybe we can kill several birds with one stone. Listen: ...",
+			"What would you say about you defeat Kraknaknork and earn some experience and better equipment in return? Sounds good?"
 		}
 	},
 	function(player)
@@ -304,7 +289,10 @@ keywordHandler:addKeyword(
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
-		text = "Well, if you change your mind you know where to find me. Remember that if you help Rookgaard, Rookgaard might be able to help you.",
+		text = {
+			"Well, if you change your mind you know where to find me. ...",
+			"Remember that if you help Rookgaard, Rookgaard might be able to help you."
+		},
 		ungreet = true
 	},
 	function(player)
@@ -322,9 +310,12 @@ local mission2Accept =
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Great. We best start by reinforcing our defences. There are four large catapults positioned on the village roofs and high grounds. ...",
-			"Go into the barn to the north-west of here and down the ladder into the cellar. You'll find a huge stone pile down there. Use it to pick up one of the big stones. ...",
-			"Carry one stone to at least two of the four catapults located on this academy roof and the village gates to load them. Have you understood all of that?"
+			"Great. We best start by reinforcing our defences. ...",
+			"There are four large catapults positioned on the village roofs and high grounds. ...",
+			"Go into the barn to the north-west of here and down the ladder into the cellar. ...",
+			"You'll find a huge stone pile down there. Use it to pick up one of the big stones. ...",
+			"Carry one stone to at least two of the four catapults located on this academy roof and the village gates to load them. ...",
+			"Have you understood all of that?"
 		}
 	},
 	nil,
@@ -354,9 +345,12 @@ mission2Accept:addChildKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Let me explain again then. We best start by reinforcing our defences. There are four large catapults positioned on the village roofs and high grounds. ...",
-			"Go into the barn to the north-west of here and down the ladder into the cellar. You'll find a huge stone pile down there. Use it to pick up one of the big stones. ...",
-			"Carry one stone to at least two of the four catapults located on this academy roof and village entrances to load them. Have you understood all of that?"
+			"Let me explain again then. We best start by reinforcing our defences. ...",
+			"There are four large catapults positioned on the village roofs and high grounds. ...",
+			"Go into the barn to the north-west of here and down the ladder into the cellar. ...",
+			"You'll find a huge stone pile down there. Use it to pick up one of the big stones. ...",
+			"Carry one stone to at least two of the four catapults located on this academy roof and village entrances to load them. ...",
+			"Have you understood all of that?"
 		},
 		moveup = 1
 	}
@@ -371,7 +365,8 @@ keywordHandler:addKeyword(
 		text = {
 			"Well done! The villagers are much safer now that the catapults are ready to fire. ...",
 			"Great. Take this wooden shield and put it to good use! ...",
-			"Actually I have some more equipment I could give to you, but first I want to see how you fight. You have fought before, haven't you?"
+			"Actually I have some more equipment I could give to you, but first I want to see how you fight. ...",
+			"You have fought before, haven't you?"
 		}
 	},
 	function(player)
@@ -404,7 +399,10 @@ local mission3 =
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Ah, that came with confidence. You can find rats in the sewers. Please kill 10 rats and then come back to me. If you want to practice fighting, just hunt a few harmless rabbits south of here. Shouldn't be too hard. Are you ready to go?"
+			"Ah, that came with confidence. You can find rats in the sewers. ...",
+			"Please kill 10 rats and then come back to me. ...",
+			"If you want to practice fighting, just hunt a few harmless rabbits south of here. Shouldn't be too hard. ...",
+			"Are you ready to go?"
 		}
 	},
 	function(player)
@@ -419,7 +417,12 @@ keywordHandler:addKeyword(
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
-		text = "No worries, let's refresh your memory. I need you to kill 10 rats on the sewers. If you want to practice fighting, just hunt a few harmless rabbits south of here. Have you understood?"
+		text = {
+			"No worries, let's refresh your memory. ...",
+			"I need you to kill 10 rats on the sewers. ...",
+			"If you want to practice fighting, just hunt a few harmless rabbits south of here. ...",
+			"Have you understood?"
+		}
 	},
 	function(player)
 		return player:getStorageValue(Storage.TheRookieGuard.Mission02) == 5 and
@@ -434,8 +437,10 @@ mission3:addChildKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Nice. I've marked two rat dungeons on your map. Kill 10 rats and return to me. ...",
-			"If you should happen to forget how many you have killed in the meantime, simply check your questlog. So, good hunting!"
+			"Nice. I've marked two rat dungeons on your map. ...",
+			"Kill 10 rats and return to me. ...",
+			"If you should happen to forget how many you have killed in the meantime, simply check your questlog. ...",
+			"So, good hunting!"
 		},
 		ungreet = true
 	},
@@ -456,8 +461,9 @@ mission3:addChildKeyword(
 		npcHandler = npcHandler,
 		text = {
 			"I'll explain it again then. Suited monsters to do some basic fighting would be rats. ...",
-			"You can find rats in the sewers. Please kill 5 rats and then come back to me. ...",
-			"Just pay attention they don't trap you in a narrow passage and take on one at a time. Are you ready to go?"
+			"You can find rats in the sewers. Please kill 10 rats and then come back to me. ...",
+			"Just pay attention they don't trap you in a narrow passage and take on one at a time. ...",
+			"Are you ready to go?"
 		},
 		moveup = 1
 	}
@@ -489,7 +495,11 @@ keywordHandler:addKeyword(
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
-		text = "Good job. Here's your promised reward - a sabre. I think you're well enough equipped now to leave the village for another small task. Find Lily south-west of here, she will tell you what she needs done.",
+		text = {
+			"Good job. Here's your promised reward - a sabre. ...",
+			"I think you're well enough equipped now to leave the village for another small task. ...",
+			"Find Lily south-west of here, she will tell you what she needs done."
+		},
 		ungreet = true
 	},
 	function(player)
@@ -514,7 +524,7 @@ keywordHandler:addKeyword(
 	},
 	function(player)
 		return player:getStorageValue(Storage.TheRookieGuard.Mission03) == 1 and
-			player:getStorageValue(Storage.TheRookieGuard.RatKills) == 5
+			player:getStorageValue(Storage.TheRookieGuard.RatKills) == 10
 	end
 )
 
@@ -527,8 +537,10 @@ keywordHandler:addKeyword(
 		text = {
 			"That's the spirit Rookgaard needs. Listen, while you were gone I thought about a way to weaken and fight Kraknaknork. ...",
 			"Even if we could make our way into his stronghold past all his minions, we cannot hope to defeat him as long as he is powerful enough to summon demons and access other dimensions. ...",
-			"While studying the fauna of Rookgaard I came across an interesting specimen that might help us in our battle. Deep in the underground tunnels, there is a spider queen - a tarantula, who is bigger and deadlier than all the other spiders here. ...",
-			"Her web is enormous - and causes a strong paralysis. If you could get a small sample of her web, I might be able to craft a trap that we can use to paralyse the orcs so you can get past their defences. ...",
+			"While studying the fauna of Rookgaard I came across an interesting specimen that might help us in our battle. ...",
+			"Deep in the underground tunnels, there is a spider queen - a tarantula, who is bigger and deadlier than all the other spiders here. ...",
+			"Her web is enormous - and causes a strong paralysis. ...",
+			"If you could get a small sample of her web, I might be able to craft a trap that we can use to paralyse the orcs so you can get past their defences. ...",
 			"Are you ready to sneak into the tarantula's lair and retrieve a sample of her web?"
 		}
 	},
@@ -561,11 +573,15 @@ keywordHandler:addKeyword(
 	{
 		npcHandler = npcHandler,
 		text = {
-			"Great. I'll mark the spider lair on your map. If you leave the village to the north again like before, but walk north-west and cross the bridge, you will find it. ...",
+			"Great. I'll mark the spider lair on your map. ...",
+			"If you leave the village to the north again like before, but walk north-west and cross the bridge, you will find it. ...",
 			"Listen, it will likely be dark in the cave, so maybe you'll want to buy a torch or two from Al Dee's shop to the left of the barn. ...",
-			"The spider queen is far too strong for you to fight and if she catches you, you might end up in her stomach. The good news is that she is almost blind and relies on her sense of smelling to find her prey. ...",
-			"Deep in her lair you'll find some blue greasy stones. If you use them, you'll rub some of the smelly grease on your body. From that moment on you'll be invisible to her, but only for a short time. ...",
-			"If you run into her lair, you should have enough time to retrieve a sample of her web before she catches you. Just get one of her intact cobwebs in her lair. Good luck!"
+			"The spider queen is far too strong for you to fight and if she catches you, you might end up in her stomach. ...",
+			"The good news is that she is almost blind and relies on her sense of smelling to find her prey. ...",
+			"Deep in her lair you'll find some blue greasy stones. ...",
+			"You can rub some of the smelly grease on your body. From that moment on you'll be invisible to her for a short time. ...",
+			"If you run into her lair, you should have enough time to retrieve a sample of her web before she catches you. ...",
+			"Just get one of her intact cobwebs in her lair. Good luck!"
 		}
 	},
 	function(player)
@@ -603,7 +619,10 @@ keywordHandler:addKeyword(
 	StdModule.say,
 	{
 		npcHandler = npcHandler,
-		text = "Here, this leather armor will protect you much better. Now - let's work on your footwear. Tom the Tanner can create great boots out of quality leather. You should pay him a visit!",
+		text = {
+			"Here, this leather armor will protect you much better. ...",
+			"Now - let's work on your footwear. Tom the Tanner can create great boots out of quality leather. You should pay him a visit!"
+		},
 		ungreet = true
 	},
 	function(player)
